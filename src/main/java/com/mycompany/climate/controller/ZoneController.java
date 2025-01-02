@@ -1,5 +1,6 @@
 package com.mycompany.climate.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.mycompany.climate.model.Zone;
 import com.mycompany.climate.service.ZoneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class ZoneController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public Zone getZone(@PathVariable int id) {
+    public Zone getZone(@PathVariable long id) {
         return service.getZoneById(id);
     }
 
@@ -26,6 +27,7 @@ public class ZoneController {
 
     @PostMapping("/new")
     public void createZone(@RequestBody Zone zone) {
+        System.out.println(zone.getTemp());
         service.saveZone(zone);
     }
 }

@@ -15,7 +15,7 @@ public class ZoneService {
     private ZoneRepository repository;
 
     public Zone getZoneById(long id) {
-        return repository.getById(id);
+        return repository.getReferenceById(id);
     }
 
     public void saveZone(Zone zone) {
