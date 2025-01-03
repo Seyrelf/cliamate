@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/zone")
+@RestController()
+@RequestMapping("/zone")
 public class ZoneController {
 
     @Autowired
@@ -29,5 +30,16 @@ public class ZoneController {
     public void createZone(@RequestBody Zone zone) {
         System.out.println(zone.getTemp());
         service.saveZone(zone);
+    }
+
+    @DeleteMapping("/del/{id}")
+    @ResponseBody
+    public void deleteZone(@PathVariable long id) {
+        service.deleteZone(id);
+    }
+
+    @DeleteMapping("/del/all")
+    public void deleteAllZones() {
+        service.deleteAllZones();
     }
 }

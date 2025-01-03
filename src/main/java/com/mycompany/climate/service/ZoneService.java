@@ -25,4 +25,12 @@ public class ZoneService {
     public List<Zone> getAllZones() {
         return repository.findAll();
     }
+
+    public void deleteZone(long id) {
+        repository.deleteById(id);
+    }
+
+    public void deleteAllZones() {
+        repository.deleteAll();
+    }
 }
