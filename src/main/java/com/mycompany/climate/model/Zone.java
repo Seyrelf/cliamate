@@ -14,20 +14,31 @@ public class Zone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String name;
     private double temp;
+    private double damp;
+    private double light;
+
     public Zone() {
     }
 
-
-    public Zone(double temp) {
+    public Zone(String name, double temp, double damp, double light) {
+        this.name = name;
         this.temp = temp;
+        this.damp = damp;
+        this.light = light;
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
-    public void setId(long id){
-        this.id = id;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getTemp() {
@@ -36,5 +47,21 @@ public class Zone {
 
     public void setTemp(double temp) {
         this.temp = temp;
+    }
+
+    public double getDamp() {
+        return damp;
+    }
+
+    public void setDamp(double damp) {
+        this.damp = damp;
+    }
+
+    public double getLight() {
+        return light;
+    }
+
+    public void setLight(double light) {
+        this.light = light;
     }
 }
