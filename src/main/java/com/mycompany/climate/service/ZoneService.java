@@ -33,4 +33,8 @@ public class ZoneService {
     public void deleteAllZones() {
         repository.deleteAll();
     }
+
+    public void updateZone(Zone zone) {
+        repository.save(zone);
+    }
 }

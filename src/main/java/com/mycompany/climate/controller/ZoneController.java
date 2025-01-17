@@ -42,4 +42,9 @@ public class ZoneController {
     public void deleteAllZones() {
         service.deleteAllZones();
     }
+
+    @PutMapping("/update/{id}")
+    public void updateZone(@PathVariable long id, @RequestBody Zone zone) {
+        service.updateZone(zone);
+    }
 }
