@@ -28,7 +28,6 @@ public class ZoneController {
 
     @PostMapping("/new")
     public void createZone(@RequestBody Zone zone) {
-        System.out.println(zone.getTemp());
         service.saveZone(zone);
     }
 
