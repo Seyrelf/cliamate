@@ -48,9 +48,10 @@ public class ZoneController {
     }
 
     @PostMapping("/sendAllZoneToServer")
-    public void sendAllZoneToServer(@RequestBody String message) {
-        System.out.println();
-        System.out.println(message);
-        System.out.println();
+    public void sendAllZoneToServer(@RequestBody List<Zone> zones) {
+        for (Zone zone : zones) {
+            System.out.println(zone.toString());
+        }
+
     }
 }
