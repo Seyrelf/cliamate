@@ -46,4 +46,9 @@ public class ZoneController {
     public void updateZone(@PathVariable long id, @RequestBody Zone zone) {
         service.updateZone(zone);
     }
+
+    @PostMapping("/sendAllZoneToServer")
+    public void sendAllZoneToServer(@RequestBody String message) {
+        System.out.println(message);
+    }
 }
