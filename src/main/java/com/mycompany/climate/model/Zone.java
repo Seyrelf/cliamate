@@ -198,4 +198,28 @@ public class Zone {
     public void setLightLow(double lightLow) {
         this.lightLow = lightLow;
     }
+
+
+    @Override
+    public String toString() {
+        return "Zone{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tempSoilReal=" + tempSoilReal +
+                ", tempSoilHigh=" + tempSoilHigh +
+                ", tempSoilLow=" + tempSoilLow +
+                ", tempAirReal=" + tempAirReal +
+                ", tempAirHigh=" + tempAirHigh +
+                ", tempAirLow=" + tempAirLow +
+                ", dampSoilReal=" + dampSoilReal +
+                ", dampSoilHigh=" + dampSoilHigh +
+                ", dampSoilLow=" + dampSoilLow +
+                ", dampAirReal=" + dampAirReal +
+                ", dampAirHigh=" + dampAirHigh +
+                ", dampAirLow=" + dampAirLow +
+                ", lightReal=" + lightReal +
+                ", lightHigh=" + lightHigh +
+                ", lightLow=" + lightLow +
+                '}';
+    }
 }
