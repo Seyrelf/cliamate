@@ -1,4 +1,4 @@
-package com.mycompany.climate.controller;
+/*package com.mycompany.climate.controller;
 
 import com.mycompany.climate.model.User;
 import com.mycompany.climate.model.Zone;
@@ -25,4 +25,4 @@ public class UserController {
     public void deleteUser(@RequestBody User user) {
         userService.delete(user);
     }
-}
+}*/

@@ -1,5 +1,4 @@
-package com.mycompany.climate.service;
-
+/*package com.mycompany.climate.service;
 import com.mycompany.climate.model.MyUserDetails;
 import com.mycompany.climate.model.User;
 import com.mycompany.climate.repository.UserRepository;
@@ -34,4 +33,4 @@ public class UserService implements UserDetailsService {
     public void delete(User user) {
         repository.delete(user);
     }
-}
+}*/

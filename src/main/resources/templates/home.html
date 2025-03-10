@@ -2,27 +2,286 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link th:href="@{/main.css}" rel="stylesheet" />
+    <link th:href="@{/style/main.css}" rel="stylesheet" />
 </head>
 <body>
-    <header class="p-1 bg-dark text-white">
+    <header class="bg-dark text-white">
         <div class="d-flex flex-wrap   justify-content-lg-start" id="main-header">
             <h1>Settings for system</h1>
         </div>
     </header>
     <div class="row" id="fullWindow">
-        <aside class="col bg-dark col-md-auto" id = "side-all-zones">
-            <div id="list-zones">
-            <th:block th:each="zone : ${zones}">
-                <div  class="zone" th:title="'Название: ' + ${zone.name} + ', Id: ' + ${zone.id}" onclick="showObjectSettingsWindow()">
-                    <span th:title="'Название: ' + ${zone.name} + ', Id: ' + ${zone.id}" th:id="${zone.id}" class="text-center">[[${zone.name}]] </span>
+
+        <aside class="col-side-all-zones">
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Температура воздуха</span>
                 </div>
-            </th:block>
+                <div class="window-param" onclick="openParamSettings(this,'Температура воздуха')">
+                    <span  id = "temperatureAirReal" class="text-center">20.0Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeTempAir" class="text-center">А</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Клапан горячей воды</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Клапан горячей воды')">
+                    <span id = "flapHotWaterReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Клапан холодной воды</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Клапан холодной воды')">
+                    <span id ="flapColdWaterReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center" > Температура почвы</span>
+                </div>
+                <div class="window-param" onclick="openParamSettings(this,'Температура почвы')">
+                    <span id = "temperatureSoilReal" class="text-center">20.5Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeTempSoil" class="text-center">А</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Мощность обогрева почвы</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность обогрева')">
+                    <span id = "powerHeatingMatReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center" >Мощность приточного ветилятора</span>
+                </div>
+                <div class="window-param" onclick="openParamSettings(this,'Мощность приточного ветилятора')">
+                    <span id="powerVentilatorInReal" class="text-center">20.5Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeVentilation" class="text-center">А</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center" >Мощность вытяжного вентилятора</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность вытяжного вентилятора')">
+                    <span id="powerVentilatorOutReal"  class="text-center">20.5Т</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <aside class="col-side-all-zones">
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Влажность почвы</span>
+                </div>
+                <div class="window-param" onclick="openParamSettings(this,'Влажность почвы')">
+                    <span id = "humiditySoilReal" class="text-center">20.0Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeHumiditySoil" class="text-center">А</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Клапан на полив</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeText(this,'Клапан на полив')">
+                    <span id = "workStatusFlapHumiditySoilReal"  class="text-center">ВКЛ</span>
+                </div>
+            </div>
+
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Насос на полив</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeText(this,'Насос на полив')">
+                    <span id = "workStatusPumpHumiditySoilReal"  class="text-center">Раб</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span  class="text-center" > Уровень бака полива</span>
+                </div>
+                <div class="window-param">
+                    <span id="waterTankLevelHumiditySoilReal" class="text-center">20.5Т</span>
+                </div>
+            </div>
+            <br>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center" > Влажность воздуха</span>
+                </div>
+                <div class="window-param" onclick="openParamSettings(this,'Влажность воздуха')">
+                    <span id = "humidityAirReal" class="text-center">20.5Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeHumidityAir" class="text-center">А</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Вентилятор с парообразователя</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeText(this,'Вентилятор с парообразователя')">
+                    <span id ="workStatusVentilatorHumidityAirReal" class="text-center">ВКЛ</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Парообразователь</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeText(this,'Парообразователь')">
+                    <span id ="workStatusGeneratorHumidityAirReal" class="text-center">ВКЛ</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Уровень в баке парообразователя</span>
+                </div>
+                <div class="window-param">
+                    <span id = "waterTankLevelHumidityAirReal" class="text-center">100%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Уровень СО2 в помощении</span>
+                </div>
+                <div class="window-param">
+                    <span id="carbonDioxideReal" class="text-center">20.0%</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeCarbonDioxide" class="text-center">А</span>
+                </div>
             </div>
         </aside>
+
+
+        <aside class="col-side-all-zones">
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Общий уровень света</span>
+                </div>
+                <div class="window-param" onclick="openParamSettings(this,'Общий уровень света')">
+                    <span id = "whiteLightReal" class="text-center">20.0Т</span>
+                </div>
+                <div class="mode-char">
+                    <span id = "modeLight" class="text-center">А</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Мощность общего уровня света</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность общего уровня света')">
+                    <span id = "whiteLightPowerReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Уровень красного спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumberForLight(this,'Уровень красного спектра')">
+                    <span id = "redLightReal" class="text-center">20.0Т</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Мощность красного спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность красного спектра')">
+                    <span   id = "redLightPowerReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Уровень дальнего красного спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumberForLight(this,'Уровень дальнего красного спектра')">
+                    <span id = "longLightRedReal" class="text-center">20.0Т</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Мощность дальнего красного спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность дальнего красного спектра')">
+                    <span  id = "longLightRedPowerReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Уровень синего спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumberForLight(this,'Уровень синего спектра')">
+                    <span id = "blueLightReal" class="text-center">20.0Т</span>
+                </div>
+            </div>
+
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Мощность синего спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность синего спектра')">
+                    <span id = "blueLightPowerReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+            <br>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center"> Уровень ультрафиолетового спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumberForLight(this,'Уровень ультрафиолетового спектра')">
+                    <span id = "uvlightReal" class="text-center">20.0Т</span>
+                </div>
+            </div>
+            <div class="param-setting">
+                <div class="name-param">
+                    <span class="text-center">Мощность ультрафиолетового спектра</span>
+                </div>
+                <div class="window-param" onclick="openParamSettingsWithoutModeNumber(this,'Мощность ультрафиолетового спектра')">
+                    <span id ="uvlightPowerReal" class="text-center">20.0%</span>
+                </div>
+            </div>
+
+        </aside>
+
+
+
     </div>
-    <script type="text/javascript" th:src="@{objectRedactor.js}"></script>
+    <script type="text/javascript" th:src="@{jsFiles/objectRedactor.js}"></script>
+    <script type="text/javascript" th:src="@{jsFiles/getRequests.js}"></script>
+    <script type="text/javascript" th:src="@{jsFiles/patchRequests.js}"></script>
+    <script type="text/javascript" th:src="@{jsFiles/updateRealParamInClient.js}"></script>
 </body>
 </html>

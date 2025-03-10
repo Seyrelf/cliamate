@@ -1,0 +1,232 @@
+body{background-image: url("../images/main.jpg");
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: "DejaVu Sans Mono", monospace;}
+
+#main-header h1{
+    padding: 0.5dvh;
+    margin:auto;
+    vertical-align:middle;
+    font-size: 4dvh;
+}
+
+header{
+    width: 100dvw;
+    height: 6dvh;
+}
+
+.row{
+    padding-top: 4dvh;
+    justify-content: space-around;
+}
+
+.mode-char{
+    display: inline-block;
+    font-size: 1.4dvw;
+    color: #cf191e;
+}
+
+.col-side-all-zones{
+    background: linear-gradient(45deg, black, transparent);
+    border-radius: 3dvh;
+    width: 31dvw;
+    font-size: 1.05dvw;
+    border: 0.1dvh solid;
+    border-color: #0d6efd ;
+    @media (min-width: 768px) {
+        flex: 0 0 auto;
+    }
+}
+
+#col-side-all-zones span{
+    font-size: 1.05dvw;
+}
+
+#side-all-zone span:before{
+    padding-right: 1dvw;
+    vertical-align: middle;
+    content: url("../images/home32.png");
+}
+
+
+
+#col-side-all-zones span{
+    font-size: 1.05dvw;
+}
+
+
+
+
+
+
+
+.param-setting{
+    margin-top: 1dvh;
+    margin-bottom: 1dvh;
+}
+
+.name-param{
+    color:#dbdfea;
+    width: 73%;
+
+    display: inline-block;
+}
+
+#paramSettings{
+    overflow: auto;
+    text-align: center;
+    font-size: 1.2dvw;
+    background-color: #9dd2fffa;
+    padding: 0.3%;
+    width: 22%;
+    position: absolute;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+}
+
+
+#paramSettingsWithoutMode{
+    overflow: auto;
+    font-size: 1.2dvw;
+    text-align: center;
+    background-color: #9dd2fffa;
+    padding: 0.3%;
+    width: 22%;
+    position: absolute;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+}
+
+#updateParamBtn:hover{
+
+    background-color: #494749;
+
+}
+
+#updateParamBtn{
+    color: #d9eff5;
+    width: 77%;
+    border-style: none;
+    background-color: #313031;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    border-bottom-width: 1px;
+}
+
+#paramName{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.header{
+    position: relative;
+    margin-bottom: 10px;
+    width: 95%;
+
+}
+
+
+#close-btn:hover{
+    color: #cf191e;
+}
+
+#close-btn{
+    color: #3b3b3b;
+    position: absolute;
+    left: 94%;
+    top: -1dvh;
+    font-size: 1.44dvw;
+    border-style: none;
+    background-color: rgba(212,39,39,0);
+}
+
+.window-param:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+#textMode{
+    font-size: 1.2dvw;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+#formSelect{
+    font-size: 1dvw;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.mode{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#inputTask{
+    font-size: 1dvw;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#textTask{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+.task{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+#okBtn{
+    margin-top: 7px;
+    width: 80%;
+}
+.window-param{
+    color:white;
+    width: 19%;
+    display: inline-block;
+    text-align: center;
+    background: black;
+    border-radius: 2dvh;
+    border-style: solid;
+    border-color: navy;
+    border-width: 0.4dvh;
+}
+
+
+#list-zones {
+    padding-bottom: 2dvh;
+    padding-top: 1.5dvh;
+    scrollbar-color: #1e6926 #212529;
+    transition: scrollbar-color 0.1s ease-out;
+    overflow: auto;
+    max-height: 84vh;
+}
+
+#fullWindow{
+    width: 100dvw;
+    margin: auto;
+}
+
+.zone{
+    white-space: nowrap;
+    width: 90%;
+    margin-top: 1.3dvh;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+
+#objectSettingsDiv{
+    margin-top: 3dvh;
+    margin-left: 3dvw;
+    width:78dvw;
+    max-height: 70dvh;
+    background-color: #212529;
+    border-radius: 20px;
+}

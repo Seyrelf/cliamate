@@ -1,4 +1,4 @@
-package com.mycompany.climate.model;
+/*package com.mycompany.climate.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -60,4 +60,4 @@ public class MyUserDetails implements UserDetails {
     public boolean isCredentialsNonExpired() {
         return true;
     }
-}
+}*/

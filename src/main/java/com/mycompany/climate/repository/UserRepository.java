@@ -1,4 +1,4 @@
-package com.mycompany.climate.repository;
+/*package com.mycompany.climate.repository;
 
 import com.mycompany.climate.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +11,4 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByUsername(String username);
-}
+}*/
