@@ -104,6 +104,27 @@ header{
 
 }
 
+#windowUsersSettings{
+    position: absolute;
+    top: 10dvh;
+    left: 10dvw;
+    width: 80dvw;
+    height: 80dvh;
+    background: linear-gradient(8deg, black, #464444fc);
+    border-radius: 3dvh;
+    border: 0.1dvh solid;
+    border-color: #0d6efd ;
+}
+
+#btnOpenWindowSettignsUser{
+    width: 15%;
+    margin-top: 0.6%;
+    height: 50%;
+    margin-right: 4dvw;
+    font-size: 1dvw;
+    border-style: solid;
+}
+
 #updateParamBtn{
     color: #d9eff5;
     width: 77%;
@@ -114,10 +135,152 @@ header{
     border-bottom-width: 1px;
 }
 
+#btnWithIcon{
+    width: 45%;
+    height: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-style: unset;
+    background: rgba(0, 0, 0, 0);
+}
+
+#tableContainer{
+    overflow: auto;
+    height: 86%;
+    width: 80%;
+    margin: auto;
+    font-size: 1.4dvw;
+    color: white;
+}
+
+#imgForBtn{
+    width: 100%;
+    height: auto;
+}
+
+#windowUserCreate{
+    font-size: 2dvh;
+    color: #000000;
+    border: 0.2dvh solid;
+    border-radius: 3%;
+    width: 20%;
+    height: auto;
+    padding: 0.5%;
+    background: linear-gradient(8deg, black, #8c8ee4fc);
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+
+
+#windowUserChange{
+    font-size: 2dvh;
+    color: #000000;
+    border: 0.2dvh solid;
+    border-radius: 3%;
+    width: 40%;
+    height: auto;
+    padding: 0.5%;
+    background: linear-gradient(8deg, black, #8c8ee4fc);
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+
+#formLogout{
+    margin-left: 5%;
+    margin-top: 0.6%;
+}
+
+#inputLogout{
+    font-size: 1dvw;
+    width: 100%;
+    height: auto;
+}
+
+#divBtnUserChange{
+    padding: 2%;
+    width: 100%;
+    margin: auto;
+}
+
+#divNameUser{
+    display: flex;
+    padding: 2%;
+}
+
+#spanUser{
+    width: 40%;
+}
+
+#divPasswordUser{
+    display: flex;
+    padding: 2%;
+}
+
+#divRoleUser{
+    display: flex;
+    padding: 2%;
+}
+
+#btnsWindowUser{
+    border-style: solid;
+    width: 40%;
+    margin-left: 5%;
+}
+
+btnsWindowUserChange{
+    border-style: solid;
+    width: 30%;
+    margin-left: 5%;
+}
+
+#divBtnUser{
+    padding: 2%;
+    width: 90%;
+    margin: auto;
+}
+
+
+#thId{
+    width: 15%;
+}
+
+#thUsername{
+    width: 35%;
+}
+
+#thRole{
+    width: 30%;
+}
+
+#thComand{
+    width: 10%;
+}
+
+#userTable{
+    color: white;
+}
+
 #paramName{
     display: flex;
     justify-content: center;
     width: 90%;
+}
+
+#headerForWindow{
+    height: 8%;
+}
+
+#openWindowNewUserBtn{
+    border-style: unset;
+    font-size: 2dvh;
+    background: #ffffffd4;
+    margin-left: 2%;
+    margin-top: 0.5%;
+    width: 20%;
+    height: 70%;
+    border-radius: 2dvh;
 }
 
 .header{
@@ -138,6 +301,16 @@ header{
     left: 94%;
     top: -1dvh;
     font-size: 1.44dvw;
+    border-style: none;
+    background-color: rgba(212,39,39,0);
+}
+
+#close-btn-for-usersSetting{
+    color: #cf191e;
+    position: absolute;
+    left: 96.2%;
+    top: 0dvh;
+    font-size: 2dvw;
     border-style: none;
     background-color: rgba(212,39,39,0);
 }

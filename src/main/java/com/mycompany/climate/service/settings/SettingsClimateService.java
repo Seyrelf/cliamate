@@ -40,6 +40,18 @@ public class SettingsClimateService {
             case "whiteLightReal":
                 settingsClimate.setWhiteLightTask(task);
                 break;
+            case "uvlightReal":
+                settingsClimate.setUvlightTask(task);
+                break;
+            case "redLightReal":
+                settingsClimate.setRedLightTask(task);
+                break;
+            case "blueLightReal":
+                settingsClimate.setBlueLightTask(task);
+                break;
+            case "longLightRedReal":
+                settingsClimate.setLongLightRedTask(task);
+                break;
             case "carbonDioxideReal":
                 settingsClimate.setCarbonDioxideTask(task);
                 break;
