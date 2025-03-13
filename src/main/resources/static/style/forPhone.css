@@ -1,83 +1,72 @@
-
-
-body{background-image: url("../images/main.jpg");
+body {
+    background-image: url("../images/main.jpg");
     min-height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    font-family: "DejaVu Sans Mono", monospace;}
+    font-family: "DejaVu Sans Mono", monospace;
+}
 
-#main-header h1{
+#main-header h1 {
     padding: 0.5dvh;
-    margin:auto;
-    vertical-align:middle;
+    margin: auto;
+    vertical-align: middle;
     font-size: 4dvh;
 }
 
-header{
+header {
     width: 100dvw;
-    height: 6dvh;
+    height: auto; /* Автоматическая высота */
+    padding: 1dvh 0; /* Добавляем отступы */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Перенос элементов на новую строку, если не хватает места */
 }
 
-.row{
+.row {
     padding-top: 4dvh;
     justify-content: space-around;
 }
 
-.mode-char{
+.mode-char {
     display: inline-block;
     font-size: 1.4dvw;
     color: #cf191e;
 }
 
-.col-side-all-zones{
+.col-side-all-zones {
     background: linear-gradient(45deg, black, transparent);
     border-radius: 3dvh;
     width: 31dvw;
     font-size: 1.05dvw;
     border: 0.1dvh solid;
-    border-color: #0d6efd ;
-    @media (min-width: 768px) {
-        flex: 0 0 auto;
-    }
+    border-color: #0d6efd;
 }
 
-#col-side-all-zones span{
+#col-side-all-zones span {
     font-size: 1.05dvw;
 }
 
-#side-all-zone span:before{
+#side-all-zone span:before {
     padding-right: 1dvw;
     vertical-align: middle;
     content: url("../images/home32.png");
 }
 
-
-
-#col-side-all-zones span{
-    font-size: 1.05dvw;
-}
-
-
-
-
-
-
-
-.param-setting{
+.param-setting {
     margin-top: 1dvh;
     margin-bottom: 1dvh;
 }
 
-.name-param{
-    color:#dbdfea;
+.name-param {
+    color: #dbdfea;
     width: 73%;
-
     display: inline-block;
 }
 
-#paramSettings{
+#paramSettings {
     overflow: auto;
     text-align: center;
     font-size: 1.2dvw;
@@ -88,8 +77,7 @@ header{
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
 
-
-#paramSettingsWithoutMode{
+#paramSettingsWithoutMode {
     overflow: auto;
     font-size: 1.2dvw;
     text-align: center;
@@ -100,13 +88,11 @@ header{
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
 
-#updateParamBtn:hover{
-
+#updateParamBtn:hover {
     background-color: #494749;
-
 }
 
-#windowUsersSettings{
+#windowUsersSettings {
     position: absolute;
     top: 10dvh;
     left: 10dvw;
@@ -115,10 +101,10 @@ header{
     background: linear-gradient(8deg, black, #464444fc);
     border-radius: 3dvh;
     border: 0.1dvh solid;
-    border-color: #0d6efd ;
+    border-color: #0d6efd;
 }
 
-#btnOpenWindowSettignsUser{
+#btnOpenWindowSettignsUser {
     width: 15%;
     margin-top: 0.6%;
     height: 50%;
@@ -127,7 +113,7 @@ header{
     border-style: solid;
 }
 
-#updateParamBtn{
+#updateParamBtn {
     color: #d9eff5;
     width: 77%;
     border-style: none;
@@ -137,7 +123,7 @@ header{
     border-bottom-width: 1px;
 }
 
-#btnWithIcon{
+#btnWithIcon {
     width: 45%;
     height: auto;
     margin-left: 2%;
@@ -146,7 +132,7 @@ header{
     background: rgba(0, 0, 0, 0);
 }
 
-#tableContainer{
+#tableContainer {
     overflow: auto;
     height: 86%;
     width: 80%;
@@ -155,12 +141,12 @@ header{
     color: white;
 }
 
-#imgForBtn{
+#imgForBtn {
     width: 100%;
     height: auto;
 }
 
-#windowUserCreate{
+#windowUserCreate {
     font-size: 2dvh;
     color: #000000;
     border: 0.2dvh solid;
@@ -174,8 +160,7 @@ header{
     left: 15%;
 }
 
-
-#windowUserChange{
+#windowUserChange {
     font-size: 2dvh;
     color: #000000;
     border: 0.2dvh solid;
@@ -189,92 +174,91 @@ header{
     left: 15%;
 }
 
-#formLogout{
+#formLogout {
     margin-left: 5%;
     margin-top: 0.6%;
 }
 
-#inputLogout{
+#inputLogout {
     font-size: 1dvw;
     width: 100%;
     height: auto;
 }
 
-#divBtnUserChange{
+#divBtnUserChange {
     padding: 2%;
     width: 100%;
     margin: auto;
 }
 
-#divNameUser{
+#divNameUser {
     display: flex;
     padding: 2%;
 }
 
-#spanUser{
+#spanUser {
     width: 40%;
 }
 
-#divPasswordUser{
+#divPasswordUser {
     display: flex;
     padding: 2%;
 }
 
-#divRoleUser{
+#divRoleUser {
     display: flex;
     padding: 2%;
 }
 
-#btnsWindowUser{
+#btnsWindowUser {
     border-style: solid;
     width: 40%;
     margin-left: 5%;
 }
 
-btnsWindowUserChange{
+btnsWindowUserChange {
     border-style: solid;
     width: 30%;
     margin-left: 5%;
 }
 
-#divBtnUser{
+#divBtnUser {
     padding: 2%;
     width: 90%;
     margin: auto;
 }
 
-
-#thId{
+#thId {
     width: 15%;
 }
 
-#thUsername{
+#thUsername {
     width: 35%;
 }
 
-#thRole{
+#thRole {
     width: 30%;
 }
 
-#thComand{
+#thComand {
     width: 10%;
 }
 
-#userTable{
+#userTable {
     color: white;
 }
 
-#paramName{
+#paramName {
     display: flex;
     justify-content: center;
     width: 90%;
 }
 
-#headerForWindow{
+#headerForWindow {
     height: 8%;
 }
 
-#openWindowNewUserBtn{
+#openWindowNewUserBtn {
     border-style: unset;
     font-size: 2dvh;
     background: #ffffffd4;
@@ -285,84 +269,87 @@ btnsWindowUserChange{
     border-radius: 2dvh;
 }
 
-.header{
+.header {
     position: relative;
     margin-bottom: 10px;
     width: 95%;
-
 }
 
-
-#close-btn:hover{
+#close-btn:hover {
     color: #cf191e;
 }
 
-#close-btn{
+#close-btn {
     color: #3b3b3b;
     position: absolute;
     left: 94%;
     top: -1dvh;
     font-size: 1.44dvw;
     border-style: none;
-    background-color: rgba(212,39,39,0);
+    background-color: rgba(212, 39, 39, 0);
 }
 
-#close-btn-for-usersSetting{
+#close-btn-for-usersSetting {
     color: #cf191e;
     position: absolute;
     left: 96.2%;
     top: 0dvh;
     font-size: 2dvw;
     border-style: none;
-    background-color: rgba(212,39,39,0);
+    background-color: rgba(212, 39, 39, 0);
 }
 
-.window-param:hover{
+.window-param:hover {
     background: white;
     color: black;
     cursor: pointer;
 }
 
-#textMode{
+#textMode {
     font-size: 1.2dvw;
     width: 55%;
     display: flex;
     justify-content: center;
 }
-#formSelect{
+
+#formSelect {
     font-size: 1dvw;
     width: 40%;
     display: flex;
     justify-content: center;
 }
-.mode{
+
+.mode {
     display: flex;
     margin-bottom: 10px;
 }
 
-#inputTask{
+#inputTask {
     font-size: 1dvw;
     width: 40%;
     display: flex;
     justify-content: center;
     text-align: center;
 }
-#textTask{
+
+#textTask {
     width: 55%;
     display: flex;
     justify-content: center;
 }
-.task{
+
+.task {
     display: flex;
     margin-bottom: 5px;
 }
 
-#okBtn{
+#okBtn {
     margin-top: 7px;
     width: 80%;
 }
-.window-param{
-    color:white;
+
+.window-param {
+    color: white;
     width: 19%;
     display: inline-block;
     text-align: center;
@@ -373,7 +360,6 @@ btnsWindowUserChange{
     border-width: 0.4dvh;
 }
 
-
 #list-zones {
     padding-bottom: 2dvh;
     padding-top: 1.5dvh;
@@ -383,12 +369,12 @@ btnsWindowUserChange{
     max-height: 84vh;
 }
 
-#fullWindow{
+#fullWindow {
     width: 100dvw;
     margin: auto;
 }
 
-.zone{
+.zone {
     white-space: nowrap;
     width: 90%;
     margin-top: 1.3dvh;
@@ -396,105 +382,92 @@ btnsWindowUserChange{
     overflow: hidden;
 }
 
-
-#objectSettingsDiv{
+#objectSettingsDiv {
     margin-top: 3dvh;
     margin-left: 3dvw;
-    width:78dvw;
+    width: 78dvw;
     max-height: 70dvh;
     background-color: #212529;
     border-radius: 20px;
 }
 
-
-/*
+/* Медиа-запрос для мобильных устройств (ширина экрана до 768px) */
 @media (max-width: 768px) {
     body {
-        background-size: auto;
+        background-size: auto; /* Убираем масштабирование фона */
     }
 
     #main-header h1 {
-        font-size: 3dvh;
+        font-size: 3dvh; /* Уменьшаем размер заголовка */
     }
 
     header {
-        height: auto;
-        padding: 1dvh 2dvw;
-        flex-direction: column;
-        align-items: flex-start;
+        height: auto; /* Автоматическая высота */
+        padding: 1dvh 2dvw; /* Добавляем отступы */
+        flex-direction: column; /* Элементы в столбик */
+        align-items: flex-start; /* Выравниваем по левому краю */
     }
 
     #btnOpenWindowSettignsUser, #formLogout {
-        width: 100%;
-        margin: 1dvh 0;
-        font-size: 2dvh;
+        width: 100%; /* Кнопки на всю ширину */
+        margin: 1dvh 0; /* Отступы между элементами */
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
     }
 
     #inputLogout {
-        font-size: 2dvh;
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
     }
 
     .col-side-all-zones {
-        width: 90dvw; 
-        font-size: 2dvh;
-        margin: 1dvh auto;
+        width: 90dvw; /* Увеличиваем ширину */
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
+        margin: 1dvh auto; /* Центрируем и добавляем отступы */
     }
 
     #paramSettings, #paramSettingsWithoutMode {
-        width: 90dvw;
-        font-size: 2dvh;
-        position: absolute;
-        margin: 1dvh auto;
+        width: 90dvw; /* Увеличиваем ширину */
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
+        position: static; /* Убираем абсолютное позиционирование */
+        margin: 1dvh auto; /* Центрируем и добавляем отступы */
     }
 
     #windowUsersSettings {
-        width: 95dvw;
-        height: auto;
-        top: 5dvh;
-        left: 2.5dvw;
+        width: 95dvw; /* Увеличиваем ширину */
+        height: auto; /* Автоматическая высота */
+        top: 5dvh; /* Смещаем вниз */
+        left: 2.5dvw; /* Центрируем */
     }
 
     #tableContainer {
-        font-size: 2dvh;
-    }
-
-    .param-setting{
-        display: flex;
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
     }
 
     #windowUserCreate, #windowUserChange {
-        width: 90dvw;
-        left: 5dvw;
+        width: 90dvw; /* Увеличиваем ширину */
+        left: 5dvw; /* Центрируем */
     }
 
     #close-btn, #close-btn-for-usersSetting {
-        font-size: 3dvh;
-        left: 90%;
+        font-size: 3dvh; /* Увеличиваем размер шрифта */
+        left: 90%; /* Смещаем кнопку закрытия */
     }
 
     .window-param {
-        width: 45%;
-        font-size: 2dvh;
+        width: 45%; /* Увеличиваем ширину */
+        font-size: 2dvh; /* Увеличиваем размер шрифта */
     }
 
     #list-zones {
-        max-height: 60dvh;
+        max-height: 60dvh; /* Уменьшаем максимальную высоту */
     }
 
     #objectSettingsDiv {
-        width: 95dvw;
-        margin-left: 2.5dvw;
+        width: 95dvw; /* Увеличиваем ширину */
+        margin-left: 2.5dvw; /* Центрируем */
     }
 
-    .name-param{
-        text-align: center;
-    }
-
-    .mode-char{
-        font-size: 2dvh;
-    }
-
+    /* Увеличиваем размеры текста для мобильных устройств */
     .mode-char, #col-side-all-zones span, .name-param, #textMode, #formSelect, #inputTask, #textTask {
         font-size: 2dvh;
     }
-}*/
+}

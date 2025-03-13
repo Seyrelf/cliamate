@@ -1,5 +1,7 @@
 package com.mycompany.climate.controller.real;
 
+import com.mycompany.climate.model.dto.DtoUpdateRealClimate;
+import com.mycompany.climate.model.dto.DtoUpdateRealDevice;
 import com.mycompany.climate.model.real.RealParamClimate;
 import com.mycompany.climate.model.real.RealParamDevice;
 import com.mycompany.climate.service.real.RealParamDeivceService;
@@ -19,9 +21,9 @@ public class RealDeviceClimateController {
         service.save(realParamDevice);
     }
 
-    @PostMapping(value = "/update")
-    private void update(@RequestBody RealParamDevice realParamDevice) {
-        service.save(realParamDevice);
+    @PatchMapping(value = "/update")
+    private void update(@RequestBody DtoUpdateRealDevice realParamDevice) {
+        service.updateLast(realParamDevice);
     }
 
     @GetMapping(value = "/getLast")

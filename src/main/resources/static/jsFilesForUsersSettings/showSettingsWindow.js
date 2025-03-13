@@ -7,7 +7,7 @@ function addButtonOpenWindowUserSettings(){
     btnOpenWindowSettignsUser = document.createElement("button");
     btnOpenWindowSettignsUser.id = "btnOpenWindowSettignsUser";
     btnOpenWindowSettignsUser.onclick = createWindowUserSettings;
-    btnOpenWindowSettignsUser.textContent = "Настройки пользователей"
+    btnOpenWindowSettignsUser.textContent = "Пользователи"
     mainHeader = document.getElementById("main-header");
     mainHeader.appendChild(btnOpenWindowSettignsUser);
 }
@@ -167,11 +167,11 @@ function openWindowCreateUser(){
     selectRole = document.createElement("select");
     selectRole.className = "form-select";
     adminOption = document.createElement("option");
-    adminOption.textContent = "ADMIN_ROLE";
+    adminOption.textContent = "ROLE_ADMIN";
     workerOption = document.createElement("option");
-    workerOption.textContent = "WORKER_ROLE";
+    workerOption.textContent = "ROLE_WORKER";
     userOption = document.createElement("option");
-    userOption.textContent = "USER_ROLE";
+    userOption.textContent = "ROLE_USER";
     selectRole.appendChild(adminOption);
     selectRole.appendChild(workerOption);
     selectRole.appendChild(userOption);
