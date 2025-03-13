@@ -26,18 +26,18 @@ public class RealParamClimateService {
     public void updateLast(DtoUpdateRealClimate climate){
         RealParamClimate realParamClimate = repository.findTopByOrderByIdDesc();
         realParamClimate.setCreatedAt(LocalDateTime.now());
-        realParamClimate.setHumidityAirReal(climate.getHumidityAirReal());
-        realParamClimate.setWaterTankLevelHumidityAirReal(climate.getWaterTankLevelHumidityAirReal());
-        realParamClimate.setCarbonDioxideReal(climate.getCarbonDioxideReal());
-        realParamClimate.setHumiditySoilReal(climate.getHumiditySoilReal());
-        realParamClimate.setWaterTankLevelHumiditySoilReal(climate.getWaterTankLevelHumiditySoilReal());
-        realParamClimate.setWhiteLightReal(climate.getWhiteLightReal());
-        realParamClimate.setRedLightReal(climate.getRedLightReal());
-        realParamClimate.setBlueLightReal(climate.getBlueLightReal());
-        realParamClimate.setLongLightRedReal(climate.getLongLightRedReal());
-        realParamClimate.setUvlightReal(climate.getUvlightReal());
-        realParamClimate.setTemperatureAirReal(climate.getTemperatureAirReal());
-        realParamClimate.setTemperatureSoilReal(climate.getTemperatureSoilReal());
+        realParamClimate.setHumidityAirReal(Math.round(climate.getHumidityAirReal() * 100) / 100.0);
+        realParamClimate.setWaterTankLevelHumidityAirReal(Math.round(climate.getWaterTankLevelHumidityAirReal() * 100) / 100.0);
+        realParamClimate.setCarbonDioxideReal(Math.round(climate.getCarbonDioxideReal() * 100) / 100.0);
+        realParamClimate.setHumiditySoilReal(Math.round(climate.getHumiditySoilReal() * 100) / 100.0);
+        realParamClimate.setWaterTankLevelHumiditySoilReal(Math.round(climate.getWaterTankLevelHumiditySoilReal() * 100) / 100.0);
+        realParamClimate.setWhiteLightReal(Math.round(climate.getWhiteLightReal() * 100) / 100.0);
+        realParamClimate.setRedLightReal(Math.round(climate.getRedLightReal() * 100) / 100.0);
+        realParamClimate.setBlueLightReal(Math.round(climate.getBlueLightReal() * 100) / 100.0);
+        realParamClimate.setLongLightRedReal(Math.round(climate.getLongLightRedReal() * 100) / 100.0);
+        realParamClimate.setUvlightReal(Math.round(climate.getUvlightReal() * 100) / 100.0);
+        realParamClimate.setTemperatureAirReal(Math.round(climate.getTemperatureAirReal() * 100) / 100.0);
+        realParamClimate.setTemperatureSoilReal(Math.round(climate.getTemperatureSoilReal() * 100) / 100.0);
         repository.save(realParamClimate);
     }
 
