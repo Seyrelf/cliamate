@@ -1,8 +1,8 @@
-linkForGetRealParamClimate = "http://localhost:8080/realParamClimate/getLast";
-linkForGetRealParamDevive = "http://localhost:8080/realDeviceClimate/getLast";
-linkForGetAllMode = "http://localhost:8080/mode/getLast";
-linkForGetSettingsParamClimate = "http://localhost:8080/settingsClimate/getLast";
-linkForGetSettingsParamDevice = "http://localhost:8080/settingsDevice/getLast";
+linkForGetRealParamClimate = "https://seyrelf.tech/realParamClimate/getLast";
+linkForGetRealParamDevive = "https://seyrelf.tech/realDeviceClimate/getLast";
+linkForGetAllMode = "https://seyrelf.tech/mode/getLast";
+linkForGetSettingsParamClimate = "https://seyrelf.tech/settingsClimate/getLast";
+linkForGetSettingsParamDevice = "https://seyrelf.tech/settingsDevice/getLast";
 
 /*Метод отвечает за отправку get запроса для получения информации о состоянии микроклимота в помещении*/
 async function getRealParamClimate(){

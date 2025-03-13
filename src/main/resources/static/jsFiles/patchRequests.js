@@ -1,8 +1,8 @@
-linkForPatchRealParamClimate = "http://localhost:8080/realParamClimate/update";
-linkForPatchRealParamDevive = "http://localhost:8080/realDeviceClimate/update";
-linkForPatchAllMode = "http://localhost:8080/mode/update";
-linkForPatchSettingsParamClimate = "http://localhost:8080/settingsClimate/update";
-linkForPatchSettingsParamDevice = "http://localhost:8080/settingsDevice/update";
+linkForPatchRealParamClimate = "https://seyrelf.tech/realParamClimate/update";
+linkForPatchRealParamDevive = "https://seyrelf.tech/realDeviceClimate/update";
+linkForPatchAllMode = "https://seyrelf.tech/mode/update";
+linkForPatchSettingsParamClimate = "https://seyrelf.tech/settingsClimate/update";
+linkForPatchSettingsParamDevice = "https://seyrelf.tech/settingsDevice/update";
 
 /*Метод отвечает за отправку patch запроса на контроллер модов, тем самым обновляя состояние режима работы контура,
 в качестве входных данных отправляем id для поиска нужного контура и новое значение режима работы*/

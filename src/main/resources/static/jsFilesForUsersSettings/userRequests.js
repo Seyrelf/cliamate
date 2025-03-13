@@ -1,8 +1,8 @@
-linkForGetAllUsers = "http://localhost:8080/users/findAllUsers";
-linkForDelUserById = "http://localhost:8080/users/deleteById";
-linkForCreateUser = "http://localhost:8080/users/save";
-linkForUpdateWithoutPasswordUser = "http://localhost:8080/users/updateWithoutPassword";
-linkForUpdateFullUser = "http://localhost:8080/users/updateFull";
+linkForGetAllUsers = "https://seyrelf.tech/users/findAllUsers";
+linkForDelUserById = "https://seyrelf.tech/users/deleteById";
+linkForCreateUser = "https://seyrelf.tech/users/save";
+linkForUpdateWithoutPasswordUser = "https://seyrelf.tech/users/updateWithoutPassword";
+linkForUpdateFullUser = "https://seyrelf.tech/users/updateFull";
 
 async function getAllUsersData(){
     try {
