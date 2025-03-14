@@ -7,6 +7,7 @@ import lombok.Data;
 public class DtoUpdateRealClimate {
 
     private double humidityAirReal;
+    private double humidityAirStreetReal;
     private double waterTankLevelHumidityAirReal;
     private double carbonDioxideReal;
     private double humiditySoilReal;
@@ -18,5 +19,6 @@ public class DtoUpdateRealClimate {
     private double longLightRedReal;
     private double uvlightReal;
     private double temperatureAirReal;
+    private double temperatureAirStreetReal;
     private double temperatureSoilReal;
 }

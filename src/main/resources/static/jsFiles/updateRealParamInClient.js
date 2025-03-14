@@ -152,6 +152,7 @@ async function updateRealClimate(){
     waterTankLevelHumidityAirReal = data.waterTankLevelHumidityAirReal;
     waterTankLevelHumiditySoilReal = data.waterTankLevelHumiditySoilReal;
     humidityAirReal = data.humidityAirReal;
+    humidityAirStreetReal = data.humidityAirStreetReal;
     carbonDioxideReal = data.carbonDioxideReal;
     humiditySoilReal = data.humiditySoilReal;
     whiteLightReal = data.whiteLightReal;
@@ -160,18 +161,21 @@ async function updateRealClimate(){
     longLightRedReal = data.longLightRedReal;
     uvlightReal = data.uvlightReal;
     temperatureAirReal = data.temperatureAirReal;
+    temperatureAirStreetReal = data.temperatureAirStreetReal;
     temperatureSoilReal = data.temperatureSoilReal;
     document.getElementById("waterTankLevelHumidityAirReal").textContent = waterTankLevelHumidityAirReal + " %" ;
     document.getElementById("waterTankLevelHumiditySoilReal").textContent = waterTankLevelHumiditySoilReal + " %" ;
     document.getElementById("humidityAirReal").textContent = humidityAirReal + " %" ;
-    document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
+    document.getElementById("humidityAirStreetReal").textContent = humidityAirStreetReal + " %" ;
     document.getElementById("humiditySoilReal").textContent = humiditySoilReal + " %"  ;
+    document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
     document.getElementById("whiteLightReal").textContent = whiteLightReal + " lx";
     document.getElementById("redLightReal").textContent = redLightReal  + " lx";
     document.getElementById("blueLightReal").textContent = blueLightReal + " lx";
     document.getElementById("longLightRedReal").textContent = longLightRedReal + " lx" ;
     document.getElementById("uvlightReal").textContent = uvlightReal + " lx";
     document.getElementById("temperatureAirReal").textContent = temperatureAirReal + " ℃" ;
+    document.getElementById("temperatureAirStreetReal").textContent = temperatureAirReal + " ℃" ;
     document.getElementById("temperatureSoilReal").textContent = temperatureSoilReal + " ℃" ;
 }
 
