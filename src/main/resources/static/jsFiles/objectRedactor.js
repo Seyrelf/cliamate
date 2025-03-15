@@ -327,6 +327,10 @@ function openParamSettings(obj,name){
     createParamSettings(obj,name);
 }
 
+function openParamSettingsWithLowHigh(obj,name){
+    closeParamSettingsAll();
+    createParamSettingsWithLowHigh(obj,name);
+}
 /*Данная функция закрывает все открытые окна настройки и открывает окно настройки обьекта с заданием в виде текста*/
 function openParamSettingsWithoutModeText(obj,name){
     closeParamSettingsAll();
