@@ -117,8 +117,8 @@ async function createParamSettingsWithLowHigh(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    taskLow = createTaskInput(settingsForParam, "inputTaskLow", "Минимальный порог");
-    taskHigh = createTaskInput(settingsForParam, "inputTaskHigh", "Максимальный порог");
+    taskLow = createTaskInput(settingsForParam, "inputTaskLow", "Мин. порог");
+    taskHigh = createTaskInput(settingsForParam, "inputTaskHigh", "Макс. порог");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
