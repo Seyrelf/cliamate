@@ -102,18 +102,12 @@ async function getSettingClimateByName(name){
             case "temperatureSoilReal":
                 data = await getSettingsParamClimate();
                 return data.temperatureSoilTask;
-            case "humidityAirLowReal":
+            case "humidityAirReal":
                 data = await getSettingsParamClimate();
-                return data.humidityAirLowTask;
-            case "humidityAirHighReal":
-                data = await getSettingsParamClimate();
-                return data.humidityAirHighTask;
+                return [data.humidityAirLowTask,data.humiditySoilHighTask];
             case "humiditySoilReal":
                 data = await getSettingsParamClimate();
-                return data.humiditySoilLowTask;
-            case "humiditySoilHighReal":
-                data = await getSettingsParamClimate();
-                return data.humiditySoilHighTask;
+                return [data.humiditySoilHighTask,data.humiditySoilHighTask];
             case "powerVentilatorInReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorInTask;

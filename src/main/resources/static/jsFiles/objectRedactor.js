@@ -87,6 +87,8 @@ async function createParamSettingsWithLowHigh(obj,name){
     paramId = obj.querySelector('span').id;
     modeForParam =  await getModeByName(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
+    lowValue = settingsForParam[0];
+    highValue = settingsForParam[1];
     console.log(modeForParam);
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettings';
@@ -117,8 +119,8 @@ async function createParamSettingsWithLowHigh(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    taskLow = createTaskInput(settingsForParam, "inputTaskLow", "Мин. порог");
-    taskHigh = createTaskInput(settingsForParam, "inputTaskHigh", "Макс. порог");
+    taskLow = createTaskInput(lowValue, "inputTaskLow", "Мин. порог");
+    taskHigh = createTaskInput(highValue, "inputTaskHigh", "Макс. порог");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
