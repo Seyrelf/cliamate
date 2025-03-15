@@ -347,6 +347,24 @@ btnsWindowUserChange{
     justify-content: center;
     text-align: center;
 }
+
+#inputTaskLow{
+    font-size: 1dvw;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#inputTaskHigh{
+    font-size: 1dvw;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 #textTask{
     width: 55%;
     display: flex;

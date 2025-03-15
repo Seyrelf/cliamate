@@ -14,9 +14,11 @@ public class SettingsClimate {
     @Id
     private long id;
 
-    private double humidityAirTask;
+    private double humidityAirLowTask;
+    private double humidityAirHighTask;
     private double carbonDioxideTask;
-    private double humiditySoilTask;
+    private double humiditySoilLowTask;
+    private double humiditySoilHighTask;
 
     private double whiteLightTask;
     private double redLightTask;

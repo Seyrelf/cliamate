@@ -55,7 +55,7 @@ async function createParamSettings(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    task = createTaskInput(settingsForParam);
+    task = createTaskInput(settingsForParam,"inputTask","Задание ");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -81,6 +81,84 @@ async function createParamSettings(obj,name){
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
 }
+
+
+async function createParamSettingsWithLowHigh(obj,name){
+    paramId = obj.querySelector('span').id;
+    modeForParam =  await getModeByName(paramId);
+    settingsForParam = await getSettingClimateByName(paramId);
+    console.log(modeForParam);
+    paramSettings = document.createElement("div");
+    paramSettings.id = 'paramSettings';
+    head = createHeadWindow(name,paramSettings);
+    paramSettings.appendChild(head);
+    mode = document.createElement('div');
+    mode.className = 'mode';
+    textMode = document.createElement('span');
+    textMode.textContent = "Режим Управления";
+    textMode.id = "textMode";
+    allMode = document.createElement('select');
+    allMode.className = "form-select";
+    allMode.id = "formSelect";
+    allMode.ariaLabel = "Default select example";
+    autoMode = document.createElement('option');
+    autoMode.textContent = "Автоматический";
+    handMode = document.createElement('option');
+    handMode.textContent = "Ручной";
+    switch (modeForParam) {
+        case 'Ручной':
+            allMode.appendChild(handMode);
+            allMode.appendChild(autoMode);
+            break;
+        case 'Автоматический':
+            allMode.appendChild(autoMode);
+            allMode.appendChild(handMode);
+            break;
+    }
+    mode.appendChild(textMode);
+    mode.appendChild(allMode);
+    taskLow = createTaskInput(settingsForParam, "inputTaskLow", "Минимальный порог");
+    taskHigh = createTaskInput(settingsForParam, "inputTaskHigh", "Максимальный порог");
+    okBtn = document.createElement('button');
+    okBtn.type = "button";
+    okBtn.textContent = "Применить";
+    okBtn.id = "updateParamBtn";
+    okBtn.onclick = function (){
+        if(checkUserRole(okBtn)){
+            return;
+        }
+        const regex = /^(\d|.)+$/;
+        inputTask = document.getElementById("inputTaskLow");
+        if(regex.test(inputTask.value)){
+            updateModeById(paramId, paramSettings.querySelector("select").value);
+            updateClimateTaskById(paramId,inputTask.value);
+            forDel = document.getElementById(paramSettings.id);
+            forDel.remove();}
+        else {
+            input = task.querySelector("input");
+            input.style.color = "red";
+        }
+        inputTask = document.getElementById("inputTaskHigh");
+        if(regex.test(inputTask.value)){
+            updateModeById(paramId, paramSettings.querySelector("select").value);
+            updateClimateTaskById(paramId,inputTask.value);
+            forDel = document.getElementById(paramSettings.id);
+            forDel.remove();}
+        else {
+            input = task.querySelector("input");
+            input.style.color = "red";
+        }
+
+    }
+    paramSettings.appendChild(mode);
+    paramSettings.appendChild(taskLow);
+    paramSettings.appendChild(taskHigh);
+    paramSettings.appendChild(okBtn);
+    obj.parentElement.appendChild(paramSettings);
+}
+
+
+
 
 function checkUserRole(okBtn){
     if(window.role === "ROLE_USER"){
@@ -142,17 +220,17 @@ async function createParamSettingsWithoutModeText(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
-function createTaskInput(settingsForDevice){
+function createTaskInput(settingsForDevice,id,text){
     task = document.createElement('div');
     task.className = 'task';
     textTask = document.createElement('span');
-    textTask.textContent = "Задание ";
+    textTask.textContent = text;
     textTask.id = "textTask";
     inputTask = document.createElement("input");
     inputTask.type = "number";
     inputTask.min = 0;
     inputTask.oninput = "validity.valid||(value='');";
-    inputTask.id = "inputTask";
+    inputTask.id = id;
     inputTask.value = settingsForDevice;
     inputTask.className = "form-control";
     task.appendChild(textTask);
@@ -170,7 +248,7 @@ async function createParamSettingsWithoutModeNumber(obj,name){
     paramSettings.id = 'paramSettingsWithoutMode';
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
-    task = createTaskInput(settingsForDevice);
+    task = createTaskInput(settingsForParam,"inputTask","Задание ");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -205,7 +283,7 @@ async function createParamSettingsWithoutModeNumberForLight(obj,name){
     paramSettings.id = 'paramSettingsWithoutMode';
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
-    task = createTaskInput(settingsForParam);
+    task = createTaskInput(settingsForParam,"inputTask","Задание ");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";

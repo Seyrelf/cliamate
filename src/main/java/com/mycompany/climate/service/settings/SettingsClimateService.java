@@ -31,12 +31,19 @@ public class SettingsClimateService {
                 break;
             case "powerVentilatorInReal":
                 break;
-            case "humiditySoilReal":
-                settingsClimate.setHumiditySoilTask(task);
+            case "humiditySoilHighReal":
+                settingsClimate.setHumiditySoilHighTask(task);
                 break;
-            case "humidityAirReal":
-                settingsClimate.setHumidityAirTask(task);
+            case "humiditySoilLowReal":
+                settingsClimate.setHumiditySoilLowTask(task);
                 break;
+            case "humidityAirHighReal":
+                settingsClimate.setHumidityAirHighTask(task);
+                break;
+            case "humidityAirLowReal":
+                settingsClimate.setHumidityAirLowTask(task);
+                break;
+
             case "whiteLightReal":
                 settingsClimate.setWhiteLightTask(task);
                 break;
