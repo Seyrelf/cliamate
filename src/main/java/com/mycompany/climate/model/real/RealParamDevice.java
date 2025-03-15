@@ -13,7 +13,6 @@ public class RealParamDevice {
     private long id;
 
     private double flapHotWaterReal;
-    private double flapColdWaterReal;
 
     private double powerHeatingMatReal;
 

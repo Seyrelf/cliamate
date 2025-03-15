@@ -13,7 +13,6 @@ public class SettingsDevice {
     private long id;
 
     private double flapHotWaterTask;
-    private double flapColdWaterTask;
 
     private double powerHeatingMatTask;
 

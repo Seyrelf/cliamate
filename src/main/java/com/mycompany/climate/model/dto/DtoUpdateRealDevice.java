@@ -6,7 +6,6 @@ import lombok.Data;
 public class DtoUpdateRealDevice {
 
     private double flapHotWaterReal;
-    private double flapColdWaterReal;
     private double powerHeatingMatReal;
     private double powerVentilatorInReal;
     private double powerVentilatorOutReal;

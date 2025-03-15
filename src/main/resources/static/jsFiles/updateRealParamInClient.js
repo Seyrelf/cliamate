@@ -50,9 +50,6 @@ async function getSettingDeviceByName(name){
             case "flapHotWaterReal":
                 data = await getSettingsParamDevice();
                 return data.flapHotWaterTask;
-            case "flapColdWaterReal":
-                data = await getSettingsParamDevice();
-                return data.flapColdWaterTask;
             case "powerHeatingMatReal":
                 data = await getSettingsParamDevice();
                 return data.powerHeatingMatTask;
@@ -189,7 +186,6 @@ async function updateRealDevice(){
         return;
     }
     flapHotWaterReal = data.flapHotWaterReal;
-    flapColdWaterReal = data.flapColdWaterReal;
     powerHeatingMatReal = data.powerHeatingMatReal;
     powerVentilatorInReal = data.powerVentilatorInReal;
     powerVentilatorOutReal = data.powerVentilatorOutReal;
@@ -203,7 +199,6 @@ async function updateRealDevice(){
     longLightRedPowerReal = data.longLightRedPowerReal;
     uvlightPowerReal = data.uvlightPowerReal;
     document.getElementById("flapHotWaterReal").textContent = flapHotWaterReal + " %" ;
-    document.getElementById("flapColdWaterReal").textContent = flapColdWaterReal + " %" ;
     document.getElementById("powerHeatingMatReal").textContent = powerHeatingMatReal + " %" ;
     document.getElementById("powerVentilatorInReal").textContent =  powerVentilatorInReal + " %";
     document.getElementById("powerVentilatorOutReal").textContent = powerVentilatorOutReal + " %"  ;

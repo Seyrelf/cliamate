@@ -23,9 +23,6 @@ public class SettingsDeviceService {
             case "flapHotWaterReal":
                 settingsDevice.setFlapHotWaterTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
-            case "flapColdWaterReal":
-                settingsDevice.setFlapColdWaterTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
-                break;
             case "powerHeatingMatReal":
                 settingsDevice.setPowerHeatingMatTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;

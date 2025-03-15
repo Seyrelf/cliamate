@@ -19,7 +19,6 @@ public class RealParamDeivceService {
 
     public void updateLast(DtoUpdateRealDevice device) {
         RealParamDevice realParamDevice= repository.findTopByOrderByIdDesc();
-        realParamDevice.setFlapColdWaterReal(device.getFlapColdWaterReal());
         realParamDevice.setFlapHotWaterReal(device.getFlapHotWaterReal());
         realParamDevice.setPowerHeatingMatReal(device.getPowerHeatingMatReal());
         realParamDevice.setPowerVentilatorInReal(device.getPowerVentilatorInReal());
