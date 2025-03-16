@@ -132,23 +132,22 @@ async function createParamSettingsWithLowHigh(obj,name){
         const regex = /^(\d|.)+$/;
         inputTaskLow = document.getElementById("inputTaskLow");
         if(regex.test(inputTaskLow.value)){
-            updateModeById(paramId, paramSettings.querySelector("select").value);
+            updateModeById(paramId.replace("Real","LowReal"), paramSettings.querySelector("select").value);
             updateClimateTaskById(paramId,inputTaskLow.value);
             inputTaskHigh = document.getElementById("inputTaskHigh");
             if(regex.test(inputTaskHigh.value)){
-                updateModeById(paramId, paramSettings.querySelector("select").value);
+                updateModeById(paramId.replace("Real","HighReal"), paramSettings.querySelector("select").value);
                 updateClimateTaskById(paramId,inputTaskHigh.value);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
             else {
-                input = task.querySelector("input");
+                input = taskLow.querySelector("input");
                 input.style.color = "red";
             }
 
         }
-
         else {
-            input = task.querySelector("input");
+            input = taskHigh.querySelector("input");
             input.style.color = "red";
         }
     }
