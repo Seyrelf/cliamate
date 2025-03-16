@@ -22,6 +22,7 @@ public class SettingsClimateService {
     public void update(DtoClimateNewTask dtoClimateNewTask) {
         SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
         Double task = dtoClimateNewTask.getParamTask() > 0 ? dtoClimateNewTask.getParamTask() : 0.0;
+        System.out.println(dtoClimateNewTask.getParamName());
         switch (dtoClimateNewTask.getParamName()){
             case "temperatureAirReal":
                 settingsClimate.setTemperatureAirTask(task);
