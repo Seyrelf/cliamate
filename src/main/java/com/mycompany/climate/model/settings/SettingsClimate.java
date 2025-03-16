@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import org.springframework.data.annotation.Version;
 
 @Entity
 @Table
@@ -14,10 +15,14 @@ public class SettingsClimate {
     @Id
     private long id;
 
+    @Version
     private double humidityAirLowTask;
+    @Version
     private double humidityAirHighTask;
     private double carbonDioxideTask;
+    @Version
     private double humiditySoilLowTask;
+    @Version
     private double humiditySoilHighTask;
 
     private double whiteLightTask;
