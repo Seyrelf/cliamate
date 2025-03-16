@@ -132,12 +132,11 @@ async function createParamSettingsWithLowHigh(obj,name){
         const regex = /^(\d|.)+$/;
         inputTaskLow = document.getElementById("inputTaskLow");
         if(regex.test(inputTaskLow.value)){
-            updateModeById(paramId.replace("Real","LowReal"), paramSettings.querySelector("select").value);
-            updateClimateTaskById(paramId,inputTaskLow.value);
             inputTaskHigh = document.getElementById("inputTaskHigh");
             if(regex.test(inputTaskHigh.value)){
-                updateModeById(paramId.replace("Real","HighReal"), paramSettings.querySelector("select").value);
-                updateClimateTaskById(paramId,inputTaskHigh.value);
+                updateModeById(paramId, paramSettings.querySelector("select").value);
+                updateClimateTaskById(paramId.replace("Real","HighReal"),inputTaskHigh.value);
+                updateClimateTaskById(paramId.replace("Real","LowReal"),inputTaskLow.value);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
             else {
