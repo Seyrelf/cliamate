@@ -22,7 +22,7 @@ public class SettingsClimateService {
     public void update(DtoClimateNewTask dtoClimateNewTask) {
         SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
         Double task = dtoClimateNewTask.getParamTask() > 0 ? dtoClimateNewTask.getParamTask() : 0.0;
-        System.out.println(dtoClimateNewTask.getParamName());
+        System.out.println(dtoClimateNewTask.getParamName() + " ||| " + dtoClimateNewTask.getParamTask());
         switch (dtoClimateNewTask.getParamName()){
             case "temperatureAirReal":
                 settingsClimate.setTemperatureAirTask(task);
@@ -33,9 +33,11 @@ public class SettingsClimateService {
             case "powerVentilatorInReal":
                 break;
             case "humiditySoilHighReal":
+                System.out.println("!");
                 settingsClimate.setHumiditySoilHighTask(task);
                 break;
             case "humiditySoilLowReal":
+                System.out.println("!!");
                 settingsClimate.setHumiditySoilLowTask(task);
                 break;
             case "humidityAirHighReal":
@@ -44,7 +46,6 @@ public class SettingsClimateService {
             case "humidityAirLowReal":
                 settingsClimate.setHumidityAirLowTask(task);
                 break;
-
             case "whiteLightReal":
                 settingsClimate.setWhiteLightTask(task);
                 break;
