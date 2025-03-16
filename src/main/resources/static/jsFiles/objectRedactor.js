@@ -130,27 +130,27 @@ async function createParamSettingsWithLowHigh(obj,name){
             return;
         }
         const regex = /^(\d|.)+$/;
-        inputTask = document.getElementById("inputTaskLow");
-        if(regex.test(inputTask.value)){
+        inputTaskLow = document.getElementById("inputTaskLow");
+        if(regex.test(inputTaskLow.value)){
             updateModeById(paramId, paramSettings.querySelector("select").value);
-            updateClimateTaskById(paramId,inputTask.value);
-            forDel = document.getElementById(paramSettings.id);
-            forDel.remove();}
-        else {
-            input = task.querySelector("input");
-            input.style.color = "red";
-        }
-        inputTask = document.getElementById("inputTaskHigh");
-        if(regex.test(inputTask.value)){
-            updateModeById(paramId, paramSettings.querySelector("select").value);
-            updateClimateTaskById(paramId,inputTask.value);
-            forDel = document.getElementById(paramSettings.id);
-            forDel.remove();}
-        else {
-            input = task.querySelector("input");
-            input.style.color = "red";
+            updateClimateTaskById(paramId,inputTaskLow.value);
+            inputTaskHigh = document.getElementById("inputTaskHigh");
+            if(regex.test(inputTaskHigh.value)){
+                updateModeById(paramId, paramSettings.querySelector("select").value);
+                updateClimateTaskById(paramId,inputTaskHigh.value);
+                forDel = document.getElementById(paramSettings.id);
+                forDel.remove();}
+            else {
+                input = task.querySelector("input");
+                input.style.color = "red";
+            }
+
         }
 
+        else {
+            input = task.querySelector("input");
+            input.style.color = "red";
+        }
     }
     paramSettings.appendChild(mode);
     paramSettings.appendChild(taskLow);
