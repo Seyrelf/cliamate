@@ -154,9 +154,10 @@ async function createParamSettingsWithLowHigh(obj,name){
 
 
 function createErrorInfoLabel(textError){
-    errorSpan = document.createElement("span");
+    errorSpan = document.createElement("div");
     errorSpan.id = "errorSpan";
-    errorSpan.textContent = textError;
+    errorSpanText = document.createElement("span");
+    errorSpanText.textContent = textError;
     return errorSpan;
 }
 
