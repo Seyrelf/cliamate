@@ -139,8 +139,10 @@ async function createParamSettingsWithLowHigh(obj,name){
             forDel.remove();}
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            console.log(document.getElementById("errorSpan")===null);
             if(!document.getElementById("errorSpan")===null){
-                paramSettings.appendChild(errorSpan);}
+                console.log(document.getElementById("errorSpan")===null);
+                document.getElementById("paramSettings").appendChild(errorSpan);}
         }
 
     }
