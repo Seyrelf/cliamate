@@ -131,23 +131,18 @@ async function createParamSettingsWithLowHigh(obj,name){
         }
         const regex = /^(\d|.)+$/;
         inputTaskLow = document.getElementById("inputTaskLow");
-        if(regex.test(inputTaskLow.value)){
-            inputTaskHigh = document.getElementById("inputTaskHigh");
-            if(regex.test(inputTaskHigh.value)){
-                updateModeById(paramId, paramSettings.querySelector("select").value);
-                updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
-                forDel = document.getElementById(paramSettings.id);
-                forDel.remove();}
-            else {
-                input = taskLow.querySelector("input");
-                input.style.color = "red";
-            }
-
-        }
+        inputTaskHigh = document.getElementById("inputTaskHigh");
+        if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
+            updateModeById(paramId, paramSettings.querySelector("select").value);
+            updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
+            forDel = document.getElementById(paramSettings.id);
+            forDel.remove();}
         else {
-            input = taskHigh.querySelector("input");
-            input.style.color = "red";
+            errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            if(!document.getElementById("errorSpan")===null){
+                paramSettings.appendChild(errorSpan);}
         }
+
     }
     paramSettings.appendChild(mode);
     paramSettings.appendChild(taskLow);
@@ -157,7 +152,12 @@ async function createParamSettingsWithLowHigh(obj,name){
 }
 
 
-
+function createErrorInfoLabel(textError){
+    errorSpan = document.createElement("span");
+    errorSpan.id = "errorSpan";
+    errorSpan.textContent = textError;
+    return errorSpan;
+}
 
 function checkUserRole(okBtn){
     if(window.role === "ROLE_USER"){
