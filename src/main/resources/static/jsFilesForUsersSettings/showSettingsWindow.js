@@ -183,8 +183,14 @@ function openWindowCreateUser(){
     createBtn.textContent = "Создать";
     createBtn.id = "btnsWindowUser";
     createBtn.onclick = function (){
-        createUser(inputName.value,inputPassword.value,selectRole.value);
-        document.getElementById("windowUserCreate").remove();
+        if(inputName.value.length !== 0 || inputPassword.value.length !== 0){
+            createUser(inputName.value,inputPassword.value,selectRole.value);
+            document.getElementById("windowUserCreate").remove();}
+        else{
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("windowUserCreate").appendChild(createErrorInfoLabel("Некорректные данные ввода!"));}
+        }
+
     }
     cancelBtn = document.createElement("button");
     cancelBtn.textContent = "Отмена";
@@ -259,15 +265,26 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     createBtn.textContent = "Изменить с паролем";
     createBtn.id = "btnsWindowUserChange";
     createBtn.onclick = function (){
-        updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
-        document.getElementById("windowUserChange").remove();
+        if(inputName.value.length !== 0 || inputPassword.value.length !== 0){
+            updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
+            document.getElementById("windowUserChange").remove();}
+        else{
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("windowUserChange").appendChild(createErrorInfoLabel("Некорректные данные ввода!"));}
+        }
     }
     createWPBtn = document.createElement("button");
     createWPBtn.textContent = "Изменить без пароля";
     createWPBtn.id = "btnsWindowUserChange";
     createWPBtn.onclick = function (){
-        updateUserWithoutPassword(userId,inputName.value,selectRole.value);
-        document.getElementById("windowUserChange").remove();
+        if(inputName.value.length !== 0 ){
+            updateUserWithoutPassword(userId,inputName.value,selectRole.value);
+            document.getElementById("windowUserChange").remove();}
+        else {
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("windowUserChange").appendChild(createErrorInfoLabel("Некорректные данные ввода!"));}
+        }
+
     }
     cancelBtn = document.createElement("button");
     cancelBtn.textContent = "Отмена";
