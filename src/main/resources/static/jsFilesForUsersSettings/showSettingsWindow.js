@@ -183,7 +183,7 @@ function openWindowCreateUser(){
     createBtn.textContent = "Создать";
     createBtn.id = "btnsWindowUser";
     createBtn.onclick = function (){
-        if(inputName.value.length !== 0 || inputPassword.value.length !== 0){
+        if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             createUser(inputName.value,inputPassword.value,selectRole.value);
             document.getElementById("windowUserCreate").remove();}
         else{
@@ -265,7 +265,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     createBtn.textContent = "Изменить с паролем";
     createBtn.id = "btnsWindowUserChange";
     createBtn.onclick = function (){
-        if(inputName.value.length !== 0 || inputPassword.value.length !== 0){
+        if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
             document.getElementById("windowUserChange").remove();}
         else{
