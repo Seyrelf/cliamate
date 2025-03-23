@@ -158,6 +158,7 @@ function createErrorInfoLabel(textError){
     errorSpan.id = "errorSpan";
     errorSpanText = document.createElement("span");
     errorSpanText.textContent = textError;
+    errorSpan.appendChild(errorSpanText);
     return errorSpan;
 }
 
