@@ -248,7 +248,7 @@ async function createParamSettingsWithoutModeNumber(obj,name){
     paramSettings.id = 'paramSettingsWithoutMode';
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
-    task = createTaskInput(settingsForParam,"inputTask","Задание ");
+    task = createTaskInput(settingsForDevice,"inputTask","Задание ");
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -265,7 +265,7 @@ async function createParamSettingsWithoutModeNumber(obj,name){
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             if(document.getElementById("errorSpan")===null){
-                document.getElementById("paramSettings").appendChild(errorSpan);}
+                document.getElementById("paramSettingsWithoutMode").appendChild(errorSpan);}
         }
     }
     paramSettings.appendChild(task);
@@ -301,7 +301,7 @@ async function createParamSettingsWithoutModeNumberForLight(obj,name){
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             if(document.getElementById("errorSpan")===null){
-                document.getElementById("paramSettings").appendChild(errorSpan);}
+                document.getElementById("paramSettingsWithoutMode").appendChild(errorSpan);}
         }
 
     }
