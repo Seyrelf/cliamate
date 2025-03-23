@@ -27,7 +27,8 @@ public class SettingsDeviceController {
     }
 
     @PatchMapping(value = "/update")
-    private void update(@RequestBody DtoDeviceNewTextTask dtoDeviceNewTextTask) {
+    private boolean update(@RequestBody DtoDeviceNewTextTask dtoDeviceNewTextTask) {
         service.update(dtoDeviceNewTextTask);
+        return true;
     }
 }

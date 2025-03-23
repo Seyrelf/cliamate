@@ -2,6 +2,7 @@ package com.mycompany.climate.service.settings;
 
 
 import com.mycompany.climate.model.dto.DtoClimateNewTask;
+import com.mycompany.climate.model.dto.DtoClimateNewTaskWHL;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.model.settings.SettingsClimate;
 import com.mycompany.climate.model.settings.SettingsMode;
@@ -32,20 +33,6 @@ public class SettingsClimateService {
                 break;
             case "powerVentilatorInReal":
                 break;
-            case "humiditySoilHighReal":
-                System.out.println("!");
-                settingsClimate.setHumiditySoilHighTask(task);
-                break;
-            case "humiditySoilLowReal":
-                System.out.println("!!");
-                settingsClimate.setHumiditySoilLowTask(task);
-                break;
-            case "humidityAirHighReal":
-                settingsClimate.setHumidityAirHighTask(task);
-                break;
-            case "humidityAirLowReal":
-                settingsClimate.setHumidityAirLowTask(task);
-                break;
             case "whiteLightReal":
                 settingsClimate.setWhiteLightTask(task);
                 break;
@@ -63,6 +50,25 @@ public class SettingsClimateService {
                 break;
             case "carbonDioxideReal":
                 settingsClimate.setCarbonDioxideTask(task);
+                break;
+        }
+        repository.save(settingsClimate);
+    }
+
+
+
+    public void updateWHL(DtoClimateNewTaskWHL dtoClimateNewTaskWHL) {
+        SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
+        Double taskLow = dtoClimateNewTaskWHL.getParamTaskLow() > 0 ? dtoClimateNewTaskWHL.getParamTaskLow() : 0.0;
+        Double taskHigh = dtoClimateNewTaskWHL.getParamTaskHigh() > 0 ? dtoClimateNewTaskWHL.getParamTaskHigh() : 0.0;
+        switch (dtoClimateNewTaskWHL.getParamName()){
+            case "humiditySoilReal":
+                settingsClimate.setHumiditySoilLowTask(taskLow);
+                settingsClimate.setHumiditySoilHighTask(taskHigh);
+                break;
+            case "humidityAirReal":
+                settingsClimate.setHumidityAirLowTask(taskLow);
+                settingsClimate.setHumidityAirHighTask(taskHigh);
                 break;
         }
         repository.save(settingsClimate);
