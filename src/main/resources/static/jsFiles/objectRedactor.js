@@ -140,7 +140,7 @@ async function createParamSettingsWithLowHigh(obj,name){
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             console.log(document.getElementById("errorSpan")===null);
-            if(!document.getElementById("errorSpan")===null){
+            if(document.getElementById("errorSpan")===null){
                 console.log(document.getElementById("errorSpan")===null);
                 document.getElementById("paramSettings").appendChild(errorSpan);}
         }
