@@ -71,8 +71,9 @@ async function createParamSettings(obj,name){
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
         else {
-            input = task.querySelector("input");
-            input.style.color = "red";
+            errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("paramSettings").appendChild(errorSpan);}
         }
 
     }
@@ -139,9 +140,7 @@ async function createParamSettingsWithLowHigh(obj,name){
             forDel.remove();}
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
-            console.log(document.getElementById("errorSpan")===null);
             if(document.getElementById("errorSpan")===null){
-                console.log(document.getElementById("errorSpan")===null);
                 document.getElementById("paramSettings").appendChild(errorSpan);}
         }
 
@@ -264,8 +263,9 @@ async function createParamSettingsWithoutModeNumber(obj,name){
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
         else {
-            input = task.querySelector("input");
-            input.style.color = "red";
+            errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("paramSettings").appendChild(errorSpan);}
         }
     }
     paramSettings.appendChild(task);
@@ -299,8 +299,9 @@ async function createParamSettingsWithoutModeNumberForLight(obj,name){
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
         else {
-            input = task.querySelector("input");
-            input.style.color = "red";
+            errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("paramSettings").appendChild(errorSpan);}
         }
 
     }

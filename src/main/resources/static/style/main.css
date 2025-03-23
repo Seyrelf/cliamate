@@ -356,7 +356,6 @@ btnsWindowUserChange{
     text-align: center;
 }
 
-
 #inputTaskHigh{
     font-size: 1dvw;
     width: 40%;
@@ -364,6 +363,12 @@ btnsWindowUserChange{
     justify-content: center;
     text-align: center;
 }
+
+
+#errorSpan{
+    color: #cf191e;
+}
+
 
 #textTask{
     width: 55%;
