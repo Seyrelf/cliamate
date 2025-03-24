@@ -7,15 +7,18 @@ body{background-image: url("../images/main.jpg");
     font-family: "DejaVu Sans Mono", monospace;}
 
 #main-header h1{
-    padding: 0.5dvh;
     margin:auto;
     vertical-align:middle;
-    font-size: 4dvh;
+    font-size: 240%;
+}
+
+#main-header{
+    font-size: 50%;
 }
 
 header{
     width: 100dvw;
-    height: 6dvh;
+    height: auto;
 }
 
 .row{
@@ -112,14 +115,10 @@ header{
 }
 
 #btnOpenWindowSettignsUser{
-    width: 15%;
-    margin-top: 0.6%;
-    height: 50%;
-    margin-right: 4dvw;
-    font-size: 1dvw;
+    margin: auto;
     border-style: solid;
-    border-radius: 5px;
-    border-bottom-width: thin;
+    border-width: thin;
+    border-color: #707070;
 }
 
 #updateParamBtn{
@@ -185,14 +184,11 @@ header{
 }
 
 #formLogout{
-    margin-left: 5%;
-    margin-top: 0.6%;
+    margin: auto;
 }
 
 #inputLogout{
-    font-size: 1dvw;
-    width: 100%;
-    height: auto;
+
 }
 
 #divBtnUserChange{
