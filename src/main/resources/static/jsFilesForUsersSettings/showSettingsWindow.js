@@ -8,7 +8,7 @@ function addButtonOpenWindowUserSettings(){
     btnOpenWindowSettignsUser.id = "btnOpenWindowSettignsUser";
     btnOpenWindowSettignsUser.onclick = createWindowUserSettings;
     btnOpenWindowSettignsUser.textContent = "Пользователи"
-    mainHeader = document.getElementById("main-header");
+    mainHeader = document.getElementById("headerButton");
     mainHeader.appendChild(btnOpenWindowSettignsUser);
 }
 

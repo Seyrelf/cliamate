@@ -11,9 +11,10 @@
     <header class="bg-dark text-white">
         <div class="d-flex flex-wrap   justify-content-lg-start" id="main-header">
             <h1>Управление теплицей</h1>
+            <div id="headerButton">
             <form id = "formLogout" th:action="@{/logout}" method="post">
                 <input id = "inputLogout" type="submit" value="Выход"/>
-            </form>
+            </form></div>
         </div>
     </header>
     <div class="row" id="fullWindow">
