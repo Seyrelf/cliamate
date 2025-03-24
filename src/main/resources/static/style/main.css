@@ -29,6 +29,11 @@ header{
     display: grid;
 }
 
+#headerButton{
+    margin-right: 1%;
+    display: flex;
+}
+
 .row{
     padding-top: 4dvh;
     justify-content: space-around;
@@ -43,19 +48,13 @@ header{
 
 .col-side-all-zones{
     background: linear-gradient(45deg, black, transparent);
-    border-radius: 3dvh;
-    width: 31dvw;
-    font-size: 1.05dvw;
-    border: 0.1dvh solid;
+    border-radius: 5%;
+    width: 30%;
+    font-size: 75%;
+    border: thin solid;
     border-color: #0d6efd ;
-    @media (min-width: 768px) {
-        flex: 0 0 auto;
-    }
 }
 
-#col-side-all-zones span{
-    font-size: 1.05dvw;
-}
 
 #side-all-zone span:before{
     padding-right: 1dvw;
@@ -64,14 +63,9 @@ header{
 }
 
 
-
-#col-side-all-zones span{
-    font-size: 1.05dvw;
-}
-
 .param-setting{
-    margin-top: 1dvh;
-    margin-bottom: 1dvh;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .name-param{
@@ -95,8 +89,8 @@ header{
 
 #paramSettingsWithoutMode{
     overflow: auto;
-    font-size: 1.2dvw;
     text-align: center;
+    font-size: 150%;
     background-color: #9dd2fffa;
     padding: 0.3%;
     width: 22%;
