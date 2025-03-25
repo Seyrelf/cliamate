@@ -16,7 +16,7 @@ body{background-image: url("../images/main.jpg");
 #main-header h1{
     margin:auto;
     vertical-align:middle;
-    font-size: 160%;
+    font-size: small;
 }
 
 #main-header{
@@ -35,14 +35,14 @@ header{
 }
 
 .row{
-    padding-top: 4dvh;
+    padding-top: 2%;
     justify-content: space-around;
 }
 
 .mode-char{
     vertical-align: middle;
     display: inline-block;
-    font-size: 150%;
+    font-size: 140%;
     color: #cf191e;
 }
 
@@ -395,6 +395,7 @@ btnsWindowUserChange{
 }
 
 #fullWindow{
+    --bs-gutter-x: 0.5rem;
     width: 100dvw;
     margin: auto;
 }
@@ -415,4 +416,17 @@ btnsWindowUserChange{
     max-height: 70dvh;
     background-color: #212529;
     border-radius: 20px;
+}
+
+
+/* Медиа-запрос для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .col-side-all-zones{
+        background: linear-gradient(45deg, black, transparent);
+        border-radius: 5%;
+        width: 80%;
+        font-size: 75%;
+        border: thin solid;
+        border-color: #0d6efd ;
+    }
 }
