@@ -120,10 +120,12 @@ header{
 }
 
 #btnOpenWindowSettignsUser{
+    color: black;
+    margin-left: 1%;
+    border-radius: 4%;
     height: 100%;
-    border-style: solid;
-    border-width: thin;
-    border-color: #707070;
+    border: thin;
+    background: #fffcfc;
 }
 
 #updateParamBtn{
@@ -194,6 +196,11 @@ header{
 
 #inputLogout{
     height: 100%;
+    color: black;
+    margin-left: 1%;
+    border-radius: 4%;
+    border: thin;
+    background: #fffcfc;
 }
 
 #divBtnUserChange{
@@ -471,6 +478,6 @@ btnsWindowUserChange{
     }
 
     header{
-        height: 5%;
+        height: 6%;
     }
 }
