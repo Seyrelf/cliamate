@@ -280,8 +280,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = await updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
             changeUserTr = createTrForData(data);
-            console.log(this);
-            console.log(this.parentElement);
+            console.log(createBtn.parentElement);
             document.getElementById("windowUserChange").remove();}
         else{
             if(document.getElementById("errorSpan")===null){
