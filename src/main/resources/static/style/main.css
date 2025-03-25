@@ -20,7 +20,7 @@ body{background-image: url("../images/main.jpg");
 }
 
 #main-header{
-    font-size: 70%;
+    font-size: 100%;
 }
 
 header{
@@ -45,7 +45,7 @@ header{
 .mode-char{
     vertical-align: middle;
     display: inline-block;
-    font-size: small;
+    font-size: x-large;
     color: #cf191e;
 }
 
@@ -81,10 +81,10 @@ header{
 #paramSettings{
     overflow: auto;
     text-align: center;
-    font-size: 150%;
+    font-size: 120%;
     background-color: #9dd2fffa;
     padding: 0.3%;
-    width: 22%;
+    width: 25%;
     position: absolute;
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
@@ -93,10 +93,10 @@ header{
 #paramSettingsWithoutMode{
     overflow: auto;
     text-align: center;
-    font-size: 150%;
+    font-size: 120%;
     background-color: #9dd2fffa;
     padding: 0.3%;
-    width: 22%;
+    width: 25%;
     position: absolute;
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
@@ -120,6 +120,7 @@ header{
 }
 
 #btnOpenWindowSettignsUser{
+    font-size: 120%;
     color: black;
     margin-left: 1%;
     border-radius: 4%;
@@ -153,19 +154,19 @@ header{
     max-height: 80%;
     width: 90%;
     margin: auto;
-    font-size: 100%;
+    font-size: 150%;
 
 }
 
 #imgForBtn{
-    width: 150%;
+    width: 115%;
     height: auto;
 }
 
 #windowUserCreate{
 
     text-align: center;
-    font-size: 80%;
+    font-size: 140%;
     color: #000000;
     border: 0.2dvh solid;
     border-radius: 3%;
@@ -187,7 +188,7 @@ header{
 }
 
 #windowUserChange{
-    font-size: 70%;
+    font-size: 120%;
     color: #000000;
     border: 0.2dvh solid;
     border-radius: 3%;
@@ -218,7 +219,7 @@ header{
     padding: 2%;
     width: 100%;
     margin: auto;
-    font-size: 70%;
+    font-size: 80%;
     justify-content: space-evenly;
 }
 
@@ -244,7 +245,8 @@ header{
 }
 
 #btnsWindowUser{
-    border-style: solid;
+    border-radius: 4%;
+    border-style: none;
     width: 47%;
     margin-left: 2%;
 }
@@ -288,6 +290,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 90%;
+    font-size: 80%;
 }
 
 #headerForWindow{
@@ -326,7 +329,8 @@ header{
 
 #close-btn-for-usersSetting{
     color: #cf191e;
-    margin: auto;
+    font-size: 180%;
+    margin-left: auto;
     border-style: none;
     background-color: rgba(212,39,39,0);
 }
@@ -398,6 +402,7 @@ header{
     width: 80%;
 }
 .window-param{
+
     color:white;
     width: 19%;
     display: inline-block;
@@ -420,7 +425,6 @@ header{
 }
 
 #fullWindow{
-    --bs-gutter-x: 0.5rem;
     width: 100dvw;
     margin: auto;
 }
@@ -487,7 +491,7 @@ header{
     #main-header h1 {
         margin: auto;
         vertical-align: middle;
-        font-size: large;
+        font-size: xx-large;
     }
 
     #headerButton{
