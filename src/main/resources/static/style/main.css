@@ -122,7 +122,7 @@ header{
 
 #btnOpenWindowSettignsUser{
     color: black;
-    margin-left: 1%;
+    margin-left: 2%;
     border-radius: 4%;
     height: 100%;
     border: thin;
@@ -456,6 +456,10 @@ header{
         height: 100%;
     }
 
+    .mode-char{
+        font-size: large;
+    }
+
     .col-side-all-zones{
         background: linear-gradient(45deg, black, transparent);
         border-radius: 5%;
@@ -464,6 +468,21 @@ header{
         font-size: 75%;
         border: thin solid;
         border-color: #0d6efd ;
+    }
+
+    #windowUserChange{
+        width: 90%;
+        font-size: 130%;
+    }
+
+    #windowUserCreate{
+        width: 80%;
+    }
+
+    #windowUsersSettings{
+        width: 90%;
+        left: 5%;
+        height: 80%;
     }
 
     #paramSettings{
@@ -491,10 +510,27 @@ header{
     #main-header h1 {
         margin: auto;
         vertical-align: middle;
-        font-size: xx-large;
+        font-size: large;
+    }
+
+    #tableContainer{
+        width: 90%;
+        font-size: 90%;
+    }
+
+    #divBtnUserChange{
+        padding: 1%;
+        font-size: 57%;
+    }
+
+    #openWindowNewUserBtn{
+        font-size: 100%;
+        margin-left: 5%;
+        width: 70%;
     }
 
     #headerButton{
+        font-size: 80%;
         height: 50%;
         margin-top: auto;
         margin-bottom: auto;
