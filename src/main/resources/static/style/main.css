@@ -16,7 +16,7 @@ body{background-image: url("../images/main.jpg");
 #main-header h1{
     margin:auto;
     vertical-align:middle;
-    font-size: large;
+    font-size: xx-large;
 }
 
 #main-header{
@@ -30,6 +30,7 @@ header{
 }
 
 #headerButton{
+    font-size: 120%;
     height: 65%;
     margin-top: auto;
     margin-bottom: auto;
@@ -53,7 +54,7 @@ header{
     background: linear-gradient(45deg, black, transparent);
     border-radius: 5%;
     width: 30%;
-    font-size: 75%;
+    font-size: 130%;
     border: thin solid;
     border-color: #0d6efd ;
 }
@@ -120,7 +121,6 @@ header{
 }
 
 #btnOpenWindowSettignsUser{
-    font-size: 120%;
     color: black;
     margin-left: 1%;
     border-radius: 4%;
@@ -188,7 +188,7 @@ header{
 }
 
 #windowUserChange{
-    font-size: 120%;
+    font-size: 110%;
     color: #000000;
     border: 0.2dvh solid;
     border-radius: 3%;
@@ -301,7 +301,7 @@ header{
 
 #openWindowNewUserBtn{
     border-style: unset;
-    font-size: 70%;
+    font-size: 120%;
     background: #fffffffc;
     margin-left: 2%;
     margin-top: 0.5%;
