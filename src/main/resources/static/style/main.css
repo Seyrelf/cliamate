@@ -534,8 +534,9 @@ header{
     }
 
     #btnWithIcon{
-        margin-left: 2%;
-        margin-right: 2%;
+        width: 80%;
+        height: auto;
+        margin: auto;
     }
 
     #imgForBtn{
