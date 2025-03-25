@@ -193,7 +193,6 @@ function openWindowCreateUser(){
     createBtn.onclick = async function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = await createUser(inputName.value,inputPassword.value,selectRole.value);
-            console.log(data);
             newUserTr = createTrForData(data);
             document.getElementById("tableBody").appendChild(newUserTr);
             document.getElementById("windowUserCreate").remove();}
@@ -277,9 +276,12 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     createBtn.type = "button";
     createBtn.textContent = "Изменить с паролем";
     createBtn.id = "btnsWindowUserChange";
-    createBtn.onclick = function (){
+    createBtn.onclick = async function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
-            updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
+            data = await updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
+            changeUserTr = createTrForData(data);
+            console.log(this);
+            console.log(this.parentElement);
             document.getElementById("windowUserChange").remove();}
         else{
             if(document.getElementById("errorSpan")===null){
@@ -290,9 +292,10 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     createWPBtn.type = "button";
     createWPBtn.textContent = "Изменить без пароля";
     createWPBtn.id = "btnsWindowUserChange";
-    createWPBtn.onclick = function (){
+    createWPBtn.onclick = async function (){
         if(inputName.value.length !== 0 ){
-            updateUserWithoutPassword(userId,inputName.value,selectRole.value);
+            data = await updateUserWithoutPassword(userId,inputName.value,selectRole.value);
+            changeUserTr = createTrForData(data);
             document.getElementById("windowUserChange").remove();}
         else {
             if(document.getElementById("errorSpan")===null){
