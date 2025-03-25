@@ -534,7 +534,7 @@ header{
     }
 
     #btnWithIcon{
-        width: 60%;
+        width: 49%;
         height: auto;
         margin-left: 2%;
         margin-right: 2%;
@@ -543,7 +543,7 @@ header{
     }
 
     #imgForBtn{
-        width: 300%;
+        width: 400%;
         height: auto;
     }
 
