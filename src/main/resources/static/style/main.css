@@ -534,7 +534,7 @@ header{
     }
 
     #btnWithIcon{
-        width: 45%;
+        width: 50%;
         height: auto;
         margin-left: 2%;
         margin-right: 2%;
@@ -551,10 +551,11 @@ header{
         border-style: unset;
         border-radius: 4%;
         background: #fffffffc;
-        margin-top: 1.5%;
+        margin-top: 0.5%;
         font-size: 100%;
         margin-left: 5%;
         width: 70%;
+        height: auto;
     }
 
     #headerButton{
@@ -569,8 +570,8 @@ header{
 
     #headerForWindow{
         display: flex;
-        margin-bottom: 2%;
-        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-top: 0%;
         align-items: center;
     }
 
