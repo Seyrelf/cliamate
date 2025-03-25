@@ -193,7 +193,7 @@ function openWindowCreateUser(){
     createBtn.onclick = function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = createUser(inputName.value,inputPassword.value,selectRole.value);
-            newUserTr = createTrForData(data);
+            newUserTr = createTrForData(data[0]);
             document.getElementById("tableBody").appendChild(newUserTr);
             document.getElementById("windowUserCreate").remove();}
         else{
