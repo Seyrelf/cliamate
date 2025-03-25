@@ -55,7 +55,6 @@ async function createUser(username,password,role){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log(data);
         console.log('Данные отправлены ' + response.statusText);
         return data;
     }

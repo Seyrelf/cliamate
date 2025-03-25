@@ -76,6 +76,7 @@ async function createWindowUserSettings(){
 
 function createTrForData(data){
     trElem = document.createElement("tr");
+    console.log(data);
     trElem.appendChild(createTd(data.id));
     trElem.appendChild(createTd(data.username));
     trElem.appendChild(createTd(data.role));
@@ -192,7 +193,8 @@ function openWindowCreateUser(){
     createBtn.onclick = function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = createUser(inputName.value,inputPassword.value,selectRole.value);
-            document.getElementById("tableBody").appendChild(createTrForData(data));
+            newUserTr = createTrForData(data);
+            document.getElementById("tableBody").appendChild(newUserTr);
             document.getElementById("windowUserCreate").remove();}
         else{
             if(document.getElementById("errorSpan")===null){
