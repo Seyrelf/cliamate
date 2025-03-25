@@ -6,6 +6,7 @@
 function addButtonOpenWindowUserSettings(){
     btnOpenWindowSettignsUser = document.createElement("button");
     btnOpenWindowSettignsUser.id = "btnOpenWindowSettignsUser";
+    btnOpenWindowSettignsUser.type = "button";
     btnOpenWindowSettignsUser.onclick = createWindowUserSettings;
     btnOpenWindowSettignsUser.textContent = "Пользователи"
     mainHeader = document.getElementById("headerButton");

@@ -463,10 +463,14 @@ btnsWindowUserChange{
     }
 
     #headerButton{
-        height: 40%;
+        height: 50%;
         margin-top: auto;
         margin-bottom: auto;
         margin-right: 1%;
         display: flex;
+    }
+
+    header{
+        height: 5%;
     }
 }
