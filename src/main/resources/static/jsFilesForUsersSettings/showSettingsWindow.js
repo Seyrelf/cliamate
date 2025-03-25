@@ -64,6 +64,7 @@ async function createWindowUserSettings(){
     tableHead.appendChild(trElem);
     table.appendChild(tableHead);
     tableBody = document.createElement("tbody");
+    tableBody.id = "tableBody";
     for(let i = 0; i < data.length;i++ ){
         tableBody.appendChild(createTrForData(data[i]));
     }
@@ -190,7 +191,8 @@ function openWindowCreateUser(){
     createBtn.id = "btnsWindowUser";
     createBtn.onclick = function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
-            createUser(inputName.value,inputPassword.value,selectRole.value);
+            data = createUser(inputName.value,inputPassword.value,selectRole.value);
+            document.getElementById("tableBody").appendChild(createTrForData(data));
             document.getElementById("windowUserCreate").remove();}
         else{
             if(document.getElementById("errorSpan")===null){

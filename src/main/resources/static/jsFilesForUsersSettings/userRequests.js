@@ -54,7 +54,9 @@ async function createUser(username,password,role){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
+        const data = await response.json();
         console.log('Данные отправлены ' + response.statusText);
+        return data;
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -78,7 +80,9 @@ async function updateUserWithoutPassword(userId,username,role){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
+        const data = await response.json();
         console.log('Данные отправлены ' + response.statusText);
+        return data;
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -103,7 +107,9 @@ async function updateUserFull(userId,username,password,role){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
+        const data = await response.json();
         console.log('Данные отправлены ' + response.statusText);
+        return data;
     }
     catch(error){
         console.error('Произошла ошибка:', error);
