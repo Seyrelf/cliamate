@@ -534,7 +534,7 @@ header{
     }
 
     #btnWithIcon{
-        width: 50%;
+        width: 80%;
         height: auto;
         margin-left: 2%;
         margin-right: 2%;
@@ -571,7 +571,7 @@ header{
     #headerForWindow{
         display: flex;
         margin-bottom: 1%;
-        margin-top: 0%;
+        margin-top: 1%;
         align-items: center;
     }
 
