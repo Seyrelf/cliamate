@@ -281,7 +281,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
             data = await updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
             changeUserTr = createTrForData(data);
             console.log(document.getElementById("windowUserChange").parentElement.parentElement);
-            document.getElementById("windowUserChange").parentElement.parentElement = changeUserBtn();
+            document.getElementById("windowUserChange").parentElement.parentElement = changeUserTr;
             document.getElementById("windowUserChange").remove();
         }
         else{
