@@ -17,8 +17,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping(value = "/save")
-    public void addUser(@RequestBody User user) {
-        userService.save(user);
+    public User addUser(@RequestBody User user) {
+        return userService.save(user);
     }
 
     @GetMapping(value = "/findAllUsers")
@@ -37,13 +37,13 @@ public class UserController {
     }
 
     @PatchMapping(value = "/updateFull")
-    public void updateFull(@RequestBody User user) {
-        userService.updateFull(user);
+    public User updateFull(@RequestBody User user) {
+        return userService.updateFull(user);
     }
 
     @PatchMapping(value = "/updateWithoutPassword")
-    public void updateWithoutPassword(@RequestBody UserWithOutPassword user) {
-        userService.updateWithOutPassword(user);
+    public User updateWithoutPassword(@RequestBody UserWithOutPassword user) {
+        return userService.updateWithOutPassword(user);
     }
 
 }

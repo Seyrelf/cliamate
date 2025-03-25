@@ -38,10 +38,9 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public void save(User user) {
-        System.out.println(user.toString());
+    public User save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        repository.save(user);
+        return repository.save(user);
     }
 
     public List<User> findAll() {
@@ -58,12 +57,12 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public void updateFull(User user) {
+    public User updateFull(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         repository.save(user);
     }
 
-    public void updateWithOutPassword(UserWithOutPassword userWithOutPassword) {
+    public User updateWithOutPassword(UserWithOutPassword userWithOutPassword) {
         User user = repository.findById(userWithOutPassword.getId()).get();
         user.setUsername(userWithOutPassword.getUsername());
         user.setRole(userWithOutPassword.getRole());
