@@ -280,8 +280,9 @@ function openWindowChangeUser(parent,userId,userName,userRole){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = await updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
             changeUserTr = createTrForData(data);
-            this.parentElement.parentElement = changeUserTr;
-            document.getElementById("windowUserChange").remove();}
+            document.getElementById("windowUserChange").parentElement.parentElement = changeUserTr;
+            //document.getElementById("windowUserChange").remove();
+        }
         else{
             if(document.getElementById("errorSpan")===null){
                 document.getElementById("windowUserChange").appendChild(createErrorInfoLabel("Некорректные данные ввода!"));}
