@@ -190,9 +190,9 @@ function openWindowCreateUser(){
     createBtn.type = "button";
     createBtn.textContent = "Создать";
     createBtn.id = "btnsWindowUser";
-    createBtn.onclick = function (){
+    createBtn.onclick = async function (){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
-            data = createUser(inputName.value,inputPassword.value,selectRole.value);
+            data = await createUser(inputName.value,inputPassword.value,selectRole.value);
             console.log(data);
             newUserTr = createTrForData(data[0]);
             document.getElementById("tableBody").appendChild(newUserTr);
