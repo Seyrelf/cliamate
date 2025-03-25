@@ -59,14 +59,14 @@ public class UserService implements UserDetailsService {
 
     public User updateFull(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        repository.save(user);
+        return repository.save(user);
     }
 
     public User updateWithOutPassword(UserWithOutPassword userWithOutPassword) {
         User user = repository.findById(userWithOutPassword.getId()).get();
         user.setUsername(userWithOutPassword.getUsername());
         user.setRole(userWithOutPassword.getRole());
-        repository.save(user);
+        return repository.save(user);
     }
 
 }
