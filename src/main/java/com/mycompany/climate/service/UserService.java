@@ -40,6 +40,8 @@ public class UserService implements UserDetailsService {
 
     public User save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        User t = repository.save(user);
+        System.out.println(t);
         return repository.save(user);
     }
 
