@@ -534,17 +534,11 @@ header{
     }
 
     #btnWithIcon{
-        width: 49%;
-        height: auto;
         margin-left: 2%;
         margin-right: 2%;
-        border-style: unset;
-        background: rgba(0, 0, 0, 0);
     }
 
     #imgForBtn{
-        width: 900%;
-        height: auto;
     }
 
     #openWindowNewUserBtn{
