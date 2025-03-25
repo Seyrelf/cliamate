@@ -308,6 +308,7 @@ header{
     border-style: unset;
     font-size: 120%;
     background: #fffffffc;
+    color: black;
     margin-left: 2%;
     margin-top: 0.5%;
     width: 20%;
@@ -525,15 +526,27 @@ header{
 
     #divBtnUserChange{
         padding: 1%;
-        font-size: 53%;
+        font-size: 50%;
     }
 
+    #divBtnUser{
+        width: 100%;
+    }
+
+    #btnWithIcon{
+        width: 85%;
+        height: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+        border-style: unset;
+        background: rgba(0, 0, 0, 0);
+    }
 
     #openWindowNewUserBtn{
         border-style: unset;
         border-radius: 4%;
         background: #fffffffc;
-        margin-top: 0.5%;
+        margin-top: 1.5%;
         font-size: 100%;
         margin-left: 5%;
         width: 70%;
