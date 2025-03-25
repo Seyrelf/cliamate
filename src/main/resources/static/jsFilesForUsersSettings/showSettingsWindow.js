@@ -25,10 +25,12 @@ async function createWindowUserSettings(){
     headerForWindow = document.createElement("div");
     headerForWindow.id = "headerForWindow";
     openWindowNewUserBtn = document.createElement("button");
+    openWindowNewUserBtn.type = "button";
     openWindowNewUserBtn.id = "openWindowNewUserBtn";
     openWindowNewUserBtn.onclick = openWindowCreateUser;
     openWindowNewUserBtn.textContent = "Новый пользователь";
     closeWindowBtn = document.createElement('button');
+    closeWindowBtn.type = "button";
     closeWindowBtn.ariaLabel = "Close";
     closeWindowBtn.textContent = "X";
     closeWindowBtn.id = 'close-btn-for-usersSetting'
@@ -83,6 +85,7 @@ function createTrForData(data){
 function delUserBtn(userId){
     btn = document.createElement("button");
     btn.id = "btnWithIcon";
+    btn.type = "button";
     imgForBtn = document.createElement("img");
     imgForBtn.id = "imgForBtn";
     imgForBtn.src = "images/delUser.png";
@@ -99,6 +102,7 @@ function delUserBtn(userId){
 function changeUserBtn(userId,userName,userRole){
     btn = document.createElement("button");
     btn.id = "btnWithIcon";
+    btn.type = "button";
     imgForBtn = document.createElement("img");
     imgForBtn.id = "imgForBtn";
     imgForBtn.src = "images/changeUser.png";
@@ -181,6 +185,7 @@ function openWindowCreateUser(){
     btnModule = document.createElement("div");
     btnModule.id = "divBtnUser";
     createBtn = document.createElement("button");
+    createBtn.type = "button";
     createBtn.textContent = "Создать";
     createBtn.id = "btnsWindowUser";
     createBtn.onclick = function (){
@@ -194,6 +199,7 @@ function openWindowCreateUser(){
 
     }
     cancelBtn = document.createElement("button");
+    cancelBtn.type ="button";
     cancelBtn.textContent = "Отмена";
     cancelBtn.id = "btnsWindowUser";
     cancelBtn.onclick = function (){
@@ -263,6 +269,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     btnModule = document.createElement("div");
     btnModule.id = "divBtnUserChange";
     createBtn = document.createElement("button");
+    createBtn.type = "button";
     createBtn.textContent = "Изменить с паролем";
     createBtn.id = "btnsWindowUserChange";
     createBtn.onclick = function (){
@@ -275,6 +282,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
         }
     }
     createWPBtn = document.createElement("button");
+    createWPBtn.type = "button";
     createWPBtn.textContent = "Изменить без пароля";
     createWPBtn.id = "btnsWindowUserChange";
     createWPBtn.onclick = function (){
@@ -288,6 +296,7 @@ function openWindowChangeUser(parent,userId,userName,userRole){
 
     }
     cancelBtn = document.createElement("button");
+    createBtn.type = "button";
     cancelBtn.textContent = "Отмена";
     cancelBtn.id = "btnsWindowUserChange";
     cancelBtn.onclick = function (){

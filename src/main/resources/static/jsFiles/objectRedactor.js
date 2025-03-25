@@ -8,6 +8,7 @@ function createHeadWindow(name,paramSettingsId){
     nameWindow.textContent = name;
     nameWindow.id = "paramName";
     closeWindowBtn = document.createElement('button');
+    closeWindowBtn.type = "button";
     closeWindowBtn.ariaLabel = "Close";
     closeWindowBtn.textContent = "X";
     closeWindowBtn.id = 'close-btn'
