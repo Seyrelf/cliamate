@@ -280,8 +280,8 @@ function openWindowChangeUser(parent,userId,userName,userRole){
         if(inputName.value.length !== 0 && inputPassword.value.length !== 0){
             data = await updateUserFull(userId,inputName.value,inputPassword.value,selectRole.value);
             changeUserTr = createTrForData(data);
-            document.getElementById("windowUserChange").parentElement.parentElement.replaceChild(changeUserTr,document.getElementById("windowUserChange").parentElement);
-            //document.getElementById("windowUserChange").remove();
+            //document.getElementById("windowUserChange").parentElement.parentElement.replaceChild(changeUserTr,document.getElementById("windowUserChange").parentElement);
+            document.getElementById("windowUserChange").remove();
         }
         else{
             if(document.getElementById("errorSpan")===null){
