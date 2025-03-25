@@ -16,11 +16,11 @@ body{background-image: url("../images/main.jpg");
 #main-header h1{
     margin:auto;
     vertical-align:middle;
-    font-size: small;
+    font-size: large;
 }
 
 #main-header{
-    font-size: 90%;
+    font-size: 70%;
 }
 
 header{
@@ -30,6 +30,9 @@ header{
 }
 
 #headerButton{
+    height: 65%;
+    margin-top: auto;
+    margin-bottom: auto;
     margin-right: 1%;
     display: flex;
 }
@@ -42,7 +45,7 @@ header{
 .mode-char{
     vertical-align: middle;
     display: inline-block;
-    font-size: 140%;
+    font-size: small;
     color: #cf191e;
 }
 
@@ -117,7 +120,7 @@ header{
 }
 
 #btnOpenWindowSettignsUser{
-    margin: auto;
+    height: 100%;
     border-style: solid;
     border-width: thin;
     border-color: #707070;
@@ -186,11 +189,11 @@ header{
 }
 
 #formLogout{
-    margin: auto;
+
 }
 
 #inputLogout{
-
+    height: 100%;
 }
 
 #divBtnUserChange{
@@ -424,9 +427,46 @@ btnsWindowUserChange{
     .col-side-all-zones{
         background: linear-gradient(45deg, black, transparent);
         border-radius: 5%;
-        width: 80%;
+        width: 90%;
+        margin-top: 2%;
         font-size: 75%;
         border: thin solid;
         border-color: #0d6efd ;
+    }
+
+    #paramSettings{
+        overflow: auto;
+        text-align: center;
+        font-size: 150%;
+        background-color: #9dd2fffa;
+        padding: 0.3%;
+        width: 70%;
+        position: absolute;
+        box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+    }
+
+    #paramSettingsWithoutMode{
+        overflow: auto;
+        text-align: center;
+        font-size: 150%;
+        background-color: #9dd2fffa;
+        padding: 0.3%;
+        width: 70%;
+        position: absolute;
+        box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+    }
+
+    #main-header h1 {
+        margin: auto;
+        vertical-align: middle;
+        font-size: large;
+    }
+
+    #headerButton{
+        height: 40%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 1%;
+        display: flex;
     }
 }
