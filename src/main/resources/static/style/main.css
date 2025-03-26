@@ -286,7 +286,8 @@ header{
 }
 
 #userTable{
-    color: white;
+    --bs-table-color-type: white;
+    --bs-table-bg: rgba(255, 255, 255, 0);
     border-color: #7385ff;
 }
 
