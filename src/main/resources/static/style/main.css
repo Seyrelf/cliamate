@@ -83,9 +83,7 @@ header{
 #paramSettings{
     overflow: auto;
     text-align: center;
-    display: flex;
-    align-items: center;
-    font-size: 1.1dvw;
+    font-size: 120%;
     background-color: #9dd2fffa;
     padding: 0.3%;
     width: 25%;
