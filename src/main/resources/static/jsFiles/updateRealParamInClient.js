@@ -64,13 +64,13 @@ async function getSettingDeviceByName(name){
                 return data.powerTempAirTask;
             case "powerHeatingMatRealOne":
                 data = await getSettingsParamDevice();
-                return data.powerHeatingMatTaskOne;
+                return data.powerHeatingMatOneTask;
             case "powerHeatingMatRealTwo":
                 data = await getSettingsParamDevice();
-                return data.powerHeatingMatTaskTwo;
+                return data.powerHeatingMatTwoTask;
             case "powerHeatingMatRealThree":
                 data = await getSettingsParamDevice();
-                return data.powerHeatingMatTaskThree;
+                return data.powerHeatingMatThreeTask;
             case "powerVentilatorOutReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorOutRealTask;
@@ -236,7 +236,7 @@ async function updateRealDevice(){
     workStatusVentilatorCO2Real = data.workStatusVentilatorCO2Real;
     workStatusVentilatorHumidityAirReal = data.workStatusVentilatorHumidityAirReal;
     workStatusGeneratorHumidityAirReal = data.workStatusGeneratorHumidityAirReal;
-    whiteLightPowerReal = data. whiteLightPowerReal;
+    whiteLightPowerReal = data.whiteLightPowerReal;
 
     document.getElementById("powerTempAirReal").textContent = powerTempAirReal + " %" ;
     document.getElementById("powerHeatingMatRealOne").textContent = powerHeatingMatRealOne + " %" ;
