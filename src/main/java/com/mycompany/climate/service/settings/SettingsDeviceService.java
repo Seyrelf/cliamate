@@ -66,10 +66,10 @@ public class SettingsDeviceService {
                 settingsDevice.setWorkStatusGeneratorHumidityAirTask(task);
                 break;
             case "workStatusFlapCO2Real":
-                settingsDevice.setWorkStatusFlapCO2Real(task);
+                settingsDevice.setWorkStatusFlapCO2Task(task);
                 break;
             case "workStatusVentilatorCO2Real":
-                settingsDevice.setWorkStatusVentilatorCO2Real(task);
+                settingsDevice.setWorkStatusVentilatorCO2Task(task);
                 break;
         }
         repository.save(settingsDevice);
