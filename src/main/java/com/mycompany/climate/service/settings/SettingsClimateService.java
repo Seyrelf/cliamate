@@ -28,26 +28,21 @@ public class SettingsClimateService {
             case "temperatureAirReal":
                 settingsClimate.setTemperatureAirTask(task);
                 break;
-            case "temperatureSoilReal":
-                settingsClimate.setTemperatureSoilTask(task);
+            case "temperatureSoilRealOne":
+                settingsClimate.setTemperatureSoilTaskOne(task);
+                break;
+            case "temperatureSoilRealTwo":
+                settingsClimate.setTemperatureSoilTaskTwo(task);
+                break;
+            case "temperatureSoilRealThree":
+                settingsClimate.setTemperatureSoilTaskThree(task);
                 break;
             case "powerVentilatorInReal":
                 break;
             case "whiteLightReal":
                 settingsClimate.setWhiteLightTask(task);
                 break;
-            case "uvlightReal":
-                settingsClimate.setUvlightTask(task);
-                break;
-            case "redLightReal":
-                settingsClimate.setRedLightTask(task);
-                break;
-            case "blueLightReal":
-                settingsClimate.setBlueLightTask(task);
-                break;
-            case "longLightRedReal":
-                settingsClimate.setLongLightRedTask(task);
-                break;
+
             case "carbonDioxideReal":
                 settingsClimate.setCarbonDioxideTask(task);
                 break;
@@ -62,9 +57,17 @@ public class SettingsClimateService {
         Double taskLow = dtoClimateNewTaskWHL.getParamTaskLow() > 0 ? dtoClimateNewTaskWHL.getParamTaskLow() : 0.0;
         Double taskHigh = dtoClimateNewTaskWHL.getParamTaskHigh() > 0 ? dtoClimateNewTaskWHL.getParamTaskHigh() : 0.0;
         switch (dtoClimateNewTaskWHL.getParamName()){
-            case "humiditySoilReal":
-                settingsClimate.setHumiditySoilLowTask(taskLow);
-                settingsClimate.setHumiditySoilHighTask(taskHigh);
+            case "humiditySoilRealOne":
+                settingsClimate.setHumiditySoilLowTaskOne(taskLow);
+                settingsClimate.setHumiditySoilHighTaskOne(taskHigh);
+                break;
+            case "humiditySoilRealTwo":
+                settingsClimate.setHumiditySoilLowTaskTwo(taskLow);
+                settingsClimate.setHumiditySoilHighTaskTwo(taskHigh);
+                break;
+            case "humiditySoilRealThree":
+                settingsClimate.setHumiditySoilLowTaskThree(taskLow);
+                settingsClimate.setHumiditySoilHighTaskThree(taskHigh);
                 break;
             case "humidityAirReal":
                 settingsClimate.setHumidityAirLowTask(taskLow);

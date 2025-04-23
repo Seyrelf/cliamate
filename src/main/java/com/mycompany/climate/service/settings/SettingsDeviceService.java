@@ -20,11 +20,17 @@ public class SettingsDeviceService {
         SettingsDevice settingsDevice = repository.findTopByOrderByIdDesc();
         String task = dto.getParamTask();
         switch (dto.getParamName()){
-            case "flapHotWaterReal":
-                settingsDevice.setFlapHotWaterTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "powerTempAirReal":
+                settingsDevice.setPowerTempAirTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
-            case "powerHeatingMatReal":
-                settingsDevice.setPowerHeatingMatTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "powerHeatingMatRealOne":
+                settingsDevice.setPowerHeatingMatOneTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+                break;
+            case "powerHeatingMatRealTwo":
+                settingsDevice.setPowerHeatingMatTwoTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+                break;
+            case "powerHeatingMatRealThree":
+                settingsDevice.setPowerHeatingMatThreeTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
             case "powerVentilatorInReal":
                 settingsDevice.setPowerVentilatorInTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
@@ -35,29 +41,35 @@ public class SettingsDeviceService {
             case "whiteLightPowerReal":
                 settingsDevice.setWhiteLightPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
-            case "redLightPowerReal":
-                settingsDevice.setRedLightPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "workStatusPumpHumiditySoilRealOne":
+                settingsDevice.setWorkStatusPumpHumiditySoilTaskOne(task);
                 break;
-            case "blueLightPowerReal":
-                settingsDevice.setBlueLightPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "workStatusFlapHumiditySoilRealOne":
+                settingsDevice.setWorkStatusFlapHumiditySoilTaskOne(task);
                 break;
-            case "longLightRedPowerReal":
-                settingsDevice.setLongLightRedPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "workStatusPumpHumiditySoilRealTwo":
+                settingsDevice.setWorkStatusPumpHumiditySoilTaskTwo(task);
                 break;
-            case "uvlightPowerReal":
-                settingsDevice.setUvlightPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "workStatusFlapHumiditySoilRealTwo":
+                settingsDevice.setWorkStatusFlapHumiditySoilTaskTwo(task);
                 break;
-            case "workStatusPumpHumiditySoilReal":
-                settingsDevice.setWorkStatusPumpHumiditySoilTask(task);
+            case "workStatusPumpHumiditySoilRealThree":
+                settingsDevice.setWorkStatusPumpHumiditySoilTaskThree(task);
                 break;
-            case "workStatusFlapHumiditySoilReal":
-                settingsDevice.setWorkStatusFlapHumiditySoilTask(task);
+            case "workStatusFlapHumiditySoilRealThree":
+                settingsDevice.setWorkStatusFlapHumiditySoilTaskThree(task);
                 break;
             case "workStatusVentilatorHumidityAirReal":
                 settingsDevice.setWorkStatusVentilatorHumidityAirTask(task);
                 break;
             case "workStatusGeneratorHumidityAirReal":
                 settingsDevice.setWorkStatusGeneratorHumidityAirTask(task);
+                break;
+            case "workStatusFlapCO2Real":
+                settingsDevice.setWorkStatusFlapCO2Real(task);
+                break;
+            case "workStatusVentilatorCO2Real":
+                settingsDevice.setWorkStatusVentilatorCO2Real(task);
                 break;
         }
         repository.save(settingsDevice);

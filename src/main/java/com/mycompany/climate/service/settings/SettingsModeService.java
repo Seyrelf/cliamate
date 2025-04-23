@@ -22,16 +22,27 @@ public class SettingsModeService {
         switch (dtoParamNameNewMode.getParamName()){
             case "temperatureAirReal":
                 allMode.setModeTempAir(dtoParamNameNewMode.getNewMode());
-                System.out.println("!!@!");
                 break;
-            case "temperatureSoilReal":
-                allMode.setModeTempSoil(dtoParamNameNewMode.getNewMode());
+            case "temperatureSoilRealOne":
+                allMode.setModeTempSoilOne(dtoParamNameNewMode.getNewMode());
+                break;
+            case "temperatureSoilRealTwo":
+                allMode.setModeTempSoilTwo(dtoParamNameNewMode.getNewMode());
+                break;
+            case "temperatureSoilRealThree":
+                allMode.setModeTempSoilThree(dtoParamNameNewMode.getNewMode());
                 break;
             case "powerVentilatorInReal":
                 allMode.setModeVentilation(dtoParamNameNewMode.getNewMode());
                 break;
-            case "humiditySoilReal":
-                allMode.setModeHumiditySoil(dtoParamNameNewMode.getNewMode());
+            case "humiditySoilRealOne":
+                allMode.setModeHumiditySoilOne(dtoParamNameNewMode.getNewMode());
+                break;
+            case "humiditySoilRealTwo":
+                allMode.setModeHumiditySoilTwo(dtoParamNameNewMode.getNewMode());
+                break;
+            case "humiditySoilRealThree":
+                allMode.setModeHumiditySoilThree(dtoParamNameNewMode.getNewMode());
                 break;
             case "humidityAirReal":
                 allMode.setModeHumidityAir(dtoParamNameNewMode.getNewMode());

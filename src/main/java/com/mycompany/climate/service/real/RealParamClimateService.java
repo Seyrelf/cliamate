@@ -29,15 +29,17 @@ public class RealParamClimateService {
         realParamClimate.setHumidityAirReal(Math.round(climate.getHumidityAirReal() * 100) / 100.0);
         realParamClimate.setWaterTankLevelHumidityAirReal(Math.round(climate.getWaterTankLevelHumidityAirReal() * 100) / 100.0);
         realParamClimate.setCarbonDioxideReal(Math.round(climate.getCarbonDioxideReal() * 100) / 100.0);
-        realParamClimate.setHumiditySoilReal(Math.round(climate.getHumiditySoilReal() * 100) / 100.0);
+        realParamClimate.setHumiditySoilRealOne(Math.round(climate.getHumiditySoilRealOne() * 100) / 100.0);
+        realParamClimate.setHumiditySoilRealTwo(Math.round(climate.getHumiditySoilRealTwo() * 100) / 100.0);
+        realParamClimate.setHumiditySoilRealThree(Math.round(climate.getHumiditySoilRealThree() * 100) / 100.0);
+        realParamClimate.setCarbonTankLvlReal(Math.round(climate.getCarbonTankLvlReal() * 100) / 100.0);
         realParamClimate.setWaterTankLevelHumiditySoilReal(Math.round(climate.getWaterTankLevelHumiditySoilReal() * 100) / 100.0);
         realParamClimate.setWhiteLightReal(Math.round(climate.getWhiteLightReal() * 100) / 100.0);
-        realParamClimate.setRedLightReal(Math.round(climate.getRedLightReal() * 100) / 100.0);
-        realParamClimate.setBlueLightReal(Math.round(climate.getBlueLightReal() * 100) / 100.0);
-        realParamClimate.setLongLightRedReal(Math.round(climate.getLongLightRedReal() * 100) / 100.0);
-        realParamClimate.setUvlightReal(Math.round(climate.getUvlightReal() * 100) / 100.0);
         realParamClimate.setTemperatureAirReal(Math.round(climate.getTemperatureAirReal() * 100) / 100.0);
-        realParamClimate.setTemperatureSoilReal(Math.round(climate.getTemperatureSoilReal() * 100) / 100.0);
+        realParamClimate.setTemperatureSoilRealOne(Math.round(climate.getTemperatureSoilRealOne() * 100) / 100.0);
+        realParamClimate.setTemperatureSoilRealTwo(Math.round(climate.getTemperatureSoilRealTwo() * 100) / 100.0);
+        realParamClimate.setTemperatureSoilRealThree(Math.round(climate.getTemperatureSoilRealThree() * 100) / 100.0);
+
         repository.save(realParamClimate);
     }
 

@@ -19,19 +19,25 @@ public class RealParamDeivceService {
 
     public void updateLast(DtoUpdateRealDevice device) {
         RealParamDevice realParamDevice= repository.findTopByOrderByIdDesc();
-        realParamDevice.setFlapHotWaterReal(device.getFlapHotWaterReal());
-        realParamDevice.setPowerHeatingMatReal(device.getPowerHeatingMatReal());
+        realParamDevice.setPowerTempAirReal(device.getPowerTempAirReal());
+        realParamDevice.setPowerHeatingMatRealOne(device.getPowerHeatingMatRealOne());
+        realParamDevice.setPowerHeatingMatRealTwo(device.getPowerHeatingMatRealTwo());
+        realParamDevice.setPowerHeatingMatRealThree(device.getPowerHeatingMatRealThree());
         realParamDevice.setPowerVentilatorInReal(device.getPowerVentilatorInReal());
         realParamDevice.setPowerVentilatorOutReal(device.getPowerVentilatorOutReal());
-        realParamDevice.setWorkStatusFlapHumiditySoilReal(device.getWorkStatusFlapHumiditySoilReal());
-        realParamDevice.setWorkStatusPumpHumiditySoilReal(device.getWorkStatusPumpHumiditySoilReal());
+        realParamDevice.setWorkStatusFlapHumiditySoilRealOne(device.getWorkStatusFlapHumiditySoilRealOne());
+        realParamDevice.setWorkStatusPumpHumiditySoilRealOne(device.getWorkStatusPumpHumiditySoilRealOne());
+        realParamDevice.setWorkStatusFlapHumiditySoilRealTwo(device.getWorkStatusFlapHumiditySoilRealTwo());
+        realParamDevice.setWorkStatusPumpHumiditySoilRealTwo(device.getWorkStatusPumpHumiditySoilRealTwo());
+        realParamDevice.setWorkStatusFlapHumiditySoilRealThree(device.getWorkStatusFlapHumiditySoilRealThree());
+        realParamDevice.setWorkStatusPumpHumiditySoilRealThree(device.getWorkStatusPumpHumiditySoilRealThree());
         realParamDevice.setWorkStatusGeneratorHumidityAirReal(device.getWorkStatusGeneratorHumidityAirReal());
         realParamDevice.setWorkStatusVentilatorHumidityAirReal(device.getWorkStatusVentilatorHumidityAirReal());
         realParamDevice.setWhiteLightPowerReal(device.getWhiteLightPowerReal());
-        realParamDevice.setBlueLightPowerReal(device.getBlueLightPowerReal());
-        realParamDevice.setUvlightPowerReal(device.getUvlightPowerReal());
-        realParamDevice.setLongLightRedPowerReal(device.getLongLightRedPowerReal());
-        realParamDevice.setRedLightPowerReal(device.getRedLightPowerReal());
+        realParamDevice.setWorkStatusFlapCO2Real(device.getWorkStatusFlapCO2Real());
+        realParamDevice.setWorkStatusVentilatorCO2Real(device.getWorkStatusVentilatorCO2Real());
+
+
         repository.save(realParamDevice);
     }
     public  void delete(RealParamDevice device) {

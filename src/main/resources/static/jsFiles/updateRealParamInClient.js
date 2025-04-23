@@ -16,15 +16,27 @@ async function getModeByName(name){
             case "temperatureAirReal":
                 data = await getAllMode();
                 return data.modeTempAir;
-            case "temperatureSoilReal":
+            case "temperatureSoilRealOne":
                 data = await getAllMode();
-                return data.modeTempSoil;
+                return data.modeTempSoilOne;
+            case "temperatureSoilRealTwo":
+                data = await getAllMode();
+                return data.modeTempSoilTwo;
+            case "temperatureSoilRealThree":
+                data = await getAllMode();
+                return data.modeTempSoilThree;
             case "humidityAirReal":
                 data = await getAllMode();
                 return data.modeHumidityAir;
-            case "humiditySoilReal":
+            case "humiditySoilRealOne":
                 data = await getAllMode();
-                return data.modeHumiditySoil;
+                return data.modeHumiditySoilOne;
+            case "humiditySoilRealTwo":
+                data = await getAllMode();
+                return data.modeHumiditySoilTwo;
+            case "humiditySoilRealThree":
+                data = await getAllMode();
+                return data.modeHumiditySoilThree;
             case "powerVentilatorInReal":
                 data = await getAllMode();
                 return data.modeVentilation;
@@ -47,42 +59,55 @@ async function getModeByName(name){
 async function getSettingDeviceByName(name){
     try {
         switch (name){
-            case "flapHotWaterReal":
+            case "powerTempAirReal":
                 data = await getSettingsParamDevice();
-                return data.flapHotWaterTask;
-            case "powerHeatingMatReal":
+                return data.powerTempAirTask;
+            case "powerHeatingMatRealOne":
                 data = await getSettingsParamDevice();
-                return data.powerHeatingMatTask;
+                return data.powerHeatingMatTaskOne;
+            case "powerHeatingMatRealTwo":
+                data = await getSettingsParamDevice();
+                return data.powerHeatingMatTaskTwo;
+            case "powerHeatingMatRealThree":
+                data = await getSettingsParamDevice();
+                return data.powerHeatingMatTaskThree;
             case "powerVentilatorOutReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorOutRealTask;
-            case "workStatusFlapHumiditySoilReal":
+            case "workStatusFlapHumiditySoilRealOne":
                 data = await getSettingsParamDevice();
-                return data.workStatusFlapHumiditySoilTask;
+                return data.workStatusFlapHumiditySoilTaskOne;
+            case "workStatusFlapHumiditySoilRealTwo":
+                data = await getSettingsParamDevice();
+                return data.workStatusFlapHumiditySoilTaskTwo;
+            case "workStatusFlapHumiditySoilRealThree":
+                data = await getSettingsParamDevice();
+                return data.workStatusFlapHumiditySoilTaskThree;
             case "workStatusVentilatorHumidityAirReal":
                 data = await getSettingsParamDevice();
                 return data.workStatusVentilatorHumidityAirTask;
-            case "workStatusPumpHumiditySoilReal":
+            case "workStatusPumpHumiditySoilRealOne":
                 data = await getSettingsParamDevice();
-                return data.workStatusPumpHumiditySoilTask;
+                return data.workStatusPumpHumiditySoilTaskOne;
+            case "workStatusPumpHumiditySoilRealTwo":
+                data = await getSettingsParamDevice();
+                return data.workStatusPumpHumiditySoilTaskTwo;
+            case "workStatusPumpHumiditySoilRealThree":
+                data = await getSettingsParamDevice();
+                return data.workStatusPumpHumiditySoilTaskThree;
             case "workStatusGeneratorHumidityAirReal":
                 data = await getSettingsParamDevice();
                 return data.workStatusGeneratorHumidityAirTask;
             case "whiteLightPowerReal":
                 data = await getSettingsParamDevice();
                 return data.whiteLightPowerTask;
-            case "redLightPowerReal":
+
+            case "workStatusFlapCO2Real":
                 data = await getSettingsParamDevice();
-                return data.redLightPowerTask;
-            case "longLightRedPowerReal":
+                return data.workStatusFlapCO2Task;
+            case "workStatusVentilatorCO2Real":
                 data = await getSettingsParamDevice();
-                return data.longLightRedPowerTask;
-            case "blueLightPowerReal":
-                data = await getSettingsParamDevice();
-                return data.blueLightPowerTask;
-            case "uvlightPowerReal":
-                data = await getSettingsParamDevice();
-                return data.uvlightPowerTask;
+                return data.workStatusVentilatorCO2Task;
         }
     }
     catch (err){
@@ -99,15 +124,27 @@ async function getSettingClimateByName(name){
             case "temperatureAirReal":
                 data = await getSettingsParamClimate();
                 return data.temperatureAirTask;
-            case "temperatureSoilReal":
+            case "temperatureSoilRealOne":
                 data = await getSettingsParamClimate();
-                return data.temperatureSoilTask;
+                return data.temperatureSoilTaskOne;
+            case "temperatureSoilRealTwo":
+                data = await getSettingsParamClimate();
+                return data.temperatureSoilTaskTwo;
+            case "temperatureSoilRealThree":
+                data = await getSettingsParamClimate();
+                return data.temperatureSoilTaskThree;
             case "humidityAirReal":
                 data = await getSettingsParamClimate();
                 return [data.humidityAirLowTask,data.humidityAirHighTask];
-            case "humiditySoilReal":
+            case "humiditySoilRealOne":
                 data = await getSettingsParamClimate();
-                return [data.humiditySoilLowTask,data.humiditySoilHighTask];
+                return [data.humiditySoilLowTaskOne,data.humiditySoilHighTaskOne];
+            case "humiditySoilRealTwo":
+                data = await getSettingsParamClimate();
+                return [data.humiditySoilLowTaskTwo,data.humiditySoilHighTaskTwo];
+            case "humiditySoilRealThree":
+                data = await getSettingsParamClimate();
+                return [data.humiditySoilLowTaskThree,data.humiditySoilHighTaskThree];
             case "powerVentilatorInReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorInTask;
@@ -117,18 +154,6 @@ async function getSettingClimateByName(name){
             case "whiteLightReal":
                 data = await getSettingsParamClimate();
                 return data.whiteLightTask;
-            case "redLightReal":
-                data = await getSettingsParamClimate();
-                return data.redLightTask;
-            case "longLightRedReal":
-                data = await getSettingsParamClimate();
-                return data.longLightRedTask;
-            case "blueLightReal":
-                data = await getSettingsParamClimate();
-                return data.blueLightTask;
-            case "uvlightReal":
-                data = await getSettingsParamClimate();
-                return data.uvlightTask;
         }
     }
     catch (err){
@@ -151,29 +176,39 @@ async function updateRealClimate(){
     humidityAirReal = data.humidityAirReal;
     humidityAirStreetReal = data.humidityAirStreetReal;
     carbonDioxideReal = data.carbonDioxideReal;
-    humiditySoilReal = data.humiditySoilReal;
+    carbonTankLvlReal = data.carbonTankLvlReal;
+
+    humiditySoilRealOne = data.humiditySoilRealOne;
+    humiditySoilRealTwo = data.humiditySoilRealTwo;
+    humiditySoilRealThree = data.humiditySoilRealThree;
     whiteLightReal = data.whiteLightReal;
-    redLightReal = data.redLightReal;
-    blueLightReal = data.blueLightReal;
-    longLightRedReal = data.longLightRedReal;
-    uvlightReal = data.uvlightReal;
+
     temperatureAirReal = data.temperatureAirReal;
     temperatureAirStreetReal = data.temperatureAirStreetReal;
-    temperatureSoilReal = data.temperatureSoilReal;
+    temperatureSoilRealOne = data.temperatureSoilRealOne;
+    temperatureSoilRealTwo = data.temperatureSoilRealTwo;
+    temperatureSoilRealThree = data.temperatureSoilRealThree;
+
+
+
+
     document.getElementById("waterTankLevelHumidityAirReal").textContent = waterTankLevelHumidityAirReal + " %" ;
     document.getElementById("waterTankLevelHumiditySoilReal").textContent = waterTankLevelHumiditySoilReal + " %" ;
     document.getElementById("humidityAirReal").textContent = humidityAirReal + " %" ;
     document.getElementById("humidityAirStreetReal").textContent = humidityAirStreetReal + " %" ;
-    document.getElementById("humiditySoilReal").textContent = humiditySoilReal + " %"  ;
+    document.getElementById("humiditySoilRealOne").textContent = humiditySoilRealOne + " %"  ;
+    document.getElementById("humiditySoilRealTwo").textContent = humiditySoilRealTwo + " %"  ;
+    document.getElementById("humiditySoilRealThree").textContent = humiditySoilRealThree + " %"  ;
+    document.getElementById("carbonTankLvlReal").textContent = carbonTankLvlReal + " %"
     document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
     document.getElementById("whiteLightReal").textContent = whiteLightReal + " lx";
-    document.getElementById("redLightReal").textContent = redLightReal  + " lx";
-    document.getElementById("blueLightReal").textContent = blueLightReal + " lx";
-    document.getElementById("longLightRedReal").textContent = longLightRedReal + " lx" ;
-    document.getElementById("uvlightReal").textContent = uvlightReal + " lx";
+
     document.getElementById("temperatureAirReal").textContent = temperatureAirReal + " ℃" ;
     document.getElementById("temperatureAirStreetReal").textContent = temperatureAirReal + " ℃" ;
-    document.getElementById("temperatureSoilReal").textContent = temperatureSoilReal + " ℃" ;
+    document.getElementById("temperatureSoilRealOne").textContent = temperatureSoilRealOne + " ℃" ;
+    document.getElementById("temperatureSoilRealTwo").textContent = temperatureSoilRealTwo + " ℃" ;
+    document.getElementById("temperatureSoilRealThree").textContent = temperatureSoilRealThree + " ℃" ;
+
 }
 
 /*Данная функция отвечает за получение и обновление данных о текущих параметров оборудования на страничке */
@@ -185,32 +220,42 @@ async function updateRealDevice(){
         alert(err.message);
         return;
     }
-    flapHotWaterReal = data.flapHotWaterReal;
-    powerHeatingMatReal = data.powerHeatingMatReal;
+    powerTempAirReal = data.powerTempAirReal;
+    powerHeatingMatRealOne = data.powerHeatingMatRealOne;
+    powerHeatingMatRealTwo = data.powerHeatingMatRealTwo;
+    powerHeatingMatRealThree = data.powerHeatingMatRealThree;
     powerVentilatorInReal = data.powerVentilatorInReal;
     powerVentilatorOutReal = data.powerVentilatorOutReal;
-    workStatusPumpHumiditySoilReal = data.workStatusPumpHumiditySoilReal;
-    workStatusFlapHumiditySoilReal = data.workStatusFlapHumiditySoilReal;
+    workStatusPumpHumiditySoilRealOne = data.workStatusPumpHumiditySoilRealOne;
+    workStatusPumpHumiditySoilRealTwo = data.workStatusPumpHumiditySoilRealTwo;
+    workStatusPumpHumiditySoilRealThree = data.workStatusPumpHumiditySoilRealThree;
+    workStatusFlapHumiditySoilRealOne = data.workStatusFlapHumiditySoilRealOne;
+    workStatusFlapHumiditySoilRealTwo = data.workStatusFlapHumiditySoilRealTwo;
+    workStatusFlapHumiditySoilRealThree = data.workStatusFlapHumiditySoilRealThree;
+    workStatusFlapCO2Real = data.workStatusFlapCO2Real;
+    workStatusVentilatorCO2Real = data.workStatusVentilatorCO2Real;
     workStatusVentilatorHumidityAirReal = data.workStatusVentilatorHumidityAirReal;
     workStatusGeneratorHumidityAirReal = data.workStatusGeneratorHumidityAirReal;
     whiteLightPowerReal = data. whiteLightPowerReal;
-    redLightPowerReal = data.redLightPowerReal;
-    blueLightPowerReal = data.blueLightPowerReal;
-    longLightRedPowerReal = data.longLightRedPowerReal;
-    uvlightPowerReal = data.uvlightPowerReal;
-    document.getElementById("flapHotWaterReal").textContent = flapHotWaterReal + " %" ;
-    document.getElementById("powerHeatingMatReal").textContent = powerHeatingMatReal + " %" ;
+
+    document.getElementById("powerTempAirReal").textContent = powerTempAirReal + " %" ;
+    document.getElementById("powerHeatingMatRealOne").textContent = powerHeatingMatRealOne + " %" ;
+    document.getElementById("powerHeatingMatRealTwo").textContent = powerHeatingMatRealTwo + " %" ;
+    document.getElementById("powerHeatingMatRealThree").textContent = powerHeatingMatRealThree + " %" ;
+    document.getElementById("workStatusFlapCO2Real").textContent = workStatusFlapCO2Real;
+    document.getElementById("workStatusVentilatorCO2Real").textContent = workStatusVentilatorCO2Real;
     document.getElementById("powerVentilatorInReal").textContent =  powerVentilatorInReal + " %";
     document.getElementById("powerVentilatorOutReal").textContent = powerVentilatorOutReal + " %"  ;
-    document.getElementById("workStatusPumpHumiditySoilReal").textContent = workStatusPumpHumiditySoilReal ;
-    document.getElementById("workStatusFlapHumiditySoilReal").textContent = workStatusFlapHumiditySoilReal  ;
+    document.getElementById("workStatusPumpHumiditySoilRealOne").textContent = workStatusPumpHumiditySoilRealOne ;
+    document.getElementById("workStatusFlapHumiditySoilRealOne").textContent = workStatusFlapHumiditySoilRealOne  ;
+    document.getElementById("workStatusPumpHumiditySoilRealTwo").textContent = workStatusPumpHumiditySoilRealTwo ;
+    document.getElementById("workStatusFlapHumiditySoilRealTwo").textContent = workStatusFlapHumiditySoilRealTwo  ;
+    document.getElementById("workStatusPumpHumiditySoilRealThree").textContent = workStatusPumpHumiditySoilRealThree ;
+    document.getElementById("workStatusFlapHumiditySoilRealThree").textContent = workStatusFlapHumiditySoilRealThree  ;
     document.getElementById("workStatusVentilatorHumidityAirReal").textContent = workStatusVentilatorHumidityAirReal ;
     document.getElementById("workStatusGeneratorHumidityAirReal").textContent = workStatusGeneratorHumidityAirReal  ;
     document.getElementById("whiteLightPowerReal").textContent = whiteLightPowerReal + " %";
-    document.getElementById("redLightPowerReal").textContent = redLightPowerReal + " %" ;
-    document.getElementById("blueLightPowerReal").textContent = blueLightPowerReal + " %" ;
-    document.getElementById("longLightRedPowerReal").textContent = longLightRedPowerReal +  " %" ;
-    document.getElementById("uvlightPowerReal").textContent = uvlightPowerReal + " %" ;
+
 }
 
 /*Данная функция отвечает за получение и обновление данных о текущих режимах работы контуров */
@@ -223,9 +268,15 @@ async function updateModeChar(){
         return;
     }
     document.getElementById("modeTempAir").textContent = data.modeTempAir[0] ;
-    document.getElementById("modeTempSoil").textContent = data.modeTempSoil[0] ;
+    document.getElementById("modeTempSoilOne").textContent = data.modeTempSoilOne[0] ;
+    document.getElementById("modeTempSoilTwo").textContent = data.modeTempSoilTwo[0] ;
+    document.getElementById("modeTempSoilThree").textContent = data.modeTempSoilThree[0] ;
+
     document.getElementById("modeHumidityAir").textContent = data.modeHumidityAir[0] ;
-    document.getElementById("modeHumiditySoil").textContent =  data.modeHumiditySoil[0] ;
+    document.getElementById("modeHumiditySoilOne").textContent =  data.modeHumiditySoilOne[0] ;
+    document.getElementById("modeHumiditySoilTwo").textContent =  data.modeHumiditySoilTwo[0] ;
+    document.getElementById("modeHumiditySoilThree").textContent =  data.modeHumiditySoilThree[0] ;
+
     document.getElementById("modeLight").textContent = data.modeLight[0] ;
     document.getElementById("modeVentilation").textContent = data.modeVentilation[0] ;
     document.getElementById("modeCarbonDioxide").textContent = data.modeCarbonDioxide[0] ;

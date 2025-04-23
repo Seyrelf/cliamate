@@ -19,6 +19,6 @@ public class MainController {
     public String home(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         model.addAttribute("role", authentication.getAuthorities());
-        return "home";
+        return "home2";
     }
 }

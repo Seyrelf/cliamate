@@ -23,17 +23,20 @@ public class RealParamClimate {
     private double humidityAirStreetReal;
     private double waterTankLevelHumidityAirReal;
     private double carbonDioxideReal;
-    private double humiditySoilReal;
+    private double carbonTankLvlReal;
     private double waterTankLevelHumiditySoilReal;
-
     private double whiteLightReal;
-    private double redLightReal;
-    private double blueLightReal;
-    private double longLightRedReal;
-    private double uvlightReal;
+
     private double temperatureAirReal;
     private double temperatureAirStreetReal;
-    private double temperatureSoilReal;
+
+    private double temperatureSoilRealOne;
+    private double temperatureSoilRealTwo;
+    private double temperatureSoilRealThree;
+
+    private double humiditySoilRealOne;
+    private double humiditySoilRealTwo;
+    private double humiditySoilRealThree;
 
 
 }

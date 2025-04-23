@@ -431,7 +431,12 @@ header{
     max-height: 84vh;
 }
 
-#fullWindow{
+#fullWindowOne{
+    width: 100dvw;
+    margin: auto;
+}
+
+#fullWindowTwo{
     width: 100dvw;
     margin: auto;
 }

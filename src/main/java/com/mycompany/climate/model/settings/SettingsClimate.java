@@ -19,17 +19,29 @@ public class SettingsClimate {
     private double humidityAirLowTask;
     @Version
     private double humidityAirHighTask;
+
     private double carbonDioxideTask;
+
     @Version
-    private double humiditySoilLowTask;
+    private double humiditySoilLowTaskOne;
     @Version
-    private double humiditySoilHighTask;
+    private double humiditySoilHighTaskOne;
+
+    @Version
+    private double humiditySoilLowTaskTwo;
+    @Version
+    private double humiditySoilHighTaskTwo;
+
+    @Version
+    private double humiditySoilLowTaskThree;
+    @Version
+    private double humiditySoilHighTaskThree;
 
     private double whiteLightTask;
-    private double redLightTask;
-    private double blueLightTask;
-    private double longLightRedTask;
-    private double uvlightTask;
     private double temperatureAirTask;
-    private double temperatureSoilTask;
+
+    private double temperatureSoilTaskOne;
+    private double temperatureSoilTaskTwo;
+    private double temperatureSoilTaskThree;
+
 }
