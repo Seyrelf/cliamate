@@ -76,7 +76,7 @@ async function getSettingDeviceByName(name){
                 return data.powerVentilatorOutRealTask;
             case "powerVentilatorInReal":
                 data = await getSettingsParamDevice();
-                return data.powerVentilatorInRealTask;
+                return data.powerVentilatorInTask;
             case "workStatusFlapHumiditySoilRealOne":
                 data = await getSettingsParamDevice();
                 return data.workStatusFlapHumiditySoilTaskOne;
