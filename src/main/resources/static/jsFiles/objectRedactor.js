@@ -306,16 +306,39 @@ async function createParamSettingsWithoutModeNumber(obj,name){
 /*Функция для отрисовки и открытия окна настройки с числовым заданием для задания света*/
 async function createParamSettingsForLight(obj,name){
     paramId = obj.querySelector('span').id;
-    console.log(paramId);
+    modeForParam =  await getModeByName(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
-    console.log(settingsForParam)
+    console.log(settingsForParam);
     paramSettings = document.createElement("div");
-    paramSettings.id = 'paramSettingsWithoutMode';
+    paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
+    mode = document.createElement('div');
+    mode.className = 'mode';
+    textMode = document.createElement('span');
+    textMode.textContent = "Режим Управления";
+    textMode.id = "textMode";
+    allMode = document.createElement('select');
+    allMode.className = "form-select";
+    allMode.id = "formSelect";
+    allMode.ariaLabel = "Default select example";
+    autoMode = document.createElement('option');
+    autoMode.textContent = "Автоматический";
+    handMode = document.createElement('option');
+    handMode.textContent = "Ручной";
+    switch (modeForParam) {
+        case 'Ручной':
+            allMode.appendChild(handMode);
+            allMode.appendChild(autoMode);
+            break;
+        case 'Автоматический':
+            allMode.appendChild(autoMode);
+            allMode.appendChild(handMode);
+            break;
+    }
+    mode.appendChild(textMode);
+    mode.appendChild(allMode);
     task = createTaskInput(settingsForParam,"inputTask","Задание ");
-   // timeTaskStart = createTaskInput(settingsForParam.)
-   // timeTaskEnd = createTaskInput()
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -326,16 +349,22 @@ async function createParamSettingsForLight(obj,name){
         }
         const regex = /^(\d|.)+$/;
         if(regex.test(inputTask.value)){
-            updateClimateTaskById(paramId,inputTask.value);
+            updateModeById(paramId, paramSettings.querySelector("select").value);
+            if(paramId === "powerVentilatorInReal"){
+                updateDeviceTaskById(paramId,inputTask.value);
+            }
+            else{
+                updateClimateTaskById(paramId,inputTask.value);}
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             if(document.getElementById("errorSpan")===null){
-                document.getElementById("paramSettingsWithoutMode").appendChild(errorSpan);}
+                document.getElementById("paramSettings").appendChild(errorSpan);}
         }
 
     }
+    paramSettings.appendChild(mode);
     paramSettings.appendChild(task);
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
