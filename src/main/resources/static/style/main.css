@@ -368,6 +368,11 @@ header{
     justify-content: center;
     background-size: 15%;
 }
+.timeTask{
+    display: flex;
+    margin-bottom: 5px;
+}
+
 .mode{
     display: flex;
     margin-bottom: 5px;
