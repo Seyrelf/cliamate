@@ -3,10 +3,11 @@ html{
     height: 100%;
 }
 
-body{background-image: url("../images/backgroundPixel.webp");
+body{background-image: url("../images/bk2.webp");
     min-height: 100%;
     height: 100%;
     width: 100%;
+    color: #dfeddc;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -74,7 +75,6 @@ header{
 }
 
 .name-param{
-    color:#dbdfea;
     width: 73%;
 
     display: inline-block;
@@ -411,7 +411,6 @@ header{
 }
 .window-param{
     margin-right: 2%;
-    color:white;
     width: 19%;
     text-align: center;
     background: black;
