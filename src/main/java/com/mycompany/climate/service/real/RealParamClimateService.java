@@ -32,7 +32,7 @@ public class RealParamClimateService {
         realParamClimate.setHumiditySoilRealOne(Math.round(climate.getHumiditySoilRealOne() * 100) / 100.0);
         realParamClimate.setHumiditySoilRealTwo(Math.round(climate.getHumiditySoilRealTwo() * 100) / 100.0);
         realParamClimate.setHumiditySoilRealThree(Math.round(climate.getHumiditySoilRealThree() * 100) / 100.0);
-        realParamClimate.setCarbonTankLvlReal(Math.round(climate.getCarbonTankLvlReal() * 100) / 100.0);
+        realParamClimate.setCarbonDioxideTankLevelReal(Math.round(climate.getCarbonDioxideTankLevelReal() * 100) / 100.0);
         realParamClimate.setWaterTankLevelHumiditySoilReal(Math.round(climate.getWaterTankLevelHumiditySoilReal() * 100) / 100.0);
         realParamClimate.setWhiteLightReal(Math.round(climate.getWhiteLightReal() * 100) / 100.0);
         realParamClimate.setTemperatureAirReal(Math.round(climate.getTemperatureAirReal() * 100) / 100.0);

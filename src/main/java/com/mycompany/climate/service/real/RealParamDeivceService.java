@@ -24,7 +24,7 @@ public class RealParamDeivceService {
         realParamDevice.setPowerHeatingMatRealTwo(device.getPowerHeatingMatRealTwo());
         realParamDevice.setPowerHeatingMatRealThree(device.getPowerHeatingMatRealThree());
         realParamDevice.setPowerVentilatorInReal(device.getPowerVentilatorInReal());
-        realParamDevice.setPowerVentilatorOutReal(device.getPowerVentilatorOutReal());
+        realParamDevice.setPowerFlapOutReal(device.getPowerVentilatorOutReal());
         realParamDevice.setWorkStatusFlapHumiditySoilRealOne(device.getWorkStatusFlapHumiditySoilRealOne());
         realParamDevice.setWorkStatusPumpHumiditySoilRealOne(device.getWorkStatusPumpHumiditySoilRealOne());
         realParamDevice.setWorkStatusFlapHumiditySoilRealTwo(device.getWorkStatusFlapHumiditySoilRealTwo());
