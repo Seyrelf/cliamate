@@ -140,6 +140,7 @@ async function createParamSettingsWithLowHigh(obj,name){
         inputTaskHigh = document.getElementById("inputTaskHigh");
         if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
             if(inputTaskLow.value < inputTaskHigh.value){
+                console.log(inputTaskLow.value + " " + inputTaskHigh.value + " " + (inputTaskLow.value < inputTaskHigh.value))
                 updateModeById(paramId, paramSettings.querySelector("select").value);
                 updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
                 forDel = document.getElementById(paramSettings.id);
