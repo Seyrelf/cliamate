@@ -339,8 +339,8 @@ async function createParamSettingsForLight(obj,name){
     mode.appendChild(textMode);
     mode.appendChild(allMode);
     lightTask = createTaskInput(settingsForParam[0],"inputTask","Задание ");
-    timeStartTask = createTimeTask(settingsForParam[1],"inputTaskLow","Вкл. освещения ");
-    timeEndTask = createTimeTask(settingsForParam[2],"inputTaskHigh","Отк. освещения ")
+    timeStartTask = createTimeTask(settingsForParam[1],"inputStartTime","Вкл. освещения ");
+    timeEndTask = createTimeTask(settingsForParam[2],"inputEndTime","Откл. освещения ")
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -351,14 +351,20 @@ async function createParamSettingsForLight(obj,name){
         }
         const regex = /^(\d|.)+$/;
         if(regex.test(inputTask.value)){
-            updateModeById(paramId, paramSettings.querySelector("select").value);
-            if(paramId === "powerVentilatorInReal"){
-                updateDeviceTaskById(paramId,inputTask.value);
+            inputStartTime = document.getElementById("inputStartTime").value;
+            inputEndTime = document.getElementById("inputEndTime").value;
+            if(inputStartTime > inputEndTime){
+                errorSpan = createErrorInfoLabel("Время начала не должно быть раньше времени конца в сутках");
+                if(document.getElementById("errorSpan")===null){
+                    document.getElementById("paramSettings").appendChild(errorSpan);}
             }
-            else{
-                updateClimateTaskById(paramId,inputTask.value);}
-            forDel = document.getElementById(paramSettings.id);
-            forDel.remove();}
+            else {
+                updateModeById(paramId, paramSettings.querySelector("select").value);
+                updateLightTask(paramId,inputTask.value,inputStartTime,inputEndTime);
+                forDel = document.getElementById(paramSettings.id);
+                forDel.remove();}
+            }
+
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             if(document.getElementById("errorSpan")===null){
