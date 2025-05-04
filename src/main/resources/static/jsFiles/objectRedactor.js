@@ -235,7 +235,7 @@ async function createParamSettingsWithoutModeText(obj,name){
 
 function createTimeTask(settingsForDevice,id,text){
     task = document.createElement('div');
-    task.className = 'timeTask';
+    task.className = 'task';
     textTask = document.createElement('span');
     textTask.textContent = text;
     textTask.id = "textTask";
@@ -350,19 +350,18 @@ async function createParamSettingsForLight(obj,name){
             return;
         }
         const regex = /^(\d|.)+$/;
-        lightTask = document.getElementById("lightTask").value;
-        if(regex.test(lightTask)){
+        lightTaskValue = document.getElementById("lightTask").value;
+        if(regex.test(lightTaskValue)){
             inputStartTime = document.getElementById("inputStartTime").value;
             inputEndTime = document.getElementById("inputEndTime").value;
             if(inputStartTime > inputEndTime){
-                errorSpan = createErrorInfoLabel("Время начала не должно быть раньше времени конца в сутках");
+                errorSpan = createErrorInfoLabel("Время начала не должно быть раньше времени окончания в сутках");
                 if(document.getElementById("errorSpan")===null){
                     document.getElementById("paramSettings").appendChild(errorSpan);}
             }
             else {
                 updateModeById(paramId, paramSettings.querySelector("select").value);
-                console.log(lightTask + " " + inputTask.value+ " " +inputStartTime+ " " +inputEndTime)
-                updateLightTask(paramId,lightTask,inputStartTime,inputEndTime);
+                updateLightTask(paramId,lightTaskValue,inputStartTime,inputEndTime);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
             }
