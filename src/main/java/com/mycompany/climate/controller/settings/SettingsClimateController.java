@@ -41,6 +41,8 @@ public class SettingsClimateController {
 
     @PatchMapping(value = "/updateTaskForLight")
     private void updateWHL(@RequestBody DtoClimateNewTaskForLight dtoClimateNewTask) {
+
+        System.out.println(dtoClimateNewTask.toString());
         service.updateTaskForLight(dtoClimateNewTask);
     }
 
