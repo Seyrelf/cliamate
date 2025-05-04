@@ -159,7 +159,7 @@ async function getSettingClimateByName(name){
                 return [data.carbonDioxideLowTask,data.carbonDioxideHighTask];
             case "whiteLightReal":
                 data = await getSettingsParamClimate();
-                return data.whiteLightTask;
+                return [data.whiteLightTask,data.startLight,data.endLight];
         }
     }
     catch (err){
