@@ -156,7 +156,7 @@ async function getSettingClimateByName(name){
                 return data.powerFlapOutReal;                
             case "carbonDioxideReal":
                 data = await getSettingsParamClimate();
-                return data.carbonDioxideTask;
+                return [data.carbonDioxideLowTask,data.carbonDioxideHighTask];
             case "whiteLightReal":
                 data = await getSettingsParamClimate();
                 return data.whiteLightTask;
@@ -205,7 +205,7 @@ async function updateRealClimate(){
     document.getElementById("humiditySoilRealOne").textContent = humiditySoilRealOne + " %"  ;
     document.getElementById("humiditySoilRealTwo").textContent = humiditySoilRealTwo + " %"  ;
     document.getElementById("humiditySoilRealThree").textContent = humiditySoilRealThree + " %"  ;
-    document.getElementById("carbonDioxideTankLevelReal").textContent = carbonDioxideTankLevelReal + " %"
+    document.getElementById("carbonDioxideTankLevelReal").textContent = carbonDioxideTankLevelReal + " %";
     document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
     document.getElementById("whiteLightReal").textContent = whiteLightReal + " lx";
 
