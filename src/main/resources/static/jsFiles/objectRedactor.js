@@ -339,8 +339,8 @@ async function createParamSettingsForLight(obj,name){
     mode.appendChild(textMode);
     mode.appendChild(allMode);
     task = createTaskInput(settingsForParam[0],"inputTask","Задание ");
-    timeStartTask = createTimeTask(settingsForParam[1],"inputTask","Задание ");
-    timeEndTask = createTimeTask(settingsForParam[2],"inputTask","Задание ")
+    timeStartTask = createTimeTask(settingsForParam[1],"inputTaskLow","Задание ");
+    timeEndTask = createTimeTask(settingsForParam[2],"inputTaskHigh","Задание ")
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
