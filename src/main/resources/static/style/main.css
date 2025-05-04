@@ -89,10 +89,11 @@ header{
     border: 0.2dvh solid #3e835e;
     background-color: #87c5bffa;
     border-radius: 3%;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
     padding: 0.3%;
     width: 25%;
     position: absolute;
-    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+
 }
 
 
@@ -122,10 +123,10 @@ header{
     left: 10%;
     width: 80%;
     height: 80%;
-    background: linear-gradient(8deg, black, #464444fc);
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
     border-radius: 3%;
-    border: thin solid;
-    border-color: #0d6efd ;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
 
 #btnOpenWindowSettignsUser{
@@ -175,13 +176,13 @@ header{
 
     text-align: center;
     font-size: 140%;
-    color: #000000;
-    border: 0.2dvh solid;
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
     border-radius: 3%;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
     width: 22%;
     height: auto;
     padding: 0.5%;
-    background: linear-gradient(8deg, black, #8c8ee4fc);
     position: absolute;
     top: 15%;
     left: 15%;
@@ -197,13 +198,13 @@ header{
 
 #windowUserChange{
     font-size: 110%;
-    color: #000000;
-    border: 0.2dvh solid;
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
     border-radius: 3%;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
     width: 40%;
     height: auto;
     padding: 0.5%;
-    background: linear-gradient(8deg, black, #8c8ee4fc);
     position: absolute;
     top: 15%;
     left: 15%;
@@ -296,7 +297,7 @@ header{
 #userTable{
     --bs-table-color-type: white;
     --bs-table-bg: rgba(255, 255, 255, 0);
-    border-color: #7385ff;
+    border-color: #99c194;
 }
 
 #paramName{
@@ -314,15 +315,16 @@ header{
 }
 
 #openWindowNewUserBtn{
-    border-style: unset;
     font-size: 120%;
-    background: #fffffffc;
-    color: black;
+    background: #313031;
+    color: #d9eff5;
     margin-left: 2%;
     margin-top: 0.5%;
     width: 20%;
     height: 70%;
-    border-radius: 4%;
+    border-style:none;
+    border-bottom-style: solid;
+    border-radius: 5px;
 }
 
 .header{
@@ -542,7 +544,7 @@ header{
         overflow: auto;
         text-align: center;
         font-size: 150%;
-        border: 0.2dvh solid #3e835e;
+        border: 0.2dvh solid #787981;
         background-color: #87c5bffa;
         border-radius: 3%;
         padding: 0.3%;
