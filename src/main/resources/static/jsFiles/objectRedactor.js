@@ -338,9 +338,9 @@ async function createParamSettingsForLight(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    lightTask = createTaskInput(settingsForParam[0],"lightTask","Задание ");
-    timeStartTask = createTimeTask(settingsForParam[1],"inputStartTime","Вкл. освещения ");
-    timeEndTask = createTimeTask(settingsForParam[2],"inputEndTime","Откл. освещения ")
+    lightTask = createTaskInput(settingsForParam[0],"inputTask","Задание ");
+    timeStartTask = createTimeTask(settingsForParam[1],"inputTaskLow","Вкл. освещения ");
+    timeEndTask = createTimeTask(settingsForParam[2],"inputTaskHigh","Откл. освещения ")
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -350,10 +350,10 @@ async function createParamSettingsForLight(obj,name){
             return;
         }
         const regex = /^(\d|.)+$/;
-        lightTaskValue = document.getElementById("lightTask").value;
+        lightTaskValue = document.getElementById("inputTask").value;
         if(regex.test(lightTaskValue)){
-            inputStartTime = document.getElementById("inputStartTime").value;
-            inputEndTime = document.getElementById("inputEndTime").value;
+            inputStartTime = document.getElementById("inputTaskLow").value;
+            inputEndTime = document.getElementById("inputTaskHigh").value;
             if(inputStartTime > inputEndTime){
                 errorSpan = createErrorInfoLabel("Время начала не должно быть раньше времени окончания в сутках");
                 if(document.getElementById("errorSpan")===null){
