@@ -182,7 +182,7 @@ async function updateRealClimate(){
     humidityAirReal = data.humidityAirReal;
     humidityAirStreetReal = data.humidityAirStreetReal;
     carbonDioxideReal = data.carbonDioxideReal;
-    carbonTankLvlReal = data.carbonTankLvlReal;
+    carbonDioxideTankLevelReal = data.carbonDioxideTankLevelReal;
 
     humiditySoilRealOne = data.humiditySoilRealOne;
     humiditySoilRealTwo = data.humiditySoilRealTwo;
