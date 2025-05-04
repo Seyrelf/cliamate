@@ -338,7 +338,7 @@ async function createParamSettingsForLight(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    lightTask = createTaskInput(settingsForParam[0],"inputTask","Задание ");
+    lightTask = createTaskInput(settingsForParam[0],"lightTask","Задание ");
     timeStartTask = createTimeTask(settingsForParam[1],"inputStartTime","Вкл. освещения ");
     timeEndTask = createTimeTask(settingsForParam[2],"inputEndTime","Откл. освещения ")
     okBtn = document.createElement('button');
@@ -350,7 +350,8 @@ async function createParamSettingsForLight(obj,name){
             return;
         }
         const regex = /^(\d|.)+$/;
-        if(regex.test(inputTask.value)){
+        lightTask = document.getElementById("lightTask").value;
+        if(regex.test(lightTask)){
             inputStartTime = document.getElementById("inputStartTime").value;
             inputEndTime = document.getElementById("inputEndTime").value;
             if(inputStartTime > inputEndTime){
@@ -360,8 +361,8 @@ async function createParamSettingsForLight(obj,name){
             }
             else {
                 updateModeById(paramId, paramSettings.querySelector("select").value);
-                console.log(paramId + " " + inputTask.value+ " " +inputStartTime+ " " +inputEndTime)
-                updateLightTask(paramId,inputTask.value,inputStartTime,inputEndTime);
+                console.log(lightTask + " " + inputTask.value+ " " +inputStartTime+ " " +inputEndTime)
+                updateLightTask(paramId,lightTask,inputStartTime,inputEndTime);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
             }
