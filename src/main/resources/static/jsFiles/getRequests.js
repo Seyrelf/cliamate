@@ -12,7 +12,6 @@ async function getRealParamClimate(){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные получены:', data);
         return data;// Парсим ответ в JSON
     }
         catch(error){
@@ -29,7 +28,6 @@ async function getRealParamDevice(){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные получены:', data);
         return data;// Парсим ответ в JSON
     }
     catch(error){
@@ -46,7 +44,6 @@ async function getAllMode(){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные получены:', data);
         return data;// Парсим ответ в JSON
     }
     catch(error){
@@ -63,7 +60,6 @@ async function getSettingsParamClimate(){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные получены:', data);
         return data;// Парсим ответ в JSON
     }
     catch(error){

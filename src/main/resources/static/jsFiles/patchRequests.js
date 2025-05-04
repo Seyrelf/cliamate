@@ -21,7 +21,6 @@ async function updateModeById(id,mode){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -45,7 +44,6 @@ async function updateClimateTaskById(id,task){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -71,7 +69,6 @@ async function updateClimateTaskByIdWithHighLow(id,taskLow,taskHigh){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -98,7 +95,6 @@ async function updateDeviceTaskById(id,task){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -124,7 +120,6 @@ async function updateLightTask(id,task,startLight,endLight){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);

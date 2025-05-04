@@ -11,7 +11,6 @@ async function getAllUsersData(){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные получены:', data);
         return data;// Парсим ответ в JSON
     }
     catch(error){
@@ -30,7 +29,6 @@ async function delUserById(id){
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
-        console.log('Данные отправлены ' + response.statusText);
     }
     catch(error){
         console.error('Произошла ошибка:', error);
@@ -55,7 +53,6 @@ async function createUser(username,password,role){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные отправлены ' + response.statusText);
         return data;
     }
     catch(error){
@@ -81,7 +78,6 @@ async function updateUserWithoutPassword(userId,username,role){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные отправлены ' + response.statusText);
         return data;
     }
     catch(error){
@@ -108,7 +104,6 @@ async function updateUserFull(userId,username,password,role){
             throw new Error('Ошибка сети: ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Данные отправлены ' + response.statusText);
         return data;
     }
     catch(error){

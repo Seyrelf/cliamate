@@ -26,7 +26,6 @@ async function createParamSettings(obj,name){
     paramId = obj.querySelector('span').id;
     modeForParam =  await getModeByName(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
-    console.log(modeForParam);
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);
@@ -95,7 +94,6 @@ async function createParamSettingsWithLowHigh(obj,name){
     settingsForParam = await getSettingClimateByName(paramId);
     lowValue = settingsForParam[0];
     highValue = settingsForParam[1];
-    console.log(modeForParam);
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);
@@ -175,7 +173,6 @@ function createErrorInfoLabel(textError){
 
 function checkUserRole(okBtn){
     if(window.role === "ROLE_USER"){
-        console.log("У вас нет прав");
         okBtn.textContent = "Недостаточно прав";
         okBtn.style.color = "red";
         return true;
@@ -270,9 +267,7 @@ function createTaskInput(settingsForDevice,id,text){
 /*Функция для отрисовки и открытия окна настройки с числовым заданием*/
 async function createParamSettingsWithoutModeNumber(obj,name){
     paramId = obj.querySelector('span').id;
-    console.log(paramId);
     settingsForDevice = await getSettingDeviceByName(paramId);
-    console.log(settingsForDevice)
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettingsWithoutMode';
     head = createHeadWindow(name,paramSettings);
@@ -308,7 +303,6 @@ async function createParamSettingsForLight(obj,name){
     paramId = obj.querySelector('span').id;
     modeForParam =  await getModeByName(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
-    console.log(settingsForParam);
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);

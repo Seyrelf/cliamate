@@ -76,7 +76,6 @@ async function createWindowUserSettings(){
 
 function createTrForData(data){
     trElem = document.createElement("tr");
-    console.log(data);
     trElem.appendChild(createTd(data.id));
     trElem.appendChild(createTd(data.username));
     trElem.appendChild(createTd(data.role));
@@ -95,7 +94,6 @@ function delUserBtn(userId){
     btn.appendChild(imgForBtn);
     btn.onclick = function (){
         delUserById(userId);
-        console.log(this.parentElement.parentElement)
         this.parentElement.parentElement.remove();
     }
     return btn
