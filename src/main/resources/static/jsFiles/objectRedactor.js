@@ -338,7 +338,9 @@ async function createParamSettingsForLight(obj,name){
     }
     mode.appendChild(textMode);
     mode.appendChild(allMode);
-    task = createTaskInput(settingsForParam,"inputTask","Задание ");
+    task = createTaskInput(settingsForParam[0],"inputTask","Задание ");
+    timeStartTask = createTaskInput(settingsForParam[1],"inputTask","Задание ");
+    timeEndTask = createTaskInput(settingsForParam[2],"inputTask","Задание ")
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
@@ -366,6 +368,8 @@ async function createParamSettingsForLight(obj,name){
     }
     paramSettings.appendChild(mode);
     paramSettings.appendChild(task);
+    paramSettings.appendChild(timeStartTask);
+    paramSettings.appendChild(timeEndTask);
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
 }
