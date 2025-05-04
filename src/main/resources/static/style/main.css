@@ -520,11 +520,12 @@ header{
     }
 
     #paramSettings{
+        border: 0.2dvh solid #3e835e;
         color: black;
         overflow: auto;
         text-align: center;
         font-size: 150%;
-        background-color: #9dd2fffa;
+        background-color: #87c5bffa;
         padding: 0.3%;
         width: 70%;
         position: absolute;
