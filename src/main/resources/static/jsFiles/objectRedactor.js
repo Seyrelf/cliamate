@@ -140,7 +140,6 @@ async function createParamSettingsWithLowHigh(obj,name){
         inputTaskHigh = document.getElementById("inputTaskHigh");
         if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
             if(Number(inputTaskLow.value) < Number(inputTaskHigh.value)){
-                console.log(inputTaskLow.value + " " + inputTaskHigh.value + " " + (inputTaskLow.value < inputTaskHigh.value))
                 updateModeById(paramId, paramSettings.querySelector("select").value);
                 updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
                 forDel = document.getElementById(paramSettings.id);
@@ -234,6 +233,22 @@ async function createParamSettingsWithoutModeText(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
+function createTimeTask(settingsForDevice,id,text){
+    task = document.createElement('div');
+    task.className = 'timeTask';
+    textTask = document.createElement('span');
+    textTask.textContent = text;
+    textTask.id = "textTask";
+    inputTask = document.createElement("input");
+    inputTask.type = "time";
+    inputTask.id = id;
+    inputTask.value = settingsForDevice;
+    inputTask.className = "form-control";
+    task.appendChild(textTask);
+    task.appendChild(inputTask);
+    return task;
+}
+
 function createTaskInput(settingsForDevice,id,text){
     task = document.createElement('div');
     task.className = 'task';
@@ -293,12 +308,14 @@ async function createParamSettingsForLight(obj,name){
     paramId = obj.querySelector('span').id;
     console.log(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
-    console.log(settingsForDevice)
+    console.log(settingsForParam)
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettingsWithoutMode';
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
     task = createTaskInput(settingsForParam,"inputTask","Задание ");
+   // timeTaskStart = createTaskInput(settingsForParam.)
+   // timeTaskEnd = createTaskInput()
     okBtn = document.createElement('button');
     okBtn.type = "button";
     okBtn.textContent = "Применить";
