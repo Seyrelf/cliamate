@@ -322,15 +322,16 @@ header{
 
 #openWindowNewUserBtn{
     font-size: 120%;
-    background: #313031;
     color: #d9eff5;
+    border-style: none;
+    background-color: #313031;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    border-width: inherit;
     margin-left: 2%;
     margin-top: 0.5%;
     width: 20%;
     height: 70%;
-    border-style:none;
-    border-bottom-style: solid;
-    border-radius: 5px;
 }
 
 .header{
@@ -590,9 +591,14 @@ header{
     }
 
     #openWindowNewUserBtn{
-        border-style: unset;
-        border-radius: 4%;
-        background: #fffffffc;
+
+        color: #d9eff5;
+        border-style: none;
+        background-color: #313031;
+        border-bottom-style: solid;
+        border-radius: 5px;
+        border-width: inherit;
+
         margin-top: 0.5%;
         font-size: 100%;
         margin-left: 5%;
