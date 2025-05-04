@@ -139,7 +139,7 @@ async function createParamSettingsWithLowHigh(obj,name){
         inputTaskLow = document.getElementById("inputTaskLow");
         inputTaskHigh = document.getElementById("inputTaskHigh");
         if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
-            if(inputTaskLow.value < inputTaskHigh.value){
+            if(Number(inputTaskLow.value) < Number(inputTaskHigh.value)){
                 console.log(inputTaskLow.value + " " + inputTaskHigh.value + " " + (inputTaskLow.value < inputTaskHigh.value))
                 updateModeById(paramId, paramSettings.querySelector("select").value);
                 updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
