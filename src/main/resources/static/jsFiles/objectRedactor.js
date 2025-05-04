@@ -360,6 +360,7 @@ async function createParamSettingsForLight(obj,name){
             }
             else {
                 updateModeById(paramId, paramSettings.querySelector("select").value);
+                console.log(paramId + " " + inputTask.value+ " " +inputStartTime+ " " +inputEndTime)
                 updateLightTask(paramId,inputTask.value,inputStartTime,inputEndTime);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
