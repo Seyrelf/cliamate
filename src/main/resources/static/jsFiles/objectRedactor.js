@@ -68,7 +68,11 @@ async function createParamSettings(obj,name){
         const regex = /^(\d|.)+$/;
         if(regex.test(inputTask.value)){
             updateModeById(paramId, paramSettings.querySelector("select").value);
-            updateClimateTaskById(paramId,inputTask.value);
+            if(paramId === "powerVentilatorInReal"){
+                updateDeviceTaskById(paramId,inputTask.value);
+            }
+            else{
+                updateClimateTaskById(paramId,inputTask.value);}
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
         else {
