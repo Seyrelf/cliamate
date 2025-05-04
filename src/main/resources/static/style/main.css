@@ -124,7 +124,7 @@ header{
     width: 80%;
     height: 80%;
     border: 0.2dvh solid #3e835e;
-    background-color: #87c5bffa;
+    background-color: #3b6864;
     border-radius: 3%;
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
 }
@@ -139,8 +139,8 @@ header{
 }
 
 #updateParamBtn{
-    color: #d9eff5;
     width: 77%;
+    color: #d9eff5;
     border-style: none;
     background-color: #313031;
     border-bottom-style: solid;
@@ -173,7 +173,7 @@ header{
 }
 
 #windowUserCreate{
-
+    color: black;
     text-align: center;
     font-size: 140%;
     border: 0.2dvh solid #3e835e;
@@ -197,6 +197,7 @@ header{
 }
 
 #windowUserChange{
+    color: black;
     font-size: 110%;
     border: 0.2dvh solid #3e835e;
     background-color: #87c5bffa;
@@ -254,20 +255,25 @@ header{
 }
 
 #btnsWindowUser{
-    border-radius: 4%;
+
+    color: #d9eff5;
     border-style: none;
+    background-color: #313031;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    border-width: inherit;
     width: 47%;
     margin-left: 2%;
-    background: white;
-    color: black;
     text-align: center;
 }
 
 #btnsWindowUserChange{
+    color: #d9eff5;
     border-style: none;
-    border-radius: 4%;
-    background: white;
-    color: black;
+    background-color: #313031;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    border-width: inherit;
     text-align: center;
 }
 
