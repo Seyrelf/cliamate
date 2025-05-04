@@ -205,7 +205,7 @@ async function updateRealClimate(){
     document.getElementById("humiditySoilRealOne").textContent = humiditySoilRealOne + " %"  ;
     document.getElementById("humiditySoilRealTwo").textContent = humiditySoilRealTwo + " %"  ;
     document.getElementById("humiditySoilRealThree").textContent = humiditySoilRealThree + " %"  ;
-    document.getElementById("carbonTankLvlReal").textContent = carbonTankLvlReal + " %"
+    document.getElementById("carbonDioxideTankLevelReal").textContent = carbonDioxideTankLevelReal + " %"
     document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
     document.getElementById("whiteLightReal").textContent = whiteLightReal + " lx";
 
