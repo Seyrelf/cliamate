@@ -86,7 +86,9 @@ header{
     overflow: auto;
     text-align: center;
     font-size: 120%;
-    background-color: #9dd2fffa;
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
+    border-radius: 3%;
     padding: 0.3%;
     width: 25%;
     position: absolute;
@@ -99,7 +101,9 @@ header{
     overflow: auto;
     text-align: center;
     font-size: 120%;
-    background-color: #9dd2fffa;
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
+    border-radius: 3%;
     padding: 0.3%;
     width: 25%;
     position: absolute;
@@ -521,11 +525,12 @@ header{
 
     #paramSettings{
         border: 0.2dvh solid #3e835e;
+        background-color: #87c5bffa;
+        border-radius: 3%;
         color: black;
         overflow: auto;
         text-align: center;
         font-size: 150%;
-        background-color: #87c5bffa;
         padding: 0.3%;
         width: 70%;
         position: absolute;
@@ -537,7 +542,9 @@ header{
         overflow: auto;
         text-align: center;
         font-size: 150%;
-        background-color: #9dd2fffa;
+        border: 0.2dvh solid #3e835e;
+        background-color: #87c5bffa;
+        border-radius: 3%;
         padding: 0.3%;
         width: 70%;
         position: absolute;
