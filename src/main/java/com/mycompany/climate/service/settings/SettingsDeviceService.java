@@ -35,8 +35,8 @@ public class SettingsDeviceService {
             case "powerVentilatorInReal":
                 settingsDevice.setPowerVentilatorInTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
-            case "powerVentilatorOutReal":
-                settingsDevice.setPowerVentilatorOutRealTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
+            case "powerFlapOutReal":
+                settingsDevice.setPowerFlapOutTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);
                 break;
             case "whiteLightPowerReal":
                 settingsDevice.setWhiteLightPowerTask(Double.parseDouble(task) > 0 ? Double.parseDouble(task): 0);

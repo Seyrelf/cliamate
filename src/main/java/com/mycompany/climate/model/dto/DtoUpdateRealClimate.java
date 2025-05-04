@@ -11,7 +11,7 @@ public class DtoUpdateRealClimate {
     private double humidityAirStreetReal;
     private double waterTankLevelHumidityAirReal;
     private double carbonDioxideReal;
-    private double carbonTankLvlReal;
+    private double carbonDioxideTankLevelReal;
     private double waterTankLevelHumiditySoilReal;
 
     private double whiteLightReal;

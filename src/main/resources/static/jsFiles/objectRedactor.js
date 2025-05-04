@@ -276,7 +276,7 @@ async function createParamSettingsWithoutModeNumber(obj,name){
 
 
 /*Функция для отрисовки и открытия окна настройки с числовым заданием для задания света*/
-async function createParamSettingsWithoutModeNumberForLight(obj,name){
+async function createParamSettingsForLight(obj,name){
     paramId = obj.querySelector('span').id;
     console.log(paramId);
     settingsForParam = await getSettingClimateByName(paramId);
@@ -347,8 +347,8 @@ function openParamSettingsWithoutModeNumber(obj,name){
 }
 
 /*Данная функция закрывает все открытые окна настройки и открывает окно настройки задания света*/
-function openParamSettingsWithoutModeNumberForLight(obj,name){
+function openParamSettingsForLight(obj,name){
     closeParamSettingsAll();
-    createParamSettingsWithoutModeNumberForLight(obj,name);
+    createParamSettingsForLight(obj,name);
 }
 

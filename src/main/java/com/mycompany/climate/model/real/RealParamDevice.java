@@ -19,7 +19,7 @@ public class RealParamDevice {
     private double powerHeatingMatRealThree;
 
     private double powerVentilatorInReal;
-    private double powerVentilatorOutReal;
+    private double powerFlapOutReal;
 
     private String workStatusPumpHumiditySoilRealOne;
     private String workStatusPumpHumiditySoilRealTwo;

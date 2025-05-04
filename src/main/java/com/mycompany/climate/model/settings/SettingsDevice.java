@@ -20,7 +20,7 @@ public class SettingsDevice {
 
 
     private double powerVentilatorInTask;
-    private double powerVentilatorOutRealTask;
+    private double powerFlapOutTask;
 
     private String workStatusPumpHumiditySoilTaskOne;
     private String workStatusFlapHumiditySoilTaskOne;

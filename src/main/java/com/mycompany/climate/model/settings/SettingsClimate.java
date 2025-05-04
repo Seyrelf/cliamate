@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import org.springframework.data.annotation.Version;
 
+import java.time.LocalTime;
+
 @Entity
 @Table
 @Data
@@ -20,7 +22,11 @@ public class SettingsClimate {
     @Version
     private double humidityAirHighTask;
 
-    private double carbonDioxideTask;
+    @Version
+    private double carbonDioxideLowTask;
+    @Version
+    private double carbonDioxideHighTask;
+
 
     @Version
     private double humiditySoilLowTaskOne;
@@ -38,6 +44,10 @@ public class SettingsClimate {
     private double humiditySoilHighTaskThree;
 
     private double whiteLightTask;
+
+    private LocalTime startLight;
+    private LocalTime endLight;
+
     private double temperatureAirTask;
 
     private double temperatureSoilTaskOne;

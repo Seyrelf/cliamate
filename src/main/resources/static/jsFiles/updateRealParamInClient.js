@@ -71,9 +71,9 @@ async function getSettingDeviceByName(name){
             case "powerHeatingMatRealThree":
                 data = await getSettingsParamDevice();
                 return data.powerHeatingMatThreeTask;
-            case "powerVentilatorOutReal":
+            case "powerFlapOutReal":
                 data = await getSettingsParamDevice();
-                return data.powerVentilatorOutRealTask;
+                return data.powerFlapOutTask;
             case "powerVentilatorInReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorInTask;
@@ -151,6 +151,9 @@ async function getSettingClimateByName(name){
             case "powerVentilatorInReal":
                 data = await getSettingsParamDevice();
                 return data.powerVentilatorInTask;
+            case "powerFlapOutReal":
+                data = await getSettingsParamDevice();
+                return data.powerFlapOutReal;                
             case "carbonDioxideReal":
                 data = await getSettingsParamClimate();
                 return data.carbonDioxideTask;
@@ -228,7 +231,7 @@ async function updateRealDevice(){
     powerHeatingMatRealTwo = data.powerHeatingMatRealTwo;
     powerHeatingMatRealThree = data.powerHeatingMatRealThree;
     powerVentilatorInReal = data.powerVentilatorInReal;
-    powerVentilatorOutReal = data.powerVentilatorOutReal;
+    powerFlapOutReal = data.powerFlapOutReal;
     workStatusPumpHumiditySoilRealOne = data.workStatusPumpHumiditySoilRealOne;
     workStatusPumpHumiditySoilRealTwo = data.workStatusPumpHumiditySoilRealTwo;
     workStatusPumpHumiditySoilRealThree = data.workStatusPumpHumiditySoilRealThree;
@@ -248,7 +251,7 @@ async function updateRealDevice(){
     document.getElementById("workStatusFlapCO2Real").textContent = workStatusFlapCO2Real;
     document.getElementById("workStatusVentilatorCO2Real").textContent = workStatusVentilatorCO2Real;
     document.getElementById("powerVentilatorInReal").textContent =  powerVentilatorInReal + " %";
-    document.getElementById("powerVentilatorOutReal").textContent = powerVentilatorOutReal + " %"  ;
+    document.getElementById("powerFlapOutReal").textContent = powerFlapOutReal + " %"  ;
     document.getElementById("workStatusPumpHumiditySoilRealOne").textContent = workStatusPumpHumiditySoilRealOne ;
     document.getElementById("workStatusFlapHumiditySoilRealOne").textContent = workStatusFlapHumiditySoilRealOne  ;
     document.getElementById("workStatusPumpHumiditySoilRealTwo").textContent = workStatusPumpHumiditySoilRealTwo ;

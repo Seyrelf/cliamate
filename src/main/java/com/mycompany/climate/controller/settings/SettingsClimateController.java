@@ -1,6 +1,7 @@
 package com.mycompany.climate.controller.settings;
 
 import com.mycompany.climate.model.dto.DtoClimateNewTask;
+import com.mycompany.climate.model.dto.DtoClimateNewTaskForLight;
 import com.mycompany.climate.model.dto.DtoClimateNewTaskWHL;
 import com.mycompany.climate.model.real.RealParamDevice;
 import com.mycompany.climate.model.settings.SettingsClimate;
@@ -36,6 +37,11 @@ public class SettingsClimateController {
     @PatchMapping(value = "/updateWHL")
     private void updateWHL(@RequestBody DtoClimateNewTaskWHL dtoClimateNewTask) {
         service.updateWHL(dtoClimateNewTask);
+    }
+
+    @PatchMapping(value = "/updateTaskForLight")
+    private void updateWHL(@RequestBody DtoClimateNewTaskForLight dtoClimateNewTask) {
+        service.updateTaskForLight(dtoClimateNewTask);
     }
 
 }

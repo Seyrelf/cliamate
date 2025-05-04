@@ -2,6 +2,7 @@ package com.mycompany.climate.service.settings;
 
 
 import com.mycompany.climate.model.dto.DtoClimateNewTask;
+import com.mycompany.climate.model.dto.DtoClimateNewTaskForLight;
 import com.mycompany.climate.model.dto.DtoClimateNewTaskWHL;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.model.settings.SettingsClimate;
@@ -37,16 +38,15 @@ public class SettingsClimateService {
             case "temperatureSoilRealThree":
                 settingsClimate.setTemperatureSoilTaskThree(task);
                 break;
-            case "powerVentilatorInReal":
-                break;
-            case "whiteLightReal":
-                settingsClimate.setWhiteLightTask(task);
-                break;
-
-            case "carbonDioxideReal":
-                settingsClimate.setCarbonDioxideTask(task);
-                break;
         }
+        repository.save(settingsClimate);
+    }
+
+    public void updateTaskForLight(DtoClimateNewTaskForLight dtoClimateNewTask) {
+        SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
+        settingsClimate.setWhiteLightTask(dtoClimateNewTask.getParamTask());
+        settingsClimate.setStartLight(dtoClimateNewTask.getStartLight());
+        settingsClimate.setEndLight(dtoClimateNewTask.getEndLight());
         repository.save(settingsClimate);
     }
 
@@ -72,7 +72,12 @@ public class SettingsClimateService {
             case "humidityAirReal":
                 settingsClimate.setHumidityAirLowTask(taskLow);
                 settingsClimate.setHumidityAirHighTask(taskHigh);
+            case "carbonDioxideReal":
+                settingsClimate.setCarbonDioxideLowTask(taskLow);
+                settingsClimate.setCarbonDioxideHighTask(taskHigh);
                 break;
+
+
         }
         repository.save(settingsClimate);
     }
