@@ -139,10 +139,18 @@ async function createParamSettingsWithLowHigh(obj,name){
         inputTaskLow = document.getElementById("inputTaskLow");
         inputTaskHigh = document.getElementById("inputTaskHigh");
         if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
-            updateModeById(paramId, paramSettings.querySelector("select").value);
-            updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
-            forDel = document.getElementById(paramSettings.id);
-            forDel.remove();}
+            if(inputTaskLow.value < inputTaskLow.value){
+                updateModeById(paramId, paramSettings.querySelector("select").value);
+                updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
+                forDel = document.getElementById(paramSettings.id);
+                forDel.remove();
+            }
+            else{
+                errorSpan = createErrorInfoLabel("Минимальное значение должно быть меньше максимального!");
+                if(document.getElementById("errorSpan")===null){
+                    document.getElementById("paramSettings").appendChild(errorSpan);}
+            }
+}
         else {
             errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
             if(document.getElementById("errorSpan")===null){
