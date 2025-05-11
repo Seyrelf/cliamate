@@ -1,5 +1,6 @@
 package com.mycompany.climate.controller.settings;
 
+import com.mycompany.climate.model.settings.SettingsDevice;
 import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.service.settings.SettingsModeService;
@@ -15,10 +16,9 @@ public class SettingsModeController {
     @Autowired
     private SettingsModeService service;
 
-    @PostMapping(value = "/test")
-    private void test(String string) {
-        System.out.println(string);
-
+    @PostMapping(value = "/create")
+    private void create(@RequestBody SettingsMode settingsMode) {
+        service.save(settingsMode);
     }
 
     @GetMapping(value = "/getLast")
