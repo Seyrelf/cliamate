@@ -139,7 +139,8 @@ async function createParamSettingsWithLowHigh(obj,name){
         inputTaskHigh = document.getElementById("inputTaskHigh");
         if(regex.test(inputTaskLow.value) && regex.test(inputTaskHigh.value)){
             if(Number(inputTaskLow.value) < Number(inputTaskHigh.value)){
-                updateModeById(paramId, paramSettings.querySelector("select").value);
+                nameForFind = document.getElementById(paramId).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
+                updateModeByName(nameForFind, paramSettings.querySelector("select").value);
                 updateClimateTaskByIdWithHighLow(paramId,inputTaskLow.value,inputTaskHigh.value);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();
@@ -355,7 +356,8 @@ async function createParamSettingsForLight(obj,name){
                     document.getElementById("paramSettings").appendChild(errorSpan);}
             }
             else {
-                updateModeById(paramId, paramSettings.querySelector("select").value);
+                nameForFind = document.getElementById(paramId).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
+                updateModeByName(nameForFind, paramSettings.querySelector("select").value);
                 updateLightTask(paramId,lightTaskValue,inputStartTime,inputEndTime);
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();}
