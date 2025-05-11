@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function (){
 async function getModeByName(name){
     try {
         nameForFind = document.getElementById(name).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
-        console.log(nameForFind);
         data = await getMode(nameForFind);
         return data.mode;
         }

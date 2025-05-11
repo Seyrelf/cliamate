@@ -57,11 +57,7 @@ async function getMode(name){
     try {
         const response = await fetch(linkForGetModeByName,
             {method:'GET',
-                body: JSON.stringify(
-                    {
-                        "name" : name,
-                    }),
-                headers: {"Content-type": "application/json; charset=UTF-8"}
+                body : name,
             });
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
