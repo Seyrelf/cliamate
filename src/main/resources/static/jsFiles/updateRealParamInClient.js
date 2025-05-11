@@ -242,6 +242,7 @@ async function updateModeChar(){
         return;
     }
     for(i in data){
-        document.getElementById(i.name[0]).textContent = i.mode[0];
+        console.log(i);
+        document.getElementById(i.name).textContent = i.mode;
     }
 }
