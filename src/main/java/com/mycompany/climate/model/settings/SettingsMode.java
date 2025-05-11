@@ -12,6 +12,7 @@ import lombok.*;
 public class SettingsMode {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String mode;
