@@ -27,7 +27,7 @@ public class SettingsModeController {
     }
 
     @GetMapping(value = "/getModeByName")
-    private SettingsMode getModeByName(String name) {
+    private SettingsMode getModeByName(@RequestParam String name ) {
         return service.getByName(name);
     }
 

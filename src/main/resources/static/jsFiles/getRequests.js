@@ -54,11 +54,10 @@ async function getAllMode(){
 
 /*Метод отвечает за отправку get запроса для получения информации о режимах работы контуров*/
 async function getMode(name){
+    const url = linkForGetModeByName + '?message=$' + name;
     try {
-        const response = await fetch(linkForGetModeByName,
-            {method:'GET',
-                body : name,
-            });
+        console.log(url)
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }
