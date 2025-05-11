@@ -22,7 +22,7 @@ public class SettingsModeService {
     public void update(DtoParamNameNewMode dtoParamNameNewMode) {
         SettingsMode modeObj =  repository.getByName(dtoParamNameNewMode.getParamName());
         modeObj.setMode(dtoParamNameNewMode.getNewMode());
-        repository.updateByName(modeObj);
+        repository.update(modeObj);
     }
 
     public SettingsMode getByName(String name) {

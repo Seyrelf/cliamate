@@ -9,7 +9,7 @@ public interface SettingsModeRepository extends JpaRepository<SettingsMode, Inte
 
     SettingsMode findTopByOrderByIdDesc();
 
-    void updateByName(SettingsMode settingsMode);
+    SettingsMode update(SettingsMode settingsMode);
 
     SettingsMode getByName(String name);
 }
