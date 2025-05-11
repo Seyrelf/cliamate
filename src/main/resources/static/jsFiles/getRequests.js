@@ -54,7 +54,7 @@ async function getAllMode(){
 
 /*Метод отвечает за отправку get запроса для получения информации о режимах работы контуров*/
 async function getMode(name){
-    const url = linkForGetModeByName + '?message=$' + name;
+    const url = linkForGetModeByName + '?name=' + name;
     try {
         console.log(url)
         const response = await fetch(url);
