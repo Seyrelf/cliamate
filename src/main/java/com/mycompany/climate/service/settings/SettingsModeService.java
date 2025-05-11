@@ -7,6 +7,8 @@ import com.mycompany.climate.repository.settings.SettingsModeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SettingsModeService {
 
@@ -18,50 +20,20 @@ public class SettingsModeService {
     }
 
     public void update(DtoParamNameNewMode dtoParamNameNewMode) {
-        SettingsMode allMode = repository.findTopByOrderByIdDesc();
-        switch (dtoParamNameNewMode.getParamName()){
-            case "temperatureAirReal":
-                allMode.setModeTempAir(dtoParamNameNewMode.getNewMode());
-                break;
-            case "temperatureSoilRealOne":
-                allMode.setModeTempSoilOne(dtoParamNameNewMode.getNewMode());
-                break;
-            case "temperatureSoilRealTwo":
-                allMode.setModeTempSoilTwo(dtoParamNameNewMode.getNewMode());
-                break;
-            case "temperatureSoilRealThree":
-                allMode.setModeTempSoilThree(dtoParamNameNewMode.getNewMode());
-                break;
-            case "powerVentilatorInReal":
-                allMode.setModeVentilation(dtoParamNameNewMode.getNewMode());
-                break;
-            case "humiditySoilRealOne":
-                allMode.setModeHumiditySoilOne(dtoParamNameNewMode.getNewMode());
-                break;
-            case "humiditySoilRealTwo":
-                allMode.setModeHumiditySoilTwo(dtoParamNameNewMode.getNewMode());
-                break;
-            case "humiditySoilRealThree":
-                allMode.setModeHumiditySoilThree(dtoParamNameNewMode.getNewMode());
-                break;
-            case "humidityAirReal":
-                allMode.setModeHumidityAir(dtoParamNameNewMode.getNewMode());
-                break;
-            case "whiteLightReal":
-                allMode.setModeLight(dtoParamNameNewMode.getNewMode());
-                break;
-            case "carbonDioxideReal":
-                allMode.setModeCarbonDioxide(dtoParamNameNewMode.getNewMode());
-                break;
-        }
-        repository.save(allMode);
+        SettingsMode modeObj =  repository.getByName(dtoParamNameNewMode.getParamName());
+        modeObj.setMode(dtoParamNameNewMode.getNewMode());
+        repository.updateByName(modeObj);
+    }
+
+    public SettingsMode getByName(String name) {
+        return repository.getByName(name);
     }
 
     public void delete(SettingsMode settings) {
         repository.delete(settings);
     }
 
-    public SettingsMode getLast(){
-        return repository.findTopByOrderByIdDesc();
+    public List<SettingsMode> getLast(){
+        return repository.findAll();
     }
 }

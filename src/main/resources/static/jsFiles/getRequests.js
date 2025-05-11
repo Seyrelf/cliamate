@@ -3,7 +3,7 @@ linkForGetRealParamDevive = "https://seyrelf.tech/realDeviceClimate/getLast";
 linkForGetAllMode = "https://seyrelf.tech/mode/getLast";
 linkForGetSettingsParamClimate = "https://seyrelf.tech/settingsClimate/getLast";
 linkForGetSettingsParamDevice = "https://seyrelf.tech/settingsDevice/getLast";
-
+linkForGetModeByName = "https://seyrelf.tech/mode/getModeByName";
 /*Метод отвечает за отправку get запроса для получения информации о состоянии микроклимота в помещении*/
 async function getRealParamClimate(){
     try {
@@ -40,6 +40,29 @@ async function getRealParamDevice(){
 async function getAllMode(){
     try {
         const response = await fetch(linkForGetAllMode);
+        if (!response.ok) {
+            throw new Error('Ошибка сети: ' + response.statusText);
+        }
+        const data = await response.json();
+        return data;// Парсим ответ в JSON
+    }
+    catch(error){
+        console.error('Произошла ошибка:', error);
+        throw error;
+    }
+}
+
+/*Метод отвечает за отправку get запроса для получения информации о режимах работы контуров*/
+async function getMode(name){
+    try {
+        const response = await fetch(linkForGetModeByName,
+            {method:'GET',
+                body: JSON.stringify(
+                    {
+                        "name" : name,
+                    }),
+                headers: {"Content-type": "application/json; charset=UTF-8"}
+            });
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);
         }

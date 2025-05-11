@@ -66,7 +66,8 @@ async function createParamSettings(obj,name){
         }
         const regex = /^(\d|.)+$/;
         if(regex.test(inputTask.value)){
-            updateModeById(paramId, paramSettings.querySelector("select").value);
+            nameForFind = document.getElementById(paramId).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
+            updateModeByName(nameForFind, paramSettings.querySelector("select").value);
             if(paramId === "powerVentilatorInReal"){
                 updateDeviceTaskById(paramId,inputTask.value);
             }

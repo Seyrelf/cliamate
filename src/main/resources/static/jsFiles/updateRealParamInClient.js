@@ -12,42 +12,10 @@ document.addEventListener('DOMContentLoaded', function (){
 /*Данная функция отвечает за получения акуального режима работы и его отображения при открытии окна управления контуром*/
 async function getModeByName(name){
     try {
-        switch (name){
-            case "temperatureAirReal":
-                data = await getAllMode();
-                return data.modeTempAir;
-            case "temperatureSoilRealOne":
-                data = await getAllMode();
-                return data.modeTempSoilOne;
-            case "temperatureSoilRealTwo":
-                data = await getAllMode();
-                return data.modeTempSoilTwo;
-            case "temperatureSoilRealThree":
-                data = await getAllMode();
-                return data.modeTempSoilThree;
-            case "humidityAirReal":
-                data = await getAllMode();
-                return data.modeHumidityAir;
-            case "humiditySoilRealOne":
-                data = await getAllMode();
-                return data.modeHumiditySoilOne;
-            case "humiditySoilRealTwo":
-                data = await getAllMode();
-                return data.modeHumiditySoilTwo;
-            case "humiditySoilRealThree":
-                data = await getAllMode();
-                return data.modeHumiditySoilThree;
-            case "powerVentilatorInReal":
-                data = await getAllMode();
-                return data.modeVentilation;
-            case "carbonDioxideReal":
-                data = await getAllMode();
-                return data.modeCarbonDioxide;
-            case "whiteLightReal":
-                data = await getAllMode();
-                return data.modeLight;
+        nameForFind = document.getElementById(name).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
+        data = await getMode(nameForFind);
+        return data.mode;
         }
-    }
     catch (err){
         alert(err.message);
         return;
@@ -273,17 +241,7 @@ async function updateModeChar(){
         alert(err.message);
         return;
     }
-    document.getElementById("modeTempAir").textContent = data.modeTempAir[0] ;
-    document.getElementById("modeTempSoilOne").textContent = data.modeTempSoilOne[0] ;
-    document.getElementById("modeTempSoilTwo").textContent = data.modeTempSoilTwo[0] ;
-    document.getElementById("modeTempSoilThree").textContent = data.modeTempSoilThree[0] ;
-
-    document.getElementById("modeHumidityAir").textContent = data.modeHumidityAir[0] ;
-    document.getElementById("modeHumiditySoilOne").textContent =  data.modeHumiditySoilOne[0] ;
-    document.getElementById("modeHumiditySoilTwo").textContent =  data.modeHumiditySoilTwo[0] ;
-    document.getElementById("modeHumiditySoilThree").textContent =  data.modeHumiditySoilThree[0] ;
-
-    document.getElementById("modeLight").textContent = data.modeLight[0] ;
-    document.getElementById("modeVentilation").textContent = data.modeVentilation[0] ;
-    document.getElementById("modeCarbonDioxide").textContent = data.modeCarbonDioxide[0] ;
+    for(i in data){
+        document.getElementById(i.name[0]).textContent = i.mode[0];
+    }
 }

@@ -7,13 +7,13 @@ linkForPatchSettingsWithHighLowParamClimate = "https://seyrelf.tech/settingsClim
 linkForPatchRealParamClimateLight = "https://seyrelf.tech/settingsClimate/updateTaskForLight";
 /*Метод отвечает за отправку patch запроса на контроллер модов, тем самым обновляя состояние режима работы контура,
 в качестве входных данных отправляем id для поиска нужного контура и новое значение режима работы*/
-async function updateModeById(id,mode){
+async function updateModeByName(name,mode){
     try {
         const response = await fetch(linkForPatchAllMode,
             {method:'PATCH',
             body: JSON.stringify(
                 {
-                    "paramName" : id,
+                    "paramName" : name,
                     "newMode" : mode
                 }),
                 headers: {"Content-type": "application/json; charset=UTF-8"}

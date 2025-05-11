@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 public interface SettingsModeRepository extends JpaRepository<SettingsMode, Integer> {
 
     SettingsMode findTopByOrderByIdDesc();
+
+    void updateByName(SettingsMode settingsMode);
+
+    SettingsMode getByName(String name);
 }

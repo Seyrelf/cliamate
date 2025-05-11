@@ -6,18 +6,14 @@ import com.mycompany.climate.service.settings.SettingsModeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/mode")
 public class SettingsModeController {
 
     @Autowired
     private SettingsModeService service;
-
-    @PostMapping(value = "/create")
-    private void create(@RequestBody SettingsMode settingsMode) {
-        System.out.println(settingsMode.getModeVentilation());
-        service.save(settingsMode);
-    }
 
     @PostMapping(value = "/test")
     private void test(String string) {
@@ -26,8 +22,13 @@ public class SettingsModeController {
     }
 
     @GetMapping(value = "/getLast")
-    private SettingsMode getSettingsMode() {
+    private List<SettingsMode> getSettingsMode() {
         return service.getLast();
+    }
+
+    @GetMapping(value = "/getModeByName")
+    private SettingsMode getModeByName(String name) {
+        return service.getByName(name);
     }
 
     @PatchMapping(value = "/update")
