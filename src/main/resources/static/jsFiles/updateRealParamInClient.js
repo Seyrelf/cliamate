@@ -244,6 +244,6 @@ async function updateModeChar(){
     console.log(data);
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
-        document.getElementById(data[i].name).textContent = data[i].mode;
+        document.getElementById(data[i].name).textContent = data[i].mode[0];
     }
 }
