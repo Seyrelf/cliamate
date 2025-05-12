@@ -13,6 +13,8 @@ function addButtonOpenWindowUserSettings(){
     mainHeader.appendChild(btnOpenWindowSettignsUser);
 }
 
+
+
 async function createWindowUserSettings(){
     mainBody = document.querySelector("body");
     if(document.getElementById("windowUsersSettings") !== null){

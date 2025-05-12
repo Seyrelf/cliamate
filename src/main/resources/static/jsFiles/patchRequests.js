@@ -1,6 +1,7 @@
 linkForPatchRealParamClimate = "https://seyrelf.tech/realParamClimate/update";
 linkForPatchRealParamDevive = "https://seyrelf.tech/realDeviceClimate/update";
-linkForPatchAllMode = "https://seyrelf.tech/mode/update";
+linkForPatchMode = "https://seyrelf.tech/mode/update";
+linkForPatchPID = "https://seyrelf.tech/pid/update";
 linkForPatchSettingsParamClimate = "https://seyrelf.tech/settingsClimate/update";
 linkForPatchSettingsParamDevice = "https://seyrelf.tech/settingsDevice/update";
 linkForPatchSettingsWithHighLowParamClimate = "https://seyrelf.tech/settingsClimate/updateWHL";
@@ -10,13 +11,36 @@ linkForPatchRealParamClimateCO2 = "https://seyrelf.tech/settingsClimate/updateTa
 в качестве входных данных отправляем id для поиска нужного контура и новое значение режима работы*/
 async function updateModeByName(name,mode){
     try {
-        const response = await fetch(linkForPatchAllMode,
+        const response = await fetch(linkForPatchMode,
             {method:'PATCH',
             body: JSON.stringify(
                 {
                     "paramName" : name,
                     "newMode" : mode
                 }),
+                headers: {"Content-type": "application/json; charset=UTF-8"}
+            });
+        if (!response.ok) {
+            throw new Error('Ошибка сети: ' + response.statusText);
+        }
+    }
+    catch(error){
+        console.error('Произошла ошибка:', error);
+        throw error;
+    }
+}
+
+async function updatePIDByName(name,paramP,paramI,paramD){
+    try {
+        const response = await fetch(linkForPatchPID,
+            {method:'PATCH',
+                body: JSON.stringify(
+                    {
+                        "name" : name,
+                        "paramP" : paramP,
+                        "paramI" : paramI,
+                        "paramD" : paramD
+                    }),
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             });
         if (!response.ok) {

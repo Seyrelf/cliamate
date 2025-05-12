@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PIDСoefficients {
+public class SettingsPIDСoefficients {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
