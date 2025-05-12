@@ -102,7 +102,6 @@ async function createParamSettingsForCO2(obj,name){
     paramSettings = document.createElement("div");
     paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);
-    paramSettings.appendChild(head);
     mode = createSwithMode(modeForParam);
     taskLow = createTaskInput(lowValue, "inputTaskLow", "Мин. порог");
     taskHigh = createTaskInput(highValue, "inputTaskHigh", "Макс. порог");
@@ -137,9 +136,11 @@ async function createParamSettingsForCO2(obj,name){
         }
 
     }
+    paramSettings.appendChild(head);
     paramSettings.appendChild(mode);
     paramSettings.appendChild(taskLow);
     paramSettings.appendChild(taskHigh);
+    paramSettings.appendChild(minLight);
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
 }
@@ -175,7 +176,6 @@ async function createParamSettingsWithoutModeText(obj,name){
             workSwitch.appendChild(onSwitch);
             break;
     }
-
     task.appendChild(textTask);
     task.appendChild(workSwitch);
     okBtn = createOkBtn();
