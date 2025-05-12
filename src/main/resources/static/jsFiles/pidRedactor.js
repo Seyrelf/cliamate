@@ -25,7 +25,11 @@ async function createWindowPIDSettings(){
     paramD = createTaskInput(data[0].paramD,"inputParamD","Д коэффициент");
     switchPID = createSwithPID(data);
     switchPID.onchange = function (){
-        console.log(document.getElementById("formSelectPID").value);
+        pidName = document.getElementById("formSelectPID").value;
+        dataForParam = getPIDData(pidName);
+        document.getElementById("inputParamP").textContent = dataForParam.pparam;
+        document.getElementById("inputParamI").textContent = dataForParam.iparam;
+        document.getElementById("inputParamD").textContent = dataForParam.dparam;
     }
     closeWindowBtn = document.createElement('button');
     closeWindowBtn.type = "button";
