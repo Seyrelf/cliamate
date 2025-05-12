@@ -325,13 +325,28 @@ function createTaskInputInt(settingsForDevice,id,text){
     inputTask.type = "number";
     inputTask.min = 0;
     inputTask.step = 1;
-    inputTask.oninput = "validity.valid||(value='');";
+    inputTask.oninput = "validateIntegerInput(this)";
     inputTask.id = id;
     inputTask.value = settingsForDevice;
     inputTask.className = "form-control";
     task.appendChild(textTask);
     task.appendChild(inputTask);
     return task;
+}
+
+function validateIntegerInput(input) {
+    // Удаляем все символы, кроме цифр
+    input.value = input.value.replace(/[^0-9]/g, '');
+
+    // Проверяем минимальное значение
+    if (input.value < 0) {
+        input.value = 0;
+    }
+
+    // Удаляем ведущие нули (опционально)
+    if (input.value.length > 1 && input.value.startsWith('0')) {
+        input.value = input.value.replace(/^0+/, '');
+    }
 }
 
 function createSwithMode(modeForParam){
