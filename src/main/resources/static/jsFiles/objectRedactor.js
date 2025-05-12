@@ -119,7 +119,7 @@ async function createParamSettingsForCO2(obj,name){
             if(Number(inputTaskLow.value) < Number(inputTaskHigh.value)){
                 nameForFind = document.getElementById(paramId).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
                 updateModeByName(nameForFind, paramSettings.querySelector("select").value);
-                updateCO2Task(paramId,inputTaskLow.value,inputTaskHigh.value,inputTaskMinLight.value);
+                updateCO2Task(paramId,validateIntegerInput(inputTaskLow.value),validateIntegerInput(inputTaskHigh.value),validateIntegerInput(inputTaskMinLight.value));
                 forDel = document.getElementById(paramSettings.id);
                 forDel.remove();
             }
@@ -245,6 +245,7 @@ async function createParamSettingsForLight(obj,name){
         const regex = /^(\d|.)+$/;
         lightTaskValue = document.getElementById("inputTask").value;
         if(regex.test(lightTaskValue)){
+            lightTaskValue = validateIntegerInput(lightTaskValue);
             inputStartTime = document.getElementById("inputTaskLow").value;
             inputEndTime = document.getElementById("inputTaskHigh").value;
             if(inputStartTime > inputEndTime){
@@ -325,7 +326,7 @@ function createTaskInputInt(settingsForDevice,id,text){
     inputTask.type = "number";
     inputTask.min = 0;
     inputTask.step = 1;
-    inputTask.oninput = "validateIntegerInput(this)";
+    inputTask.oninput = "validity.valid||(value='');";
     inputTask.id = id;
     inputTask.value = settingsForDevice;
     inputTask.className = "form-control";
@@ -334,19 +335,20 @@ function createTaskInputInt(settingsForDevice,id,text){
     return task;
 }
 
-function validateIntegerInput(input) {
+function validateIntegerInput(value) {
     // Удаляем все символы, кроме цифр
-    input.value = input.value.replace(/[^0-9]/g, '');
+    value = value.replace(/[^0-9]/g, '');
 
     // Проверяем минимальное значение
-    if (input.value < 0) {
-        input.value = 0;
+    if (value < 0) {
+        value = 0;
     }
 
     // Удаляем ведущие нули (опционально)
-    if (input.value.length > 1 && input.value.startsWith('0')) {
-        input.value = input.value.replace(/^0+/, '');
+    if (value.length > 1 && value.startsWith('0')) {
+        value = value.replace(/^0+/, '');
     }
+    return value;
 }
 
 function createSwithMode(modeForParam){
