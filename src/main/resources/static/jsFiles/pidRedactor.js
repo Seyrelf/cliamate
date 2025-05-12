@@ -20,16 +20,16 @@ async function createWindowPIDSettings(){
     headerForWindow = document.createElement("div");
     headerForWindow.id = "headerForWindow";
     headerForWindow.textContent = "Настройки для ПИД регуляторов"
-    paramP = createTaskInput(data[0].paramP,"inputParamP","П коэффициент");
-    paramI = createTaskInput(data[0].paramI,"inputParamI","И коэффициент");
-    paramD = createTaskInput(data[0].paramD,"inputParamD","Д коэффициент");
+    paramP = createTaskInput(data[0].pparam,"inputParamP","П коэффициент");
+    paramI = createTaskInput(data[0].iparam,"inputParamI","И коэффициент");
+    paramD = createTaskInput(data[0].dparam,"inputParamD","Д коэффициент");
     switchPID = createSwithPID(data);
     switchPID.onchange = function (){
         pidName = document.getElementById("formSelectPID").value;
         dataForParam = getPIDData(pidName);
-        document.getElementById("inputParamP").textContent = dataForParam.pparam;
-        document.getElementById("inputParamI").textContent = dataForParam.iparam;
-        document.getElementById("inputParamD").textContent = dataForParam.dparam;
+        document.getElementById("inputParamP").value = dataForParam.pparam;
+        document.getElementById("inputParamI").value = dataForParam.iparam;
+        document.getElementById("inputParamD").value = dataForParam.dparam;
     }
     closeWindowBtn = document.createElement('button');
     closeWindowBtn.type = "button";
