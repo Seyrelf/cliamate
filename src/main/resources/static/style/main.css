@@ -451,15 +451,17 @@ header{
 }
 
 #window-pid{
-    margin-right: 2%;
-    width: 19%;
+    border: 0.2dvh solid #3e835e;
+    background-color: #87c5bffa;
+    border-radius: 3%;
+    color: black;
+    overflow: auto;
     text-align: center;
-    background: black;
-    border-radius: 10%;
-    border-style: solid;
-    border-color: navy;
-    border-width: thin;
+    font-size: 150%;
+    padding: 0.3%;
+    width: 70%;
     position: absolute;
+    box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
     top: 10%;
     left: 10%;
 }
