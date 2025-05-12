@@ -24,7 +24,7 @@ public class RealParamClimate {
     private double waterTankLevelHumidityAirReal;
     private double waterTankLevelHumiditySoilReal;
     private int carbonDioxideReal;
-    private int carbonDioxideTankLevelReal;
+    private double carbonDioxideTankLevelReal;
     private int whiteLightReal;
 
     private double temperatureAirReal;
