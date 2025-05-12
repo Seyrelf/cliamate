@@ -140,7 +140,7 @@ async function createParamSettingsForCO2(obj,name){
     paramSettings.appendChild(mode);
     paramSettings.appendChild(taskLow);
     paramSettings.appendChild(taskHigh);
-    paramSettings.appendChild(minLight);
+    paramSettings.appendChild(taskMinLight);
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
 }
