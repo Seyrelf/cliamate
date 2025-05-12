@@ -124,7 +124,7 @@ async function getSettingClimateByName(name){
                 return data.powerFlapOutReal;                
             case "carbonDioxideReal":
                 data = await getSettingsParamClimate();
-                return [data.carbonDioxideLowTask,data.carbonDioxideHighTask];
+                return [data.carbonDioxideLowTask,data.carbonDioxideHighTask,data.whiteLightTaskForCO2];
             case "whiteLightReal":
                 data = await getSettingsParamClimate();
                 return [data.whiteLightTask,data.startLight,data.endLight];
