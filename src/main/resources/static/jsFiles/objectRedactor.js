@@ -105,7 +105,7 @@ async function createParamSettingsForCO2(obj,name){
     mode = createSwithMode(modeForParam);
     taskLow = createTaskInput(lowValue, "inputTaskLow", "Мин. порог");
     taskHigh = createTaskInput(highValue, "inputTaskHigh", "Макс. порог");
-    taskMinLight = createTaskInput(highValue, "inputMinLight", "Мин. ур. света");
+    taskMinLight = createTaskInput(minLight, "inputMinLight", "Мин. ур. света");
     okBtn = createOkBtn();
     okBtn.onclick = function (){
         if(checkUserRole(okBtn)){

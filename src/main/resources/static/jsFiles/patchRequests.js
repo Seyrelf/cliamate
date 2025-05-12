@@ -77,9 +77,6 @@ async function updateClimateTaskByIdWithHighLow(id,taskLow,taskHigh){
     }
 }
 
-
-
-
 /*Метод отвечает за отправку patch запроса на контроллер заданий для параметров приборов, тем самым обновляя задание для
  прибора, в качестве входных данных отправляем id для поиска нужного оборудования и новое значение задания*/
 async function updateDeviceTaskById(id,task){

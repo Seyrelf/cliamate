@@ -404,6 +404,12 @@ header{
     justify-content: center;
     text-align: center;
 }
+#taskMinLight{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 
 #inputTaskHigh{
     width: 40%;
