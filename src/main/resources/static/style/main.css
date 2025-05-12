@@ -593,6 +593,22 @@ header{
         width: 80%;
     }
 
+    #window-pid{
+        border: 0.2dvh solid #3e835e;
+        background-color: #87c5bffa;
+        border-radius: 3%;
+        color: black;
+        overflow: auto;
+        text-align: center;
+        font-size: 150%;
+        padding: 0.3%;
+        width: 90%;
+        position: absolute;
+        box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
+        top: 10%;
+        left: 5%;
+    }
+
     #windowUsersSettings{
         width: 90%;
         left: 5%;
