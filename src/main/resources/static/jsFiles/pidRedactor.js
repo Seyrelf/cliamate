@@ -27,6 +27,7 @@ async function createWindowPIDSettings(){
     switchPID.onchange = function (){
         pidName = document.getElementById("formSelectPID").value;
         dataForParam = getPIDData(pidName);
+        console.log(dataForParam);
         document.getElementById("inputParamP").value = dataForParam.pparam;
         document.getElementById("inputParamI").value = dataForParam.iparam;
         document.getElementById("inputParamD").value = dataForParam.dparam;
