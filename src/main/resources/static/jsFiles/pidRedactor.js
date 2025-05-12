@@ -24,6 +24,9 @@ async function createWindowPIDSettings(){
     paramI = createTaskInput(data[0].paramI,"inputParamI","И коэффициент");
     paramD = createTaskInput(data[0].paramD,"inputParamD","Д коэффициент");
     switchPID = createSwithPID(data);
+    switchPID.onchange = function (){
+        console.log(switchPID.value)
+    }
     closeWindowBtn = document.createElement('button');
     closeWindowBtn.type = "button";
     closeWindowBtn.ariaLabel = "Close";
