@@ -107,7 +107,7 @@ async function updateDeviceTaskById(id,task){
  прибора, в качестве входных данных отправляем id для поиска нужного оборудования и новое значение задания*/
 async function updateCO2Task(id,taskLow,taskHigh,minLightTask){
     try {
-        const response = await fetch(linkForPatchRealParamClimateLight,
+        const response = await fetch(linkForPatchRealParamClimateCO2,
             {method:'PATCH',
                 body: JSON.stringify(
                     {
@@ -132,14 +132,14 @@ async function updateCO2Task(id,taskLow,taskHigh,minLightTask){
  прибора, в качестве входных данных отправляем id для поиска нужного оборудования и новое значение задания*/
 async function updateLightTask(id,task,startLight,endLight){
     try {
-        const response = await fetch(linkForPatchRealParamClimateCO2,
+        const response = await fetch(linkForPatchRealParamClimateLight,
             {method:'PATCH',
                 body: JSON.stringify(
                     {
                         "paramName" : id,
                         "paramTask" : task,
-                        "paramTask" : task,
-                        "paramTask" : task,
+                        "startLight" : startLight,
+                        "endLight" : endLight,
                     }),
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             });
