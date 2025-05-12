@@ -24,9 +24,9 @@ async function createWindowPIDSettings(){
     paramI = createTaskInput(data[0].iparam,"inputParamI","И коэффициент");
     paramD = createTaskInput(data[0].dparam,"inputParamD","Д коэффициент");
     switchPID = createSwithPID(data);
-    switchPID.onchange = function (){
+    switchPID.onchange = async function (){
         pidName = document.getElementById("formSelectPID").value;
-        dataForParam = getPIDData(pidName);
+        dataForParam = await getPIDData(pidName);
         console.log(dataForParam);
         document.getElementById("inputParamP").value = dataForParam.pparam;
         document.getElementById("inputParamI").value = dataForParam.iparam;
