@@ -33,12 +33,14 @@ async function createWindowPIDSettings(){
         forDel = document.getElementById("window-pid");
         forDel.remove();
     }
+    okBtn = createOkBtn();
     headerForWindow.appendChild(closeWindowBtn);
     windowPIDSettings.appendChild(headerForWindow);
     windowPIDSettings.appendChild(switchPID);
     windowPIDSettings.appendChild(paramP);
     windowPIDSettings.appendChild(paramI);
     windowPIDSettings.appendChild(paramD);
+    windowPIDSettings.appendChild(okBtn);
     mainBody.appendChild(windowPIDSettings);
 }
 
@@ -51,7 +53,7 @@ function createSwithPID(data){
     textMode.id = "textMode";
     allPID = document.createElement('select');
     allPID.className = "form-select";
-    allPID.id = "formSelect";
+    allPID.id = "formSelectPID";
     allPID.ariaLabel = "Default select example";
     for (let i = 0; i < data.length; i++) {
         pidName = document.createElement('option');

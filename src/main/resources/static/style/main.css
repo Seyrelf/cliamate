@@ -390,6 +390,14 @@ header{
     justify-content: center;
     background-size: 15%;
 }
+
+#formSelectPID{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    background-size: 15%;
+}
+
 .timeTask{
     display: flex;
     margin-bottom: 5px;
@@ -400,7 +408,33 @@ header{
     margin-bottom: 5px;
 }
 
+.pid{
+    display: flex;
+    margin-bottom: 5px;
+}
+
 #inputTask{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#inputParamP{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#inputParamI{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#inputParamD{
     width: 40%;
     display: flex;
     justify-content: center;

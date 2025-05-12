@@ -34,6 +34,6 @@ public class SettingsPIDСoefficientsService {
     }
 
     public List<SettingsPIDСoefficients> getLast(){
-        return repository.findTopByOrderByIdDesc();
+        return repository.findAll();
     }
 }
