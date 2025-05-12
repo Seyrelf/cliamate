@@ -450,7 +450,7 @@ header{
     width: 80%;
 }
 
-.window-pid{
+#window-pid{
     margin-right: 2%;
     width: 19%;
     text-align: center;
