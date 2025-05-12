@@ -493,11 +493,11 @@ header{
     text-align: center;
     font-size: 150%;
     padding: 0.3%;
-    width: 70%;
+    width: 30%;
     position: absolute;
     box-shadow: inset -1px 1px 53px 4px rgb(88 59 59 / 75%);
     top: 10%;
-    left: 30%;
+    left: 35%;
 }
 
 
