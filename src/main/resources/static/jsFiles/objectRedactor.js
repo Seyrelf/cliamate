@@ -103,9 +103,9 @@ async function createParamSettingsForCO2(obj,name){
     paramSettings.id = 'paramSettings';
     head = createHeadWindow(name,paramSettings);
     mode = createSwithMode(modeForParam);
-    taskLow = createTaskInput(lowValue, "inputTaskLow", "Мин. порог");
-    taskHigh = createTaskInput(highValue, "inputTaskHigh", "Макс. порог");
-    taskMinLight = createTaskInput(minLight, "inputMinLight", "Мин. ур. света");
+    taskLow = createTaskInputInt(lowValue, "inputTaskLow", "Мин. порог");
+    taskHigh = createTaskInputInt(highValue, "inputTaskHigh", "Макс. порог");
+    taskMinLight = createTaskInputInt(minLight, "inputMinLight", "Мин. ур. света");
     okBtn = createOkBtn();
     okBtn.onclick = function (){
         if(checkUserRole(okBtn)){
@@ -234,7 +234,7 @@ async function createParamSettingsForLight(obj,name){
     head = createHeadWindow(name,paramSettings);
     paramSettings.appendChild(head);
     mode = createSwithMode(modeForParam);
-    lightTask = createTaskInput(settingsForParam[0],"inputTask","Задание ");
+    lightTask = createTaskInputInt(settingsForParam[0],"inputTask","Задание ");
     timeStartTask = createTimeTask(settingsForParam[1],"inputTaskLow","Вкл. освещения ");
     timeEndTask = createTimeTask(settingsForParam[2],"inputTaskHigh","Откл. освещения ")
     okBtn = createOkBtn();
@@ -306,6 +306,25 @@ function createTaskInput(settingsForDevice,id,text){
     inputTask = document.createElement("input");
     inputTask.type = "number";
     inputTask.min = 0;
+    inputTask.oninput = "validity.valid||(value='');";
+    inputTask.id = id;
+    inputTask.value = settingsForDevice;
+    inputTask.className = "form-control";
+    task.appendChild(textTask);
+    task.appendChild(inputTask);
+    return task;
+}
+
+function createTaskInputInt(settingsForDevice,id,text){
+    task = document.createElement('div');
+    task.className = 'task';
+    textTask = document.createElement('span');
+    textTask.textContent = text;
+    textTask.id = "textTask";
+    inputTask = document.createElement("input");
+    inputTask.type = "number";
+    inputTask.min = 0;
+    inputTask.step = 1;
     inputTask.oninput = "validity.valid||(value='');";
     inputTask.id = id;
     inputTask.value = settingsForDevice;
