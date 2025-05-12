@@ -11,7 +11,7 @@ function addButtonOpenWindowPIDSettings(){
 async function createWindowPIDSettings(){
     mainBody = document.querySelector("body");
     if(document.getElementById("window-pid") !== null){
-        windowForRemove = document.getElementById("windowPIDSettings");
+        windowForRemove = document.getElementById("window-pid");
         windowForRemove.remove();
     }
     data = await getAllPIDData();

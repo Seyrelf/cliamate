@@ -36,7 +36,7 @@ header{
     height: 50%;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 1%;
+    margin-right: 2%;
     display: flex;
 }
 
@@ -459,6 +459,9 @@ header{
     border-style: solid;
     border-color: navy;
     border-width: thin;
+    position: absolute;
+    top: 10%;
+    left: 10%;
 }
 
 
