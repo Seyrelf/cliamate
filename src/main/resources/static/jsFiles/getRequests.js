@@ -58,7 +58,6 @@ async function getAllMode(){
 async function getMode(name){
     const url = linkForGetModeByName + '?name=' + name;
     try {
-        console.log(url)
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Ошибка сети: ' + response.statusText);

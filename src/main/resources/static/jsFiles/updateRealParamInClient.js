@@ -241,9 +241,7 @@ async function updateModeChar(){
         alert(err.message);
         return;
     }
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
         document.getElementById(data[i].name).textContent = data[i].mode[0];
     }
 }
