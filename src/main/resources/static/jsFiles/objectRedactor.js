@@ -337,17 +337,13 @@ function createTaskInputInt(settingsForDevice,id,text){
 
 function validateIntegerInput(value) {
     // Удаляем все символы, кроме цифр
-    value = value.replace(/[^0-9]/g, '');
+    value = Math.floor(value)
 
     // Проверяем минимальное значение
     if (value < 0) {
         value = 0;
     }
 
-    // Удаляем ведущие нули (опционально)
-    if (value.length > 1 && value.startsWith('0')) {
-        value = value.replace(/^0+/, '');
-    }
     return value;
 }
 
