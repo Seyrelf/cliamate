@@ -7,7 +7,7 @@ import java.time.LocalTime;
 @Data
 public class DtoClimateNewTaskForLight {
     private String paramName;
-    private Double paramTask;
+    private int paramTask;
     private LocalTime startLight;
     private LocalTime endLight;
 }

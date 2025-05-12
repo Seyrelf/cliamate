@@ -23,9 +23,9 @@ public class SettingsClimate {
     private double humidityAirHighTask;
 
     @Version
-    private double carbonDioxideLowTask;
+    private int carbonDioxideLowTask;
     @Version
-    private double carbonDioxideHighTask;
+    private int carbonDioxideHighTask;
 
 
     @Version
@@ -43,8 +43,8 @@ public class SettingsClimate {
     @Version
     private double humiditySoilHighTaskThree;
 
-    private double whiteLightTask;
-
+    private int whiteLightTask;
+    private int whiteLightTaskForCO2;
     private LocalTime startLight;
     private LocalTime endLight;
 

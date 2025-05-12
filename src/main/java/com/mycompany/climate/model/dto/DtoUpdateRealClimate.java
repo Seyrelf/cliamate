@@ -10,11 +10,11 @@ public class DtoUpdateRealClimate {
     private double humidityAirReal;
     private double humidityAirStreetReal;
     private double waterTankLevelHumidityAirReal;
-    private double carbonDioxideReal;
+    private int carbonDioxideReal;
     private double carbonDioxideTankLevelReal;
     private double waterTankLevelHumiditySoilReal;
 
-    private double whiteLightReal;
+    private int whiteLightReal;
     private double temperatureAirReal;
     private double temperatureAirStreetReal;
 

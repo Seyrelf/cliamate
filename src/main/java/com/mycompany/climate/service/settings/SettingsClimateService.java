@@ -1,10 +1,7 @@
 package com.mycompany.climate.service.settings;
 
 
-import com.mycompany.climate.model.dto.DtoClimateNewTask;
-import com.mycompany.climate.model.dto.DtoClimateNewTaskForLight;
-import com.mycompany.climate.model.dto.DtoClimateNewTaskWHL;
-import com.mycompany.climate.model.dto.DtoParamNameNewMode;
+import com.mycompany.climate.model.dto.*;
 import com.mycompany.climate.model.settings.SettingsClimate;
 import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.repository.settings.SettingsClimateRepository;
@@ -23,7 +20,7 @@ public class SettingsClimateService {
 
     public void update(DtoClimateNewTask dtoClimateNewTask) {
         SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
-        Double task = dtoClimateNewTask.getParamTask() > 0 ? dtoClimateNewTask.getParamTask() : 0.0;
+        double task = dtoClimateNewTask.getParamTask() > 0 ? dtoClimateNewTask.getParamTask() : 0.0;
         System.out.println(dtoClimateNewTask.getParamName() + " ||| " + dtoClimateNewTask.getParamTask());
         switch (dtoClimateNewTask.getParamName()){
             case "temperatureAirReal":
@@ -50,12 +47,20 @@ public class SettingsClimateService {
         repository.save(settingsClimate);
     }
 
+    public void updateTaskForCO2(DtoClimateNewTaskForCO2 dtoClimateNewTask) {
+        SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
+        settingsClimate.setWhiteLightTaskForCO2(dtoClimateNewTask.getMinLightTask());
+        settingsClimate.setCarbonDioxideLowTask(dtoClimateNewTask.getParamTaskLow());
+        settingsClimate.setCarbonDioxideHighTask(dtoClimateNewTask.getParamTaskHigh());
+        repository.save(settingsClimate);
+    }
+
 
 
     public void updateWHL(DtoClimateNewTaskWHL dtoClimateNewTaskWHL) {
         SettingsClimate settingsClimate = repository.findTopByOrderByIdDesc();
-        Double taskLow = dtoClimateNewTaskWHL.getParamTaskLow() > 0 ? dtoClimateNewTaskWHL.getParamTaskLow() : 0.0;
-        Double taskHigh = dtoClimateNewTaskWHL.getParamTaskHigh() > 0 ? dtoClimateNewTaskWHL.getParamTaskHigh() : 0.0;
+        double taskLow = dtoClimateNewTaskWHL.getParamTaskLow() > 0 ? dtoClimateNewTaskWHL.getParamTaskLow() : 0.0;
+        double taskHigh = dtoClimateNewTaskWHL.getParamTaskHigh() > 0 ? dtoClimateNewTaskWHL.getParamTaskHigh() : 0.0;
         switch (dtoClimateNewTaskWHL.getParamName()){
             case "humiditySoilRealOne":
                 settingsClimate.setHumiditySoilLowTaskOne(taskLow);
@@ -72,12 +77,6 @@ public class SettingsClimateService {
             case "humidityAirReal":
                 settingsClimate.setHumidityAirLowTask(taskLow);
                 settingsClimate.setHumidityAirHighTask(taskHigh);
-            case "carbonDioxideReal":
-                settingsClimate.setCarbonDioxideLowTask(taskLow);
-                settingsClimate.setCarbonDioxideHighTask(taskHigh);
-                break;
-
-
         }
         repository.save(settingsClimate);
     }
