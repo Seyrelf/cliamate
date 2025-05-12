@@ -19,6 +19,11 @@ async function createWindowPIDSettings(){
     windowPIDSettings.id = "window-pid";
     headerForWindow = document.createElement("div");
     headerForWindow.id = "headerForWindow";
+    headerForWindow.textContent = "Настройки для ПИД регуляторов"
+    paramP = createTaskInput(data[0].paramP,"inputParamP","П коэффициент");
+    paramI = createTaskInput(data[0].paramI,"inputParamI","И коэффициент");
+    paramD = createTaskInput(data[0].paramD,"inputParamD","Д коэффициент");
+    switchPID = createSwithPID(data);
     closeWindowBtn = document.createElement('button');
     closeWindowBtn.type = "button";
     closeWindowBtn.ariaLabel = "Close";
@@ -30,5 +35,30 @@ async function createWindowPIDSettings(){
     }
     headerForWindow.appendChild(closeWindowBtn);
     windowPIDSettings.appendChild(headerForWindow);
+    windowPIDSettings.appendChild(switchPID);
+    windowPIDSettings.appendChild(paramP);
+    windowPIDSettings.appendChild(paramI);
+    windowPIDSettings.appendChild(paramD);
     mainBody.appendChild(windowPIDSettings);
+}
+
+
+function createSwithPID(data){
+    pid = document.createElement('div');
+    pid.className = 'pid';
+    textMode = document.createElement('span');
+    textMode.textContent = "Название регулятора";
+    textMode.id = "textMode";
+    allPID = document.createElement('select');
+    allPID.className = "form-select";
+    allPID.id = "formSelect";
+    allPID.ariaLabel = "Default select example";
+    for (let i = 0; i < data.length; i++) {
+        pidName = document.createElement('option');
+        pidName.textContent = data[i].name;
+        allPID.appendChild(pidName);
+    }
+    pid.appendChild(textMode);
+    pidName.appendChild(allPID);
+    return pid;
 }
