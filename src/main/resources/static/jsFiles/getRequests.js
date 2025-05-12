@@ -88,7 +88,7 @@ async function getAllPIDData(){
 }
 
 async function getPIDData(name){
-    const url = linkForGetModeByName + '?name=' + name;
+    const url = linkForGetPIDByName + '?name=' + name;
     try {
         const response = await fetch(url);
         if (!response.ok) {
