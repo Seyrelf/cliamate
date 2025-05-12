@@ -61,6 +61,6 @@ function createSwithPID(data){
         allPID.appendChild(pidName);
     }
     pid.appendChild(textMode);
-    pidName.appendChild(allPID);
+    pid.appendChild(allPID);
     return pid;
 }
