@@ -30,5 +30,5 @@ async function createWindowPIDSettings(){
     }
     headerForWindow.appendChild(closeWindowBtn);
     windowPIDSettings.appendChild(headerForWindow);
-    mainBody.appendChild(windowUsersSettings);
+    mainBody.appendChild(windowPIDSettings);
 }
