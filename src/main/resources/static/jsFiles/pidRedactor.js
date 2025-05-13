@@ -42,6 +42,20 @@ async function createWindowPIDSettings(){
         forDel.remove();
     }
     okBtn = createOkBtn();
+    okBtn.onclick = function (){
+        namePIDForSend = document.getElementById("formSelectPID").value;
+        pParamForSend = document.getElementById("inputParamP").value;
+        iParamForSend = document.getElementById("inputParamI").value;
+        dParamForSend = document.getElementById("inputParamD").value;
+        const regex = /^(\d|.)+$/;
+        if(regex.test(pParamForSend) && regex.test(iParamForSend) && regex.test(dParamForSend)){
+            updatePIDByName(namePIDForSend,pParamForSend,iParamForSend,dParamForSend)}
+        else {
+            errorSpan = createErrorInfoLabel("Некоректные значения ввода!");
+            if(document.getElementById("errorSpan")===null){
+                document.getElementById("paramSettings").appendChild(errorSpan);}
+        }
+    }
     headerForWindow.appendChild(closeWindowBtn);
     windowPIDSettings.appendChild(headerForWindow);
     windowPIDSettings.appendChild(switchPID);
