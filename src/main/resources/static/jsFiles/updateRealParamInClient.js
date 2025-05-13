@@ -150,6 +150,7 @@ async function updateRealClimate(){
     humidityAirReal = data.humidityAirReal;
     humidityAirStreetReal = data.humidityAirStreetReal;
     carbonDioxideReal = data.carbonDioxideReal;
+    carbonDioxideStreetReal = data.carbonDioxideStreetReal;
     carbonDioxideTankLevelReal = data.carbonDioxideTankLevelReal;
     humiditySoilRealOne = data.humiditySoilRealOne;
     humiditySoilRealTwo = data.humiditySoilRealTwo;
@@ -170,6 +171,7 @@ async function updateRealClimate(){
     document.getElementById("humiditySoilRealThree").textContent = humiditySoilRealThree + " %"  ;
     document.getElementById("carbonDioxideTankLevelReal").textContent = carbonDioxideTankLevelReal + " %";
     document.getElementById("carbonDioxideReal").textContent =  carbonDioxideReal +" ppm";
+    document.getElementById("carbonDioxideStreetReal").textContent =  carbonDioxideStreetReal +" ppm";
     document.getElementById("whiteLightReal").textContent = whiteLightReal + " lx";
 
     document.getElementById("temperatureAirReal").textContent = temperatureAirReal + " ℃" ;
