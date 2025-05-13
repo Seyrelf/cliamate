@@ -1,9 +1,6 @@
 package com.mycompany.climate.controller.settings;
 
-import com.mycompany.climate.model.dto.DtoDeviceNewTaskDouble;
 import com.mycompany.climate.model.dto.DtoDeviceNewTextTask;
-import com.mycompany.climate.model.dto.DtoNewTask;
-import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.model.settings.SettingsDevice;
 import com.mycompany.climate.service.settings.SettingsDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,10 +2,7 @@ package com.mycompany.climate.controller.real;
 
 import com.mycompany.climate.model.dto.DtoUpdateRealClimate;
 import com.mycompany.climate.model.real.RealParamClimate;
-import com.mycompany.climate.model.real.RealParamDevice;
-import com.mycompany.climate.model.settings.SettingsClimate;
 import com.mycompany.climate.service.real.RealParamClimateService;
-import com.mycompany.climate.service.real.RealParamDeivceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -2,7 +2,6 @@ package com.mycompany.climate.service.settings;
 
 import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
-
 import com.mycompany.climate.repository.settings.SettingsModeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

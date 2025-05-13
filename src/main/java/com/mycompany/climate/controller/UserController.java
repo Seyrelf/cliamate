@@ -4,7 +4,6 @@ import com.mycompany.climate.model.User;
 import com.mycompany.climate.model.UserWithOutPassword;
 import com.mycompany.climate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

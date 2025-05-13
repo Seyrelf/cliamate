@@ -4,6 +4,8 @@ linkForCreateUser = "https://seyrelf.tech/users/save";
 linkForUpdateWithoutPasswordUser = "https://seyrelf.tech/users/updateWithoutPassword";
 linkForUpdateFullUser = "https://seyrelf.tech/users/updateFull";
 
+
+/*Данная функция отвечает за отправку запроса на получение информации о всех пользователях системы*/
 async function getAllUsersData(){
     try {
         const response = await fetch(linkForGetAllUsers);
@@ -19,6 +21,7 @@ async function getAllUsersData(){
     }
 }
 
+/*Данная функция отвечает за отправку запроса на удаление пользователя по id*/
 async function delUserById(id){
     try {
         const response = await fetch(linkForDelUserById,
@@ -36,6 +39,7 @@ async function delUserById(id){
     }
 }
 
+/*Данная функция отвечает за отправку запроса на создание пользователя*/
 async function createUser(username,password,role){
     try {
         const response = await fetch(linkForCreateUser,
@@ -61,6 +65,7 @@ async function createUser(username,password,role){
     }
 }
 
+/*Данная функция отвечает за отправку запроса на изменение пользователя, без изменения его пароля*/
 async function updateUserWithoutPassword(userId,username,role){
     try {
         const response = await fetch(linkForUpdateWithoutPasswordUser,
@@ -86,6 +91,7 @@ async function updateUserWithoutPassword(userId,username,role){
     }
 }
 
+/*Данная функция отвечает за отправку запроса на изменение пользователя*/
 async function updateUserFull(userId,username,password,role){
     try {
         const response = await fetch(linkForUpdateFullUser,

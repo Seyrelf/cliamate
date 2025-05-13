@@ -1,3 +1,4 @@
+/*Данная функция отвечает за добавление кнопки перехода к окну управления регуляторами*/
 function addButtonOpenWindowPIDSettings(){
     btnOpenWindowSettignsPID = document.createElement("button");
     btnOpenWindowSettignsPID.id = "btnOpenWindowSettignsPID";
@@ -8,6 +9,7 @@ function addButtonOpenWindowPIDSettings(){
     mainHeader.appendChild(btnOpenWindowSettignsPID);
 }
 
+/*Данная функция отвечает за добавление окна управления регуляторами и логикой его работы*/
 async function createWindowPIDSettings(){
     mainBody = document.querySelector("body");
     if(document.getElementById("window-pid") !== null){
@@ -66,7 +68,7 @@ async function createWindowPIDSettings(){
     mainBody.appendChild(windowPIDSettings);
 }
 
-
+/*Данная функция отвечает за добавление блока выбора регуляторов в меню управления регуляторами*/
 function createSwithPID(data){
     pid = document.createElement('div');
     pid.className = 'pid';

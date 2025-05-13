@@ -1,11 +1,7 @@
 package com.mycompany.climate.controller.settings;
 
-
 import com.mycompany.climate.model.dto.DtoPID;
-import com.mycompany.climate.model.dto.DtoParamNameNewMode;
-import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.model.settings.SettingsPIDСoefficients;
-import com.mycompany.climate.service.settings.SettingsModeService;
 import com.mycompany.climate.service.settings.SettingsPIDСoefficientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

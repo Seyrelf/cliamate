@@ -1,8 +1,4 @@
-/*document.addEventListener('DOMContentLoaded', function (){
-    addButtonOpenWindowUserSettings();
-})*/
-
-
+/*Данная функция отвечает за добавление кнопки перехода к окну управления пользователями*/
 function addButtonOpenWindowUserSettings(){
     btnOpenWindowSettignsUser = document.createElement("button");
     btnOpenWindowSettignsUser.id = "btnOpenWindowSettignsUser";
@@ -13,8 +9,7 @@ function addButtonOpenWindowUserSettings(){
     mainHeader.appendChild(btnOpenWindowSettignsUser);
 }
 
-
-
+/*Данная функция отвечает за открытие окна управления пользователями*/
 async function createWindowUserSettings(){
     mainBody = document.querySelector("body");
     if(document.getElementById("windowUsersSettings") !== null){
@@ -76,15 +71,7 @@ async function createWindowUserSettings(){
     mainBody.appendChild(windowUsersSettings);
 }
 
-function createTrForData(data){
-    trElem = document.createElement("tr");
-    trElem.appendChild(createTd(data.id));
-    trElem.appendChild(createTd(data.username));
-    trElem.appendChild(createTd(data.role));
-    trElem.appendChild(createTdBtn(data.id,data.username,data.role));
-    return trElem;
-}
-
+/*Данная функция отвечает за функционал кнопки удаления пользователя*/
 function delUserBtn(userId){
     btn = document.createElement("button");
     btn.id = "btnWithIcon";
@@ -101,6 +88,7 @@ function delUserBtn(userId){
     return btn
 }
 
+/*Данная функция отвечает за функционал кнопки изменения пользователя*/
 function changeUserBtn(userId,userName,userRole){
     btn = document.createElement("button");
     btn.id = "btnWithIcon";
@@ -129,6 +117,15 @@ function createTd(data){
     return tdElem;
 }
 
+function createTrForData(data){
+    trElem = document.createElement("tr");
+    trElem.appendChild(createTd(data.id));
+    trElem.appendChild(createTd(data.username));
+    trElem.appendChild(createTd(data.role));
+    trElem.appendChild(createTdBtn(data.id,data.username,data.role));
+    return trElem;
+}
+
 
 function createTh(data){
     thElem = document.createElement("th");
@@ -137,6 +134,7 @@ function createTh(data){
     return thElem;
 }
 
+/*Данная функция отвечает за открытие и функционал окна создания пользователя*/
 function openWindowCreateUser(){
     mainWindow = document.createElement("div");
     mainWindow.id = "windowUserCreate";
@@ -220,14 +218,13 @@ function openWindowCreateUser(){
 }
 
 
-
+/*Данная функция отвечает за открытие и функционал окна изменения пользователя*/
 function openWindowChangeUser(parent,userId,userName,userRole){
     mainWindow = document.createElement("div");
     mainWindow.id = "windowUserChange";
     if(document.getElementById("windowUserChange") !== null){
         document.getElementById("windowUserChange").remove();
     }
-
     nameModule = document.createElement("div");
     nameModule.id = "divNameUser";
     spanName = document.createElement("span");
@@ -320,6 +317,5 @@ function openWindowChangeUser(parent,userId,userName,userRole){
     mainWindow.appendChild(roleModule);
     mainWindow.appendChild(btnModule);
     parent.appendChild(mainWindow);
-
 }
 

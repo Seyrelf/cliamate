@@ -1,9 +1,5 @@
 package com.mycompany.climate.model;
-
-
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
 
 @Entity
 @Table(name = "users")

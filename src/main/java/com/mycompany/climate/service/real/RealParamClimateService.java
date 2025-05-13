@@ -1,6 +1,5 @@
 package com.mycompany.climate.service.real;
 
-
 import com.mycompany.climate.model.dto.DtoUpdateRealClimate;
 import com.mycompany.climate.model.real.RealParamClimate;
 import com.mycompany.climate.repository.real.RealParamClimateRepository;

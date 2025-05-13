@@ -1,6 +1,5 @@
 package com.mycompany.climate.controller.settings;
 
-import com.mycompany.climate.model.settings.SettingsDevice;
 import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.service.settings.SettingsModeService;

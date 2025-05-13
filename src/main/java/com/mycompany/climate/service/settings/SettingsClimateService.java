@@ -3,7 +3,6 @@ package com.mycompany.climate.service.settings;
 
 import com.mycompany.climate.model.dto.*;
 import com.mycompany.climate.model.settings.SettingsClimate;
-import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.repository.settings.SettingsClimateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

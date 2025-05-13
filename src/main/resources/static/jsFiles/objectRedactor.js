@@ -41,6 +41,7 @@ async function createParamSettings(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
+/*Функция для отрисовки и открытия окна настройки с минимальным и максимальным значением*/
 async function createParamSettingsWithLowHigh(obj,name){
     paramId = obj.querySelector('span').id;
     modeForParam =  await getModeByName(paramId);
@@ -90,8 +91,7 @@ async function createParamSettingsWithLowHigh(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
-
-
+/*Функция для отрисовки и открытия окна настройки co2 контура*/
 async function createParamSettingsForCO2(obj,name){
     paramId = obj.querySelector('span').id;
     modeForParam =  await getModeByName(paramId);
@@ -134,7 +134,6 @@ async function createParamSettingsForCO2(obj,name){
             if(document.getElementById("errorSpan")===null){
                 document.getElementById("paramSettings").appendChild(errorSpan);}
         }
-
     }
     paramSettings.appendChild(head);
     paramSettings.appendChild(mode);
@@ -192,7 +191,6 @@ async function createParamSettingsWithoutModeText(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
-
 /*Функция для отрисовки и открытия окна настройки с числовым заданием*/
 async function createParamSettingsWithoutModeNumber(obj,name){
     paramId = obj.querySelector('span').id;
@@ -222,7 +220,6 @@ async function createParamSettingsWithoutModeNumber(obj,name){
     paramSettings.appendChild(okBtn);
     obj.parentElement.appendChild(paramSettings);
 }
-
 
 /*Функция для отрисовки и открытия окна настройки с числовым заданием для задания света*/
 async function createParamSettingsForLight(obj,name){
@@ -276,7 +273,6 @@ async function createParamSettingsForLight(obj,name){
     obj.parentElement.appendChild(paramSettings);
 }
 
-
 /*Функция для создания шапки окна настройки*/
 function createHeadWindow(name,paramSettingsId){
     head = document.createElement('div');
@@ -298,6 +294,7 @@ function createHeadWindow(name,paramSettingsId){
     return head;
 }
 
+/*Функция для создания блока задания окна настройки*/
 function createTaskInput(settingsForDevice,id,text){
     task = document.createElement('div');
     task.className = 'task';
@@ -316,6 +313,7 @@ function createTaskInput(settingsForDevice,id,text){
     return task;
 }
 
+/*Функция для создания блока задания с целочисленными значениями окна настройки*/
 function createTaskInputInt(settingsForDevice,id,text){
     task = document.createElement('div');
     task.className = 'task';
@@ -335,18 +333,18 @@ function createTaskInputInt(settingsForDevice,id,text){
     return task;
 }
 
+/*Функция фильтрации целочисленного задания окна настройки*/
 function validateIntegerInput(value) {
     // Удаляем все символы, кроме цифр
     value = Math.floor(value)
-
     // Проверяем минимальное значение
     if (value < 0) {
         value = 0;
     }
-
     return value;
 }
 
+/*Функция для создания блока выбора мода окна настройки*/
 function createSwithMode(modeForParam){
     mode = document.createElement('div');
     mode.className = 'mode';
@@ -376,6 +374,7 @@ function createSwithMode(modeForParam){
     return mode;
 }
 
+/*Функция для создания кнопки применить*/
 function createOkBtn(){
     okBtn = document.createElement('button');
     okBtn.type = "button";
@@ -384,6 +383,7 @@ function createOkBtn(){
     return okBtn;
 }
 
+/*Функция для создания блока задания временного диапозона настройки*/
 function createTimeTask(settingsForDevice,id,text){
     task = document.createElement('div');
     task.className = 'task';
@@ -400,6 +400,7 @@ function createTimeTask(settingsForDevice,id,text){
     return task;
 }
 
+/*Функция для создания блока вывода ошибки окна настройки*/
 function createErrorInfoLabel(textError){
     errorSpan = document.createElement("div");
     errorSpan.id = "errorSpan";
@@ -407,6 +408,7 @@ function createErrorInfoLabel(textError){
     return errorSpan;
 }
 
+/*Функция для проверки роли пользователя с обработкой ошибки*/
 function checkUserRole(okBtn){
     if(window.role === "ROLE_USER"){
         okBtn.textContent = "Недостаточно прав";
@@ -414,8 +416,6 @@ function checkUserRole(okBtn){
         return true;
     }
 }
-
-
 
 /*Данная функция закрывает все открытые окна настройки*/
 function closeParamSettingsAll(){
@@ -429,23 +429,23 @@ function closeParamSettingsAll(){
     }
 }
 
-
 /*Данная функция вызывает функцию закрытия всех открытые окна настройки и открывает окно настройки контура*/
 function openParamSettings(obj,name){
     closeParamSettingsAll();
     createParamSettings(obj,name);
 }
 
+/*Данная функция вызывает функцию закрытия всех открытые окна настройки и открывает окно настройки контура*/
 function openParamSettingsWithLowHigh(obj,name){
     closeParamSettingsAll();
     createParamSettingsWithLowHigh(obj,name);
 }
 
+/*Данная функция вызывает функцию закрытия всех открытые окна настройки и открывает окно настройки контура*/
 function openParamSettingsForCo2(obj,name){
     closeParamSettingsAll();
     createParamSettingsForCO2(obj,name);
 }
-
 
 /*Данная функция закрывает все открытые окна настройки и открывает окно настройки обьекта с заданием в виде текста*/
 function openParamSettingsWithoutModeText(obj,name){

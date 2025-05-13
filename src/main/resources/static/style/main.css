@@ -60,12 +60,10 @@ header{
     border-color: #0d6efd ;
 }
 
-
 #side-all-zone span:before{
     padding-right: 1dvw;
     vertical-align: middle;
 }
-
 
 .param-setting{
     display: flex;
@@ -92,9 +90,7 @@ header{
     padding: 0.3%;
     width: 25%;
     position: absolute;
-
 }
-
 
 #paramSettingsWithoutMode{
     color: black;
@@ -111,9 +107,7 @@ header{
 }
 
 #updateParamBtn:hover{
-
     background-color: #494749;
-
 }
 
 #windowUsersSettings{
@@ -173,7 +167,6 @@ header{
     width: 90%;
     margin: auto;
     font-size: 150%;
-
 }
 
 #imgForBtn{
@@ -220,10 +213,6 @@ header{
     left: 15%;
 }
 
-#formLogout{
-
-}
-
 #inputLogout{
     height: 100%;
     color: black;
@@ -264,7 +253,6 @@ header{
 }
 
 #btnsWindowUser{
-
     color: #d9eff5;
     border-style: none;
     background-color: #313031;
@@ -291,7 +279,6 @@ header{
     width: 90%;
     margin: auto;
 }
-
 
 #thId{
     width: 15%;
@@ -461,12 +448,10 @@ header{
     text-align: center;
 }
 
-
 #errorSpan{
     color: #cf191e;
     text-align: center;
 }
-
 
 #textTask{
     width: 55%;
@@ -551,7 +536,6 @@ header{
     overflow: hidden;
 }
 
-
 #objectSettingsDiv{
     margin-top: 3dvh;
     margin-left: 3dvw;
@@ -560,7 +544,6 @@ header{
     background-color: #212529;
     border-radius: 20px;
 }
-
 
 /* Медиа-запрос для мобильных устройств (ширина экрана до 768px) */
 @media (max-width: 768px) {
@@ -659,18 +642,13 @@ header{
         margin: auto;
     }
 
-    #imgForBtn{
-    }
-
     #openWindowNewUserBtn{
-
         color: #d9eff5;
         border-style: none;
         background-color: #313031;
         border-bottom-style: solid;
         border-radius: 5px;
         border-width: inherit;
-
         margin-top: 0.5%;
         font-size: 100%;
         margin-left: 5%;

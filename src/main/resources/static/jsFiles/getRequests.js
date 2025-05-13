@@ -6,6 +6,8 @@ linkForGetSettingsParamDevice = "https://seyrelf.tech/settingsDevice/getLast";
 linkForGetModeByName = "https://seyrelf.tech/mode/getModeByName";
 linkForGetPIDSettings = "https://seyrelf.tech/pid/getLast";
 linkForGetPIDByName = "https://seyrelf.tech/pid/getPIDByName";
+
+
 /*Метод отвечает за отправку get запроса для получения информации о состоянии микроклимота в помещении*/
 async function getRealParamClimate(){
     try {
@@ -54,7 +56,7 @@ async function getAllMode(){
     }
 }
 
-/*Метод отвечает за отправку get запроса для получения информации о режимах работы контуров*/
+/*Метод отвечает за отправку get запроса для получения информации о режиме работы контура*/
 async function getMode(name){
     const url = linkForGetModeByName + '?name=' + name;
     try {
@@ -71,6 +73,7 @@ async function getMode(name){
     }
 }
 
+/*Метод отвечает за отправку get запроса для получения информации о настройках регуляторов*/
 async function getAllPIDData(){
     try {
         const response = await fetch(linkForGetPIDSettings);
@@ -86,6 +89,7 @@ async function getAllPIDData(){
     }
 }
 
+/*Метод отвечает за отправку get запроса для получения информации о настройках регулятора*/
 async function getPIDData(name){
     const url = linkForGetPIDByName + '?name=' + name;
     try {

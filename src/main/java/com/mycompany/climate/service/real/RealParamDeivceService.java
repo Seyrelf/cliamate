@@ -1,6 +1,5 @@
 package com.mycompany.climate.service.real;
 
-
 import com.mycompany.climate.model.dto.DtoUpdateRealDevice;
 import com.mycompany.climate.model.real.RealParamDevice;
 import com.mycompany.climate.repository.real.RealParamDeviceRepository;
@@ -36,8 +35,6 @@ public class RealParamDeivceService {
         realParamDevice.setWhiteLightPowerReal(device.getWhiteLightPowerReal());
         realParamDevice.setWorkStatusFlapCO2Real(device.getWorkStatusFlapCO2Real());
         realParamDevice.setWorkStatusVentilatorCO2Real(device.getWorkStatusVentilatorCO2Real());
-
-
         repository.save(realParamDevice);
     }
     public  void delete(RealParamDevice device) {
