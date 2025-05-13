@@ -636,7 +636,7 @@ header{
         color: #e0e8de;
         margin: auto;
         vertical-align: middle;
-        font-size: large;
+        font-size: inherit;
     }
 
     #tableContainer{
