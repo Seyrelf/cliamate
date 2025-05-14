@@ -29,6 +29,11 @@ public class SettingsPIDСoefficientsController {
         return service.getByName(name);
     }
 
+    @GetMapping(value = "/getPIDForController")
+    private List<DtoPID> getAllPidForController() {
+        return service.sendAllPidToController();
+    }
+
     @PatchMapping(value = "/update")
     private void update(@RequestBody DtoPID dto) {
         service.update(dto);

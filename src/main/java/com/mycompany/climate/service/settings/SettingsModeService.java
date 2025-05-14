@@ -1,5 +1,8 @@
 package com.mycompany.climate.service.settings;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.mycompany.climate.model.dto.SettingsModeForController;
 import com.mycompany.climate.model.settings.SettingsMode;
 import com.mycompany.climate.model.dto.DtoParamNameNewMode;
 import com.mycompany.climate.repository.settings.SettingsModeRepository;
@@ -34,5 +37,15 @@ public class SettingsModeService {
 
     public List<SettingsMode> getLast(){
         return repository.findAll();
+    }
+
+    public ObjectNode sendsendAllPidToController(){
+        List<SettingsMode> list = repository.findAll();
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode json = mapper.createObjectNode();
+        for(SettingsMode settings : list){
+            json.put(settings.getName(),settings.getMode());
+        }
+        return json;
     }
 }
