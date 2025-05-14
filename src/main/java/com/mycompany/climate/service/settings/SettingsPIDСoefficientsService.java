@@ -39,18 +39,4 @@ public class SettingsPIDСoefficientsService {
         return repository.findAll();
     }
 
-    public List<DtoPID> sendAllPidToController() {
-        List<DtoPID> allPidDto = new ArrayList<>();
-        List<SettingsPIDСoefficients> allPid = repository.findAll();
-        for(SettingsPIDСoefficients i: allPid){
-            DtoPID dto = new DtoPID();
-            dto.setName(i.getName());
-            dto.setParamP(i.getPParam());
-            dto.setParamD(i.getDParam());
-            dto.setParamI(i.getIParam());
-            allPidDto.add(dto);
-        }
-        return allPidDto;
-
-    }
 }
