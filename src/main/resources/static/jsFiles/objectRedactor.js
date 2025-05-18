@@ -207,6 +207,9 @@ async function createParamSettingsWithoutModeNumber(obj,name){
         }
         const regex = /^(\d|.)+$/;
         if(regex.test(inputTask.value)){
+            if(inputTask.value > 100){
+               inputTask.value = '100';
+            }
             updateDeviceTaskById(paramId,inputTask.value);
             forDel = document.getElementById(paramSettings.id);
             forDel.remove();}
@@ -332,6 +335,18 @@ function createTaskInputInt(settingsForDevice,id,text){
     task.appendChild(inputTask);
     return task;
 }
+
+/*Функция фильтрации целочисленного задания окна настройки*/
+function validateIntegerInput(value) {
+    // Удаляем все символы, кроме цифр
+    value = Math.floor(value)
+    // Проверяем минимальное значение
+    if (value < 0) {
+        value = 0;
+    }
+    return value;
+}
+
 
 /*Функция фильтрации целочисленного задания окна настройки*/
 function validateIntegerInput(value) {
