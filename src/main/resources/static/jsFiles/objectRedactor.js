@@ -22,6 +22,9 @@ async function createParamSettings(obj,name){
             nameForFind = document.getElementById(paramId).parentElement.parentElement.getElementsByClassName("mode-char")[0].getElementsByClassName("text-center")[0].id;
             updateModeByName(nameForFind, paramSettings.querySelector("select").value);
             if(paramId === "powerVentilatorInReal"){
+                if(inputTask.value > 100){
+                    inputTask.value = "100";
+                }
                 updateDeviceTaskById(paramId,inputTask.value);
             }
             else{
