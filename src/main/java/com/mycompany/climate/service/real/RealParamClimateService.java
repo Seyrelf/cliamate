@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-public abstract class RealParamClimateService extends RealParamClimateController implements RealParamClimateRepository {
+public class RealParamClimateService {
 
     @Autowired
     private RealParamClimateRepository repository;

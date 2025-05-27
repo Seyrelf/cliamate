@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table
 @Data
-public abstract class RealParamClimate implements RealParamClimateRepository {
+public abstract class RealParamClimate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
