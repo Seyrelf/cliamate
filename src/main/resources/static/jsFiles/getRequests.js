@@ -1,11 +1,11 @@
-linkForGetRealParamClimate = "https://seyrelf.tech/realParamClimate/getLast";
-linkForGetRealParamDevive = "https://seyrelf.tech/realDeviceClimate/getLast";
-linkForGetAllMode = "https://seyrelf.tech/mode/getLast";
-linkForGetSettingsParamClimate = "https://seyrelf.tech/settingsClimate/getLast";
-linkForGetSettingsParamDevice = "https://seyrelf.tech/settingsDevice/getLast";
-linkForGetModeByName = "https://seyrelf.tech/mode/getModeByName";
-linkForGetPIDSettings = "https://seyrelf.tech/pid/getLast";
-linkForGetPIDByName = "https://seyrelf.tech/pid/getPIDByName";
+linkForGetRealParamClimate = "http://localhost:8080/realParamClimate/getLast";
+linkForGetRealParamDevive = "http://localhost:8080/realDeviceClimate/getLast";
+linkForGetAllMode = "http://localhost:8080/mode/getLast";
+linkForGetSettingsParamClimate = "http://localhost:8080/settingsClimate/getLast";
+linkForGetSettingsParamDevice = "http://localhost:8080/settingsDevice/getLast";
+linkForGetModeByName = "http://localhost:8080/mode/getModeByName";
+linkForGetPIDSettings = "http://localhost:8080/pid/getLast";
+linkForGetPIDByName = "http://localhost:8080/pid/getPIDByName";
 
 
 /*Метод отвечает за отправку get запроса для получения информации о состоянии микроклимота в помещении*/

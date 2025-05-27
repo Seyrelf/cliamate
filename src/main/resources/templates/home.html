@@ -11,10 +11,7 @@
 <header class="bg-dark text-white">
     <div class="d-flex flex-wrap   justify-content-lg-start" id="main-header">
         <h1>Управление теплицей</h1>
-        <div id="headerButton">
-            <form id = "formLogout" th:action="@{/logout}" method="post">
-                <input id = "inputLogout" type="submit" value="Выход"/>
-            </form></div>
+        <div id="headerButton"></div>
     </div>
 </header>
 
@@ -364,25 +361,6 @@
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/getRequests.js}"></script>
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/patchRequests.js}"></script>
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/updateRealParamInClient.js}"></script>
-<script th:inline="javascript" type="text/javascript" th:src="@{jsFilesForUsersSettings/userRequests.js}"></script>
-<script th:inline="javascript" type="text/javascript" th:src="@{jsFilesForUsersSettings/showSettingsWindow.js}"></script>
-<script th:inline="javascript">
-    /*<![CDATA[*/
-    const roleJson = /*[[${role}]]*/ 'default';
-    window.role = roleJson[0].authority;
-    /*]]>*/
-    switch (window.role){
-        case "ROLE_ADMIN":
-            addButtonOpenWindowUserSettings();
-            addButtonOpenWindowPIDSettings();
-            break;
-        case "ROLE_WORKER":
-            break;
-        case "ROLE_USER":
-            document.getElementById("updateParamBtn").disabled = true;
-            break;
-    }
-
-</script>
+<script th:inline="javascript">addButtonOpenWindowPIDSettings()</script>
 </body>
 </html>
