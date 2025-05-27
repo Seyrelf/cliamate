@@ -68,9 +68,6 @@ public class SettingsDeviceService {
             case "workStatusFlapCO2Real":
                 settingsDevice.setWorkStatusFlapCO2Task(task);
                 break;
-            case "workStatusVentilatorCO2Real":
-                settingsDevice.setWorkStatusVentilatorCO2Task(task);
-                break;
         }
         repository.save(settingsDevice);
     }

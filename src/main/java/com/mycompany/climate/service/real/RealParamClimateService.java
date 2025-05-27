@@ -1,5 +1,6 @@
 package com.mycompany.climate.service.real;
 
+import com.mycompany.climate.controller.real.RealParamClimateController;
 import com.mycompany.climate.model.dto.DtoUpdateRealClimate;
 import com.mycompany.climate.model.real.RealParamClimate;
 import com.mycompany.climate.repository.real.RealParamClimateRepository;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
-public class RealParamClimateService {
+public abstract class RealParamClimateService extends RealParamClimateController implements RealParamClimateRepository {
 
     @Autowired
     private RealParamClimateRepository repository;

@@ -1,5 +1,6 @@
 package com.mycompany.climate.model.real;
 
+import com.mycompany.climate.repository.real.RealParamClimateRepository;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table
 @Data
-public class RealParamClimate {
+public abstract class RealParamClimate implements RealParamClimateRepository {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

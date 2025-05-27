@@ -18,7 +18,6 @@ public class SettingsDevice {
     private double powerHeatingMatTwoTask;
     private double powerHeatingMatThreeTask;
 
-
     private double powerVentilatorInTask;
     private double powerFlapOutTask;
 
@@ -34,7 +33,6 @@ public class SettingsDevice {
     private String workStatusVentilatorHumidityAirTask;
     private String workStatusGeneratorHumidityAirTask;
 
-    private String workStatusVentilatorCO2Task;
     private String workStatusFlapCO2Task;
 
     private double whiteLightPowerTask;

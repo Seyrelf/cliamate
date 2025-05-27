@@ -35,7 +35,6 @@ public class RealParamDevice {
     private double whiteLightPowerReal;
 
     private String workStatusFlapCO2Real;
-    private String workStatusVentilatorCO2Real;
 
 
 }

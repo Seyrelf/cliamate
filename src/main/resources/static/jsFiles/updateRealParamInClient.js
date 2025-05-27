@@ -76,9 +76,6 @@ async function getSettingDeviceByName(name){
             case "workStatusFlapCO2Real":
                 data = await getSettingsParamDevice();
                 return data.workStatusFlapCO2Task;
-            case "workStatusVentilatorCO2Real":
-                data = await getSettingsParamDevice();
-                return data.workStatusVentilatorCO2Task;
         }
     }
     catch (err){
@@ -204,7 +201,6 @@ async function updateRealDevice(){
     workStatusFlapHumiditySoilRealTwo = data.workStatusFlapHumiditySoilRealTwo;
     workStatusFlapHumiditySoilRealThree = data.workStatusFlapHumiditySoilRealThree;
     workStatusFlapCO2Real = data.workStatusFlapCO2Real;
-    workStatusVentilatorCO2Real = data.workStatusVentilatorCO2Real;
     workStatusVentilatorHumidityAirReal = data.workStatusVentilatorHumidityAirReal;
     workStatusGeneratorHumidityAirReal = data.workStatusGeneratorHumidityAirReal;
     whiteLightPowerReal = data.whiteLightPowerReal;
@@ -214,7 +210,6 @@ async function updateRealDevice(){
     document.getElementById("powerHeatingMatRealTwo").textContent = powerHeatingMatRealTwo + " %" ;
     document.getElementById("powerHeatingMatRealThree").textContent = powerHeatingMatRealThree + " %" ;
     document.getElementById("workStatusFlapCO2Real").textContent = workStatusFlapCO2Real;
-    document.getElementById("workStatusVentilatorCO2Real").textContent = workStatusVentilatorCO2Real;
     document.getElementById("powerVentilatorInReal").textContent =  powerVentilatorInReal + " %";
     document.getElementById("powerFlapOutReal").textContent = powerFlapOutReal + " %"  ;
     document.getElementById("workStatusPumpHumiditySoilRealOne").textContent = workStatusPumpHumiditySoilRealOne ;

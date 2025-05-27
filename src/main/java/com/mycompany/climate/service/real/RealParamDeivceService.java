@@ -34,7 +34,6 @@ public class RealParamDeivceService {
         realParamDevice.setWorkStatusVentilatorHumidityAirReal(device.getWorkStatusVentilatorHumidityAirReal());
         realParamDevice.setWhiteLightPowerReal(device.getWhiteLightPowerReal());
         realParamDevice.setWorkStatusFlapCO2Real(device.getWorkStatusFlapCO2Real());
-        realParamDevice.setWorkStatusVentilatorCO2Real(device.getWorkStatusVentilatorCO2Real());
         repository.save(realParamDevice);
     }
     public  void delete(RealParamDevice device) {
