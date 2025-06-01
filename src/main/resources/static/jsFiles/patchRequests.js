@@ -1,12 +1,12 @@
-linkForPatchRealParamClimate = "https://seyrelf.tech/realParamClimate/update";
-linkForPatchRealParamDevive = "https://seyrelf.tech/realDeviceClimate/update";
-linkForPatchMode = "https://seyrelf.tech/mode/update";
-linkForPatchPID = "https://seyrelf.tech/pid/update";
-linkForPatchSettingsParamClimate = "https://seyrelf.tech/settingsClimate/update";
-linkForPatchSettingsParamDevice = "https://seyrelf.tech/settingsDevice/update";
-linkForPatchSettingsWithHighLowParamClimate = "https://seyrelf.tech/settingsClimate/updateWHL";
-linkForPatchRealParamClimateLight = "https://seyrelf.tech/settingsClimate/updateTaskForLight";
-linkForPatchRealParamClimateCO2 = "https://seyrelf.tech/settingsClimate/updateTaskForCO2"
+linkForPatchRealParamClimate = baseUrl + "realParamClimate/update";
+linkForPatchRealParamDevive = baseUrl + "realDeviceClimate/update";
+linkForPatchMode = baseUrl + "mode/update";
+linkForPatchPID = baseUrl + "pid/update";
+linkForPatchSettingsParamClimate = baseUrl + "settingsClimate/update";
+linkForPatchSettingsParamDevice = baseUrl + "settingsDevice/update";
+linkForPatchSettingsWithHighLowParamClimate = baseUrl + "http://localhost:8080/settingsClimate/updateWHL";
+linkForPatchRealParamClimateLight = baseUrl + "settingsClimate/updateTaskForLight";
+linkForPatchRealParamClimateCO2 = baseUrl + "settingsClimate/updateTaskForCO2"
 
 /*Метод отвечает за отправку patch запроса на контроллер модов, тем самым обновляя состояние режима работы контура,
 в качестве входных данных отправляем id для поиска нужного контура и новое значение режима работы*/

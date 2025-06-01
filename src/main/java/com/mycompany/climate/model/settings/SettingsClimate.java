@@ -4,7 +4,9 @@ package com.mycompany.climate.model.settings;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Version;
 
 import java.time.LocalTime;
@@ -12,6 +14,8 @@ import java.time.LocalTime;
 @Entity
 @Table
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SettingsClimate {
 
     @Id
