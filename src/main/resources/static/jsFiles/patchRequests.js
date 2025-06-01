@@ -1,12 +1,12 @@
-linkForPatchRealParamClimate = "http://localhost:8080/realParamClimate/update";
-linkForPatchRealParamDevive = "http://localhost:8080/realDeviceClimate/update";
-linkForPatchMode = "http://localhost:8080/mode/update";
-linkForPatchPID = "http://localhost:8080/pid/update";
-linkForPatchSettingsParamClimate = "http://localhost:8080/settingsClimate/update";
-linkForPatchSettingsParamDevice = "http://localhost:8080/settingsDevice/update";
-linkForPatchSettingsWithHighLowParamClimate = "http://localhost:8080/settingsClimate/updateWHL";
-linkForPatchRealParamClimateLight = "http://localhost:8080/settingsClimate/updateTaskForLight";
-linkForPatchRealParamClimateCO2 = "http://localhost:8080/settingsClimate/updateTaskForCO2"
+linkForPatchRealParamClimate = baseUrl + "realParamClimate/update";
+linkForPatchRealParamDevive = baseUrl + "realDeviceClimate/update";
+linkForPatchMode = baseUrl + "mode/update";
+linkForPatchPID = baseUrl + "pid/update";
+linkForPatchSettingsParamClimate = baseUrl + "settingsClimate/update";
+linkForPatchSettingsParamDevice = baseUrl + "settingsDevice/update";
+linkForPatchSettingsWithHighLowParamClimate = baseUrl + "http://localhost:8080/settingsClimate/updateWHL";
+linkForPatchRealParamClimateLight = baseUrl + "settingsClimate/updateTaskForLight";
+linkForPatchRealParamClimateCO2 = baseUrl + "settingsClimate/updateTaskForCO2"
 
 /*Метод отвечает за отправку patch запроса на контроллер модов, тем самым обновляя состояние режима работы контура,
 в качестве входных данных отправляем id для поиска нужного контура и новое значение режима работы*/

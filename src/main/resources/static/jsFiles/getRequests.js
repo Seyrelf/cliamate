@@ -1,11 +1,12 @@
-linkForGetRealParamClimate = "http://localhost:8080/realParamClimate/getLast";
-linkForGetRealParamDevive = "http://localhost:8080/realDeviceClimate/getLast";
-linkForGetAllMode = "http://localhost:8080/mode/getLast";
-linkForGetSettingsParamClimate = "http://localhost:8080/settingsClimate/getLast";
-linkForGetSettingsParamDevice = "http://localhost:8080/settingsDevice/getLast";
-linkForGetModeByName = "http://localhost:8080/mode/getModeByName";
-linkForGetPIDSettings = "http://localhost:8080/pid/getLast";
-linkForGetPIDByName = "http://localhost:8080/pid/getPIDByName";
+
+linkForGetRealParamClimate = baseUrl + "realParamClimate/getLast";
+linkForGetRealParamDevive = baseUrl + "realDeviceClimate/getLast";
+linkForGetAllMode = baseUrl + "mode/getLast";
+linkForGetSettingsParamClimate = baseUrl + "settingsClimate/getLast";
+linkForGetSettingsParamDevice = baseUrl + "settingsDevice/getLast";
+linkForGetModeByName = baseUrl + "mode/getModeByName";
+linkForGetPIDSettings = baseUrl + "pid/getLast";
+linkForGetPIDByName = baseUrl + "pid/getPIDByName";
 
 
 /*Метод отвечает за отправку get запроса для получения информации о состоянии микроклимота в помещении*/

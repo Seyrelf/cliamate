@@ -39,6 +39,6 @@ public class SettingsModeController {
 
     @GetMapping(value = "/getModeForController")
     private ObjectNode getAllPidForController() {
-        return service.sendsendAllPidToController();
+        return service.sendAllModeToController();
     }
 }

@@ -355,7 +355,9 @@
     </aside>
 </div>
 
-
+<script th:inline="javascript">
+    var baseUrl = /*[[${baseUrl}]]*/ 'default';
+</script>
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/pidRedactor.js}"></script>
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/objectRedactor.js}"></script>
 <script th:inline="javascript" type="text/javascript" th:src="@{jsFiles/getRequests.js}"></script>

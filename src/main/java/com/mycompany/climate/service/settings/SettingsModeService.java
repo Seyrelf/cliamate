@@ -39,7 +39,7 @@ public class SettingsModeService {
         return repository.findAll();
     }
 
-    public ObjectNode sendsendAllPidToController(){
+    public ObjectNode sendAllModeToController(){
         List<SettingsMode> list = repository.findAll();
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode json = mapper.createObjectNode();
