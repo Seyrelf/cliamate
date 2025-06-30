@@ -26,6 +26,8 @@ const int maxPower = 4096;
 const double waterLVLMin = 10;
 ModbusMaster sensor;
 
+
+//RS-485 номера датчиков
 const int sensorAirOneRSNumber = 1;
 const int sensorAirTwoRSNumber = 2;
 const int sensorAirThreeRSNumber = 3;
@@ -33,96 +35,113 @@ const int sensorAirStreetRSNumber = 4;
 const int sensorSoilOneRSNumber = 5;
 const int sensorSoilTwoRSNumber = 6;
 const int sensorSoilThreeRSNumber = 7;
-const int sensorSoilFourRSNumber = 8;
-const int sensorSoilFiveRSNumber = 9;
-const int sensorSoilSixRSNumber = 10;
-const int sensorSoilSevenRSNumber = 11;
-const int sensorSoilEightRSNumber = 12;
-const int sensorSoilNineRSNumber = 13;
-const int sensorCO2OneRSNumber = 14;
-const int sensorCO2TwoRSNumber = 15;
-const int sensorCO2ThreeRSNumber = 16;
-const int sensorCO2StreetRSNumber = 17;
+const int sensorCO2OneRSNumber = 8;
+const int sensorCO2TwoRSNumber = 9;
+const int sensorCO2ThreeRSNumber = 10;
+const int sensorCO2StreetRSNumber = 11;
+const int sensorLightOneRSNumber = 12;
+const int sensorLightTwoRSNumber = 13;
+const int sensorLightThreeRSNumber = 14;
 
 
+//Пины для подключения АЦП для считывания веса баллона
+const int sensorMCO2NumberFirstPin = 9;//D7
+const int sensorMCO2NumberSecondPin = 10;//D8
 
-const int sensorMCO2ANumberFirstPin = 9;//D7
-const int sensorMCO2ANumberSecondPin = 10;//D8
+//Пины для подключения датчиков уровня жидкости
+const int sensorWaterLevelOneANumber = A4;
+const int sensorWaterLevelTwoANumber = A5;
 
 
-const int sensorLightOneANumber = A1;
-const int sensorLightTwoANumber = A2;
-const int sensorLightThreeANumber = A3;
-const int sensorWaterLevelOneRSNumber = A4;
-const int sensorWaterLevelTwoRSNumber = A5;
-
+//Пины для подключения устройств на релейные выходы
 const int pumpOneNumber = 22;//R0
 const int pumpTwoNumber = 23;//R1
 const int pumpThreeNumber = 24;//R2
-
 const int flapPolivOneNumber = 25;//R3
 const int flapPolivTwoNumber = 26;//R4
 const int flapPolivThreeNumber = 27;//R5
-
 const int flapCO2Number = 28;//R6
-
 const int generatorHumidityNumber = 42;//D12
 const int ventilatorHumidityNumber = 32;//R10
 
-const int pwmForTempSoilOneNumber = 1;//i2c port
-const int pwmForTempSoilTwoNumber = 2;//i2c port
-const int pwmForTempSoilThreeNumber = 3;//i2c port
-const int pwmForTempAirNumber = 4;//i2c port
+//Пины для подключения устройств на pwm выходы
+const int pwmForTempSoilOneNumber = 2;//pwm port
+const int pwmForTempSoilTwoNumber = 3;//pwm port
+const int pwmForTempSoilThreeNumber = 4;//pwm port
+const int pwmForTempAirNumberOne = 5;//pwm port
+const int pwmForTempAirNumberTwo = 6;//pwm port
+const int pwmForVentilatorVentilationNumber = 7;//pwm port
+const int pwmForVentilationFlapNumber = 8;//pwm port
 
-const int pwmForVentilatorVentilationNumber = 5;//i2c port
-const int pwmForVentilationFlapNumber = 6;//i2c port
+//Список пинов для управления светильнками через внешний модуль MegaD16
+int activeChannelsLight[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12};
 
-const int sdlForLightNumber = 21;//SCL
-const int sdaForLightNumber = 20;//SDA
-
-
-int activeChannelsLight[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12}; 
 int numChannels = sizeof(activeChannelsLight) / sizeof(activeChannelsLight[0]);
-Adafruit_PWMServoDriver pwmLight = Adafruit_PWMServoDriver(0x40);
-Adafruit_PWMServoDriver pwmPowerTemp = Adafruit_PWMServoDriver(0x41);
 
+//Подключение внешнего модуля
+Adafruit_PWMServoDriver megaD16Pwm = Adafruit_PWMServoDriver(0x40);
+
+
+//Переменная для хранения заданий климата
 SettingsClimate taskClimate;
+
+//Переменная для хранения заданий механизмов
 SettingsDevice taskDevice;
+
+//Переменная для хранения режимов
 SettingsMode taskMode;
+
+//Переменная для хранения параметров механизмов
 RealParamDevice paramDevice;
+
+//Переменная для хранения параметров климата
 RealParamClimate paramClimate;
 
+//Ссылка на получение данных
 const char* linkForSendRealClimate = "/realParamClimate/update";
+//Ссылка на отправку данных
 const char* linkForSendRealDevice = "/realDeviceClimate/update";
 
 
+//Регулятор управления мощности светильников через внешний модуль
 GyverPID regulatorLight(1,1,1);
 int minPwmLight = 0;
 int maxPwmLight = 3412.5;
 
+//Регулятор управления мощности ИК обогревателей через mp248
 GyverPID regulatorTempAir(1,1,1);
 int minPwmRegulatorTempAir = 0;
-int maxPwmRegulatorTempAir = 1706.25;
+int maxPwmRegulatorTempAir = 53;
 
+//Регулятор управления мощности греющего кабеля зоны 1 через mp248
 GyverPID regulatorTempSoilOne(1,1,1);
 int minPwmRegulatorTempSoilOne = 0;
-int maxPwmRegulatorTempSoilOne = 1706.25;
+int maxPwmRegulatorTempSoilOne = 53;
 
+//Регулятор управления мощности греющего кабеля зоны 2 через mp248
 GyverPID regulatorTempSoilTwo(1,1,1);
 int minPwmRegulatorTempSoilTwo = 0;
-int maxPwmRegulatorTempSoilTwo = 1706.25;
+int maxPwmRegulatorTempSoilTwo = 53;
 
+//Регулятор управления мощности греющего кабеля зоны 3 через mp248
 GyverPID regulatorTempSoilThree(1,1,1);
 int minPwmRegulatorTempSoilThree = 0;
-int maxPwmRegulatorTempSoilThree = 1706.25;
+int maxPwmRegulatorTempSoilThree = 53;
 
+
+//Регулятор управления мощности вентиляторов вентиляции через mp248
 GyverPID regulatorVentilation(1,1,1);
 int minPwmVentilation = 0;
-int maxPwmVentilation = 3412.5;
+int maxPwmVentilation = 53;
 
+//Регулятор управления положения вентиляционных клапанов через внешний модуль
+GyverPID regulatorVentilationClap(1,1,1);
+int minPwmVentilationClap = 0;
+int maxPwmVentilationClap = 4016;
 
+//Подключение к сети
 void connectEthernet(){
-  Ethernet.begin(mac, PlcIP);  
+  Ethernet.begin(mac, PlcIP);
   delay(3000);
   Serial.println("connecting...");
   if (client.connect(serverIP, serverPort)) {
@@ -133,6 +152,7 @@ void connectEthernet(){
   }
 }
 
+//Сравнение времени
 bool chechTime(){
   String startTime = taskClimate.startLight;
   String endTime = taskClimate.endLight;
@@ -151,8 +171,9 @@ bool chechTime(){
   }
 }
 
+//Проверка подключения к интернету
 bool chechEthernet(){
-  
+
   if (client.connect(serverIP, serverPort)){
     ethernetTryConnect = 0;
     return true;
@@ -168,6 +189,7 @@ bool chechEthernet(){
   }
 }
 
+//Отправка данных на сервер общая
 void sendDataToServer(String link,String data){
   Serial.println("Отправка данных");
   Serial.println(data);
@@ -183,9 +205,10 @@ void sendDataToServer(String link,String data){
   client.stop();
 }
 
+//Обновление параметров ПИД регулирования
 void updatePID(StaticJsonDocument<700> data){
-  StaticJsonDocument<100> obj; 
-  
+  StaticJsonDocument<100> obj;
+
   obj.set(data["regulatorTempAir"]);
   regulatorTempAir.Kp = obj["p"];
   regulatorTempAir.Ki = obj["i"];
@@ -200,12 +223,12 @@ void updatePID(StaticJsonDocument<700> data){
   regulatorTempSoilTwo.Kp = obj["p"];
   regulatorTempSoilTwo.Ki = obj["i"];
   regulatorTempSoilTwo.Kd = obj["d"];
-  
+
   obj.set(data["regulatorTempSoilThree"]);
   regulatorTempSoilThree.Kp = obj["p"];
   regulatorTempSoilThree.Ki = obj["i"];
   regulatorTempSoilThree.Kd = obj["d"];
-  
+
   obj.set(data["regulatorLight"]);
   regulatorLight.Kp = obj["p"];
   regulatorLight.Ki = obj["i"];
@@ -217,11 +240,12 @@ void updatePID(StaticJsonDocument<700> data){
   regulatorVentilation.Ki = obj["i"];
   regulatorVentilation.Kd = obj["d"];
   Serial.println(regulatorVentilation.Kp);
-  
+
   data.clear();
   obj.clear();
 }
 
+//Получение данных с сервера
 void getDataFromServer(){
   Serial.println("start");
   client.connect(serverIP, serverPort);
@@ -248,6 +272,7 @@ void getDataFromServer(){
     Serial.println(regulatorVentilation.Kp);
 }}
 
+//Отправка данных климата на сервер
 void sendRealParamClimate(){
     StaticJsonDocument<800> doc;
     doc["humidityAirReal"] =  paramClimate.humidityAirReal;
@@ -265,12 +290,14 @@ void sendRealParamClimate(){
     doc["carbonDioxideReal"] = paramClimate.carbonDioxideReal;
     doc["carbonDioxideStreetReal"] = paramClimate.carbonDioxideStreetReal;
     doc["carbonDioxideTankLevelReal"] = paramClimate.carbonDioxideTankLevelReal;
-    doc["whiteLightReal"] = paramClimate.whiteLightReal; 
+    doc["whiteLightReal"] = paramClimate.whiteLightReal;
     String jsonString;
     serializeJson(doc, jsonString);
     sendDataToServer(linkForSendRealClimate,jsonString);
 }
 
+
+//Отправка данных мехагизмов на сервер
 void sendRealParamDevice() {
     StaticJsonDocument<800> doc;
     doc["powerTempAirReal"] = paramDevice.powerTempAirReal;
@@ -294,6 +321,7 @@ void sendRealParamDevice() {
     sendDataToServer(linkForSendRealDevice,jsonString);
 }
 
+//Фильтрование значений трех датчиков одного контура
 double getAverageDataFromSensors(double data[3], double THRESHOLD){
   double validData[3];
   int validCount = 0;
@@ -329,7 +357,7 @@ double getAverageDataFromSensors(double data[3], double THRESHOLD){
     Serial.print("\nСреднее значение: ");
     Serial.print(avgData);
     return avgData;
-  } 
+  }
   else {
     Serial.println("Нет корректных данных!");
     return 99999.0;
@@ -338,6 +366,7 @@ double getAverageDataFromSensors(double data[3], double THRESHOLD){
 
 
 
+//Получение информации с датчика темпераутры, влажности,CO2
 double getDataFromSensorModbus(int sensorNum,uint16_t reg){
   uint8_t result;
   double data;
@@ -354,9 +383,11 @@ double getDataFromSensorModbus(int sensorNum,uint16_t reg){
   return data;
 }
 
-double getDataFromSensorCO2Modbus(int sensorNum,uint16_t reg){
+//Получение информации с датчика CO2 и Освещения
+double getDataFromSensorModbusTwo(int sensorNum,uint16_t reg){
   uint8_t result;
   double data;
+
   sensor.begin(sensorNum, Serial1);
   result = sensor.readInputRegisters(reg, 1);
   if (result == sensor.ku8MBSuccess) {
@@ -379,15 +410,11 @@ int getAverageDataFromINTSensors(double data[3], double THRESHOLD){
 
 double getDataFromWaterLVLSensor(int sensorNumber,double maxLvl){
   int data = analogRead(sensorNumber);
-  double lvl = (data * (maxLvl / 368)) *  (100 / maxLvl);
+  double lvl = (data / 387) *  (200 / maxLvl);
   return lvl;
 }
 
-double getDataLightSensor(int sensorNumber){
-  int data = analogRead(sensorNumber);
-  double lvl = data * 20000 / 368;
-  return lvl;
-}
+
 
 double getDataFromCO2PASensor(){
   double data = scale.get_units(5);
@@ -412,18 +439,15 @@ void tempAirConturReg(){
   else{
     powerTask = taskDevice.powerTempAirTask / 100 * maxPower;
   }
-  analogWrite(pwmForTempAirNumber,powerTask);
+  analogWrite(pwmForTempAirNumberOne,powerTask);
+  analogWrite(pwmForTempAirNumberTwo,powerTask);
   paramDevice.powerTempAirReal = powerTask*100/maxPower;
   paramClimate.temperatureAirReal = tempReal;
 }
 
 void tempSoilConturRegOne(){
-  double data[3];
   double powerTask;
-  data[0] = getDataFromSensorModbus(sensorSoilOneRSNumber,0x0001);
-  data[1] = getDataFromSensorModbus(sensorSoilTwoRSNumber,0x0001);
-  data[2] = getDataFromSensorModbus(sensorSoilThreeRSNumber,0x0001);
-  const double tempReal = getAverageDataFromSensors(data,2.0);
+  const double tempReal = getDataFromSensorModbus(sensorSoilOneRSNumber,0x0001);
   const double tempTask = taskClimate.temperatureSoilTaskOne;
   const String mode = taskMode.modeTempSoilOne;
   if(mode == "Автоматический"){
@@ -441,11 +465,7 @@ void tempSoilConturRegOne(){
 }
 
 void tempSoilConturRegTwo(){
-  double data[3];
-  data[0] = getDataFromSensorModbus(sensorSoilFourRSNumber,0x0001);
-  data[1] = getDataFromSensorModbus(sensorSoilFiveRSNumber,0x0001);
-  data[2] = getDataFromSensorModbus(sensorSoilSixRSNumber,0x0001);
-  const double tempReal = getAverageDataFromSensors(data,2.0);
+  const double tempReal = getDataFromSensorModbus(sensorSoilTwoRSNumber,0x0001);
   const double tempTask = taskClimate.temperatureSoilTaskTwo;
   const String mode = taskMode.modeTempSoilTwo;
   double powerTask;
@@ -464,12 +484,8 @@ void tempSoilConturRegTwo(){
 }
 
 void tempSoilConturRegThree(){
-  double data[3];
   double powerTask;
-  data[0] = getDataFromSensorModbus(sensorSoilSevenRSNumber,0x0001);
-  data[1] = getDataFromSensorModbus(sensorSoilEightRSNumber,0x0001);
-  data[2] = getDataFromSensorModbus(sensorSoilNineRSNumber,0x0001);
-  const double tempReal = getAverageDataFromSensors(data,2.0);
+  const double tempReal = getDataFromSensorModbus(sensorSoilThreeRSNumber,0x0001);
   const double tempTask = taskClimate.temperatureSoilTaskThree;
   const String mode = taskMode.modeTempSoilThree;
   if(mode == "Автоматический"){
@@ -492,7 +508,7 @@ void humidityAirConturReg(){
   data[1] = getDataFromSensorModbus(sensorAirTwoRSNumber,0x0001);
   data[2] = getDataFromSensorModbus(sensorAirThreeRSNumber,0x0001);
   const double humidityAirReal = getAverageDataFromSensors(data,15.0);
-  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelOneRSNumber,0.5);
+  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelOneANumber,0.5);
   const double humidityAirTaskLow = taskClimate.humidityAirLowTask;
   const double humidityAirTaskHigh = taskClimate.humidityAirHighTask;
   const String generatorStatus = paramDevice.workStatusGeneratorHumidityAirReal;
@@ -551,12 +567,8 @@ void humidityAirConturReg(){
 }
 
 void humiditySoilConturRegOne(){
-  double data[3];
-  data[0] = getDataFromSensorModbus(sensorSoilOneRSNumber,0x0000);
-  data[1] = getDataFromSensorModbus(sensorSoilTwoRSNumber,0x0000);
-  data[2] = getDataFromSensorModbus(sensorSoilThreeRSNumber,0x0000);
-  const double humiditySoilReal = getAverageDataFromSensors(data,15.0);
-  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelTwoRSNumber,2);
+  const double humiditySoilReal = getDataFromSensorModbus(sensorSoilOneRSNumber,0x0000);
+  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelTwoANumber,2);
   const double humiditySoilTaskLow = taskClimate.humiditySoilLowTaskOne;
   const double humiditySoilTaskHigh = taskClimate.humiditySoilHighTaskOne;
   const String flapStatus = paramDevice.workStatusFlapHumiditySoilRealOne;
@@ -611,12 +623,8 @@ void humiditySoilConturRegOne(){
 }
 
 void humiditySoilConturRegTwo(){
-  double data[3];
-  data[0] = getDataFromSensorModbus(sensorSoilFourRSNumber,0x0000);
-  data[1] = getDataFromSensorModbus(sensorSoilFiveRSNumber,0x0000);
-  data[2] = getDataFromSensorModbus(sensorSoilSixRSNumber,0x0000);
-  const double humiditySoilReal = getAverageDataFromSensors(data,15.0);
-  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelTwoRSNumber,2);
+  const double humiditySoilReal = getDataFromSensorModbus(sensorSoilTwoRSNumber,0x0000);
+  const double waterLVLReal = getDataFromWaterLVLSensor(sensorWaterLevelTwoANumber,2);
   const double humiditySoilTaskLow = taskClimate.humiditySoilLowTaskTwo;
   const double humiditySoilTaskHigh = taskClimate.humiditySoilHighTaskTwo;
   const String flapStatus = paramDevice.workStatusFlapHumiditySoilRealTwo;
@@ -671,12 +679,8 @@ void humiditySoilConturRegTwo(){
 }
 
 void humiditySoilConturRegThree(){
-  double data[3];
-  data[0] = getDataFromSensorModbus(sensorSoilSevenRSNumber,0x0000);
-  data[1] = getDataFromSensorModbus(sensorSoilEightRSNumber,0x0000);
-  data[2] = getDataFromSensorModbus(sensorSoilNineRSNumber,0x0000);
-  const double humiditySoilReal = getAverageDataFromSensors(data,15.0);
-  const double waterLVLReal =  getDataFromWaterLVLSensor(sensorWaterLevelTwoRSNumber,2);
+  const double humiditySoilReal = getDataFromSensorModbus(sensorSoilThreeRSNumber,0x0000);
+  const double waterLVLReal =  getDataFromWaterLVLSensor(sensorWaterLevelTwoANumber,2);
   const double humiditySoilTaskLow = taskClimate.humiditySoilLowTaskThree;
   const double humiditySoilTaskHigh = taskClimate.humiditySoilHighTaskThree;
   const String flapStatus = paramDevice.workStatusFlapHumiditySoilRealThree;
@@ -732,9 +736,9 @@ void humiditySoilConturRegThree(){
 
 void lightConturReg(){
   double data[3];
-  data[0] = getDataLightSensor(sensorLightOneANumber);
-  data[1] = getDataLightSensor(sensorLightTwoANumber);
-  data[2] = getDataLightSensor(sensorLightThreeANumber);
+  data[0] = getDataFromSensorModbusTwo(sensorLightOneRSNumber,0x0000);
+  data[1] = getDataFromSensorModbusTwo(sensorLightTwoRSNumber,0x0000);
+  data[2] = getDataFromSensorModbusTwo(sensorLightThreeRSNumber,0x0000);
   const int lightReal = getAverageDataFromINTSensors(data, 100);
   const int lightTask = taskClimate.whiteLightTask;
   const String startLightTime = taskClimate.startLight;
@@ -755,27 +759,29 @@ void lightConturReg(){
     powerTask = taskDevice.whiteLightPowerTask / 100 * maxPower;
   }
   double powerReal = powerTask * 100 / maxPower;
-  //analogWrite(pwmForLightNumber,powerTask);
+  for(int i = 0; i < numChannels; i++){
+    megaD16Pwm.setPWM(activeChannelsLight[i],0,powerTask);
+  }
   paramDevice.whiteLightPowerReal=(powerReal);
   paramClimate.whiteLightReal=(lightReal);
 }
 
 void CO2ConturReg(){
   double data[3];
-  data[0] = getDataFromSensorCO2Modbus(sensorCO2OneRSNumber,0x0000);
-  data[1] = getDataFromSensorCO2Modbus(sensorCO2TwoRSNumber,0x0000);
-  data[2] = getDataFromSensorCO2Modbus(sensorCO2ThreeRSNumber,0x0000);
+  data[0] = getDataFromSensorModbusTwo(sensorCO2OneRSNumber,0x0000);
+  data[1] = getDataFromSensorModbusTwo(sensorCO2TwoRSNumber,0x0000);
+  data[2] = getDataFromSensorModbusTwo(sensorCO2ThreeRSNumber,0x0000);
   const int CO2Real = getAverageDataFromINTSensors(data,75);
   const double powerVentilation = paramDevice.powerVentilatorInReal;
   const int lightTaskForCO2 = taskClimate.whiteLightTaskForCO2;
-  data[0] = getDataLightSensor(sensorLightOneANumber);
-  data[1] = getDataLightSensor(sensorLightTwoANumber);
-  data[2] = getDataLightSensor(sensorLightThreeANumber);
+  data[0] = getDataFromSensorModbusTwo(sensorLightOneRSNumber,0x0000);
+  data[1] = getDataFromSensorModbusTwo(sensorLightTwoRSNumber,0x0000);
+  data[2] = getDataFromSensorModbusTwo(sensorLightThreeRSNumber,0x0000);
   const int lightReal = getAverageDataFromINTSensors(data, 100);
   const int  CO2TaskHigh = taskClimate.carbonDioxideHighTask;
   const int CO2TaskLow = taskClimate.carbonDioxideLowTask;
   const String flapStatus = paramDevice.workStatusFlapCO2Real;
-  const double CO2TankLVL = 1.1;//getDataFromCO2PASensor();!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const double CO2TankLVL = getDataFromCO2PASensor();
   const String mode = taskMode.modeCarbonDioxide;
   if(mode == "Автоматический"){
     if((lightReal < lightTaskForCO2) || (CO2Real > CO2TaskHigh) || (powerVentilation > 30)){
@@ -793,7 +799,7 @@ void CO2ConturReg(){
       }
   }}
   else{
-    const String flapTask = taskDevice.workStatusFlapCO2Task;                     
+    const String flapTask = taskDevice.workStatusFlapCO2Task;
     if(flapTask == "ВКЛ" && flapStatus != "ВКЛ"){
       digitalWrite(flapCO2Number,HIGH);
       flapStatus = "ВКЛ";
@@ -815,11 +821,11 @@ void VentilationReg(){
   double newTaskVentilationFlap;
 
   double data[3];
-  data[0] = getDataFromSensorCO2Modbus(sensorCO2OneRSNumber,0x0000);
-  data[1] = getDataFromSensorCO2Modbus(sensorCO2TwoRSNumber,0x0000);
-  data[2] = getDataFromSensorCO2Modbus(sensorCO2ThreeRSNumber,0x0000);
+  data[0] = getDataFromSensorModbusTwo(sensorCO2OneRSNumber,0x0000);
+  data[1] = getDataFromSensorModbusTwo(sensorCO2TwoRSNumber,0x0000);
+  data[2] = getDataFromSensorModbusTwo(sensorCO2ThreeRSNumber,0x0000);
   const int CO2Real = (int)getAverageDataFromINTSensors(data,75);
-  const int CO2Street = getDataFromSensorCO2Modbus(sensorCO2StreetRSNumber,0x0000);
+  const int CO2Street = getDataFromSensorModbusTwo(sensorCO2StreetRSNumber,0x0000);
   const int CO2Task = taskClimate.carbonDioxideHighTask;
 
   data[0] = getDataFromSensorModbus(sensorAirOneRSNumber,0x0000);
@@ -832,7 +838,7 @@ void VentilationReg(){
   data[0] = getDataFromSensorModbus(sensorAirOneRSNumber,0x0001);
   data[1] = getDataFromSensorModbus(sensorAirTwoRSNumber,0x0001);
   data[2] = getDataFromSensorModbus(sensorAirThreeRSNumber,0x0001);
-  const double humidityReal = getAverageDataFromSensors(data,15.0);  
+  const double humidityReal = getAverageDataFromSensors(data,15.0);
   const double humidityStreet = getDataFromSensorModbus(sensorAirStreetRSNumber,0x0001);
   const double humidityTask = taskClimate.humidityAirHighTask;
   double tOtkl = 0.0;
@@ -846,30 +852,31 @@ void VentilationReg(){
       double hOtkl = (humidityReal - humidityTask)/humidityTask*100*((humidityReal-humidityStreet)/(humidityReal-humidityTask));}
     if(CO2Real!=99999 && CO2Street!=99999 && (CO2Real-CO2Task > 40) && (CO2Real - CO2Street > 40)){
       double cOtkl = (CO2Real - CO2Task)/CO2Task*100*((CO2Real-CO2Street)/(CO2Real-CO2Task));}
-    double otkl = max(tOtkl,max(hOtkl,cOtkl));
-    newTaskVentilation = regulatorVentilation.getResultTimer();  
-    newTaskVentilationFlap = newTaskVentilation;     
+    double otkl = max(tOtkl,max(hOtkl/4,cOtkl/40));
+    regulatorVentilation.input = otkl;
+    regulatorVentilationClap.input = otkl;
+    newTaskVentilation = regulatorVentilation.getResultTimer();
+    newTaskVentilationFlap = regulatorVentilationClap.getResultTimer();
     }
   else{
-    newTaskVentilation = taskDevice.powerVentilatorInTask / 100 * maxPower;
-    newTaskVentilationFlap = taskDevice.powerFlapOutTask / 100 * maxPower;
+    newTaskVentilation = taskDevice.powerVentilatorInTask / 100 * 53;
+    newTaskVentilationFlap = taskDevice.powerFlapOutTask / 100 * 4096;
     }
-    paramDevice.powerVentilatorInReal=(newTaskVentilation * 100 / maxPower);
-    paramDevice.powerFlapOutReal=(newTaskVentilationFlap * 100 / maxPower);
-    analogWrite(pwmForVentilationFlapNumber,newTaskVentilation);
+    paramDevice.powerVentilatorInReal=(newTaskVentilation * 100 / 53);
+    paramDevice.powerFlapOutReal=(newTaskVentilationFlap * 100 / 4096);
+    megaD16Pwm.setPWM(13,0,newTaskVentilationFlap);
+    megaD16Pwm.setPWM(14,0,newTaskVentilationFlap);
     analogWrite(pwmForVentilatorVentilationNumber,newTaskVentilation);
 }
 
 
 void setup() {
-  
+
 connectEthernet();
-  //pinMode(sensorPACO2ANumber,INPUT);
-  pinMode(sensorLightOneANumber,INPUT);
-  pinMode(sensorLightTwoANumber,INPUT);
-  pinMode(sensorLightThreeANumber,INPUT);
-  pinMode(sensorWaterLevelOneRSNumber,INPUT);
-  pinMode(sensorWaterLevelTwoRSNumber,INPUT);
+
+  pinMode(sensorWaterLevelOneANumber,INPUT);
+  pinMode(sensorWaterLevelTwoANumber,INPUT);
+
   pinMode(pumpOneNumber,OUTPUT);
   pinMode(pumpTwoNumber,OUTPUT);
   pinMode(pumpThreeNumber ,OUTPUT);
@@ -879,36 +886,44 @@ connectEthernet();
   pinMode(flapCO2Number ,OUTPUT);
   pinMode(generatorHumidityNumber ,OUTPUT);
   pinMode(ventilatorHumidityNumber ,OUTPUT);
+
   pinMode(pwmForTempSoilOneNumber ,OUTPUT);
   pinMode(pwmForTempSoilOneNumber ,OUTPUT);
   pinMode(pwmForTempSoilOneNumber ,OUTPUT);
-  pinMode(pwmForTempAirNumber ,OUTPUT);
+  pinMode(pwmForTempAirNumberOne ,OUTPUT);
+  pinMode(pwmForTempAirNumberTwo ,OUTPUT);
   pinMode(pwmForVentilatorVentilationNumber ,OUTPUT);
   pinMode(pwmForVentilationFlapNumber ,OUTPUT);
- // pinMode(pwmForLightNumber ,OUTPUT);
-  
-  
+
+
+
   regulatorLight.setDirection(NORMAL);
   regulatorLight.setLimits(0, 3412.5);
+
   regulatorTempAir.setDirection(NORMAL);
-  regulatorTempAir.setLimits(0, 1706.25);
+  regulatorTempAir.setLimits(0, 53);
+
   regulatorTempSoilOne.setDirection(NORMAL);
-  regulatorTempSoilOne.setLimits(0, 1706.25);
+  regulatorTempSoilOne.setLimits(0, 53);
+
   regulatorTempSoilTwo.setDirection(NORMAL);
-  regulatorTempSoilTwo.setLimits(0, 1706.25);
+  regulatorTempSoilTwo.setLimits(0, 53);
+
   regulatorTempSoilThree.setDirection(NORMAL);
-  regulatorTempSoilThree.setLimits(0, 1706.25);
+  regulatorTempSoilThree.setLimits(0, 53);
+
   regulatorVentilation.setDirection(NORMAL);
   regulatorVentilation.setLimits(0, 3412.5);
+  regulatorVentilation.setpoint = 5;
 
-  pwmLight.begin();
-  pwmPowerTemp.begin();
-  pwmLight.setPWMFreq(1000);
-  pwmPowerTemp.setPWMFreq(1000);
+  regulatorVentilationClap.setDirection(NORMAL);
+  regulatorVentilationClap.setLimits(0, 4096.0);
+  regulatorVentilationClap.setpoint = 5;
+  megaD16Pwm.begin();
+  megaD16Pwm.setPWMFreq(1000);
 
-  scale.begin(sensorMCO2ANumberFirstPin,sensorMCO2ANumberSecondPin);
+  scale.begin(sensorMCO2NumberFirstPin,sensorMCO2NumberSecondPin);
   Serial1.begin(9600);
-  //scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
 
 }
 
@@ -934,5 +949,5 @@ void loop() {
   if(chechEthernet()){
     sendRealParamClimate();
     sendRealParamDevice();
-  }    
+  }
 }
