@@ -235,11 +235,12 @@ void updatePID(StaticJsonDocument<700> data){
   regulatorLight.Kd = obj["d"];
 
   obj.set(data["regulatorVentilation"]);
-  Serial.println(obj.as<String>());
   regulatorVentilation.Kp = obj["p"];
   regulatorVentilation.Ki = obj["i"];
   regulatorVentilation.Kd = obj["d"];
-  Serial.println(regulatorVentilation.Kp);
+  regulatorVentilationClap.Kp = obj["p"];
+  regulatorVentilationClap.Ki = obj["i"];
+  regulatorVentilationClap.Kd = obj["d"];
 
   data.clear();
   obj.clear();
